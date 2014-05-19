@@ -1,0 +1,64 @@
+﻿@model ZsfData.V_UserInfoDetail
+@{
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+    ViewBag.Title = "我的资料";
+}
+<link href="@Url.Content("~/Contents/Css/jquery-ui-1.9.1.custom.css")" type="text/css" rel="Stylesheet" />
+<style>
+    .ui-datepicker-calendar thead{ display:none}
+    .ui-datepicker-calendar{ margin-top:5px!important}
+</style>
+<div class="user_info">
+    <h4>@ViewBag.Title</h4>
+    <ul class="dt_list">
+        <li><label class="tl">用户名：</label><span class="val">@Model.Name</span><span class="lev">@Model.GradeName</span></li>
+        <li><label class="tl">邮箱：</label><span class="val">@Model.Email</span>@Html.ActionLink("修改密码", "changepassword", "user", null, new { @class = "cp_lk" })</li>
+        <li><label class="tl">性别：</label>
+            <label class="val@(Model.Gender ? " unck" : null)"><input id="Gender" name="Gender" class="gender" onclick="ChangeGender(this)" value="false" type="radio" @(Model.Gender ? null : "checked=checked") />男</label>
+            <label class="val@(Model.Gender ? null : " unck")"><input id="Gender" name="Gender" class="gender" onclick="ChangeGender(this)" value="true" type="radio" @(Model.Gender ? "checked=checked" : null) />女</label>
+        </li>
+        <li><label class="tl">出生日期：</label>
+            <input class="val birth" id="BirthDay" type="text" value="@Model.Birthday.ToString("yyyy年M月d日")" onkeydown="return false;"></input>
+        </li>
+        <li class="btn"><label class="tl"></label><input type="button" value="保存更改" onclick="SaveUserInfo()" /></li>
+    </ul>
+</div>
+<script type="text/javascript" src="@Url.Content("~/Scripts/jquery-ui-1.9.1.custom.min.js")"></script>
+
+<script type="text/javascript">
+    function SaveUserInfo() {
+        var gender = $('#Gender:checked').val();
+        var birthDay = $('#BirthDay').val();
+        if (!gender || gender == '')
+            gender = false;
+        $.post('/User/ChangeUserInfo', { 'gender': gender, 'birthDay': birthDay }, function (data) {
+            alert(data.value);
+        });
+    }
+
+    function ChangeGender(e) {
+        $('.gender').parent().addClass('unck');
+        $(e).parent().removeClass('unck');
+    }
+
+    $(document).ready(function () {
+
+        var dateNow = new Date();
+        $('#BirthDay').datepicker({
+            changeMonth: true,
+            changeYear: true,
+            showMonthAfterYear: true,
+            showWeek: false,
+            constrainInput: true,
+            dateFormat: "yy年m月d日",
+            firstDay: 1,
+            yearRange: (dateNow.getFullYear() - 60) + ":" + (dateNow.getFullYear() - 10),
+            nextText: "下一月",
+            prevText: "上一月",
+            monthNames: ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"],
+            monthNamesShort: ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"],
+            onSelect: function () {
+            }
+        });
+    });
+</script>

@@ -1,0 +1,482 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{82B80986-3FD9-48AF-A594-3691D4E31ACF}</ProjectGuid>
+    <ProjectTypeGuids>{E53F8FEA-EAE0-44A6-8774-FFD645390401};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ZsfMaster</RootNamespace>
+    <AssemblyName>ZsfMaster</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <MvcProjectUpgradeChecked>true</MvcProjectUpgradeChecked>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AspNet.SignalR.Core">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.0.0\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.2.0.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.2.0.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.2.0.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\ActivityController.cs" />
+    <Compile Include="Controllers\ChangeAreaController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\JobController.cs" />
+    <Compile Include="Controllers\ShopController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\MobileCapableRazorViewEngine.cs" />
+    <Compile Include="Models\BaseDataModel.cs" />
+    <Compile Include="Models\JobModel.cs" />
+    <Compile Include="Models\ShopModel.cs" />
+    <Compile Include="Models\UserAuthAttribute.cs" />
+    <Compile Include="Models\UserModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShopOrderHub.cs" />
+    <Compile Include="Startup.cs" />
+    <Compile Include="Tools\ImageValidate.cs" />
+    <Compile Include="Tools\Paging.cs" />
+    <Compile Include="Tools\PhoneToImage.cs" />
+    <Compile Include="Tools\SendEmail.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Contents\Css\chosen.css" />
+    <Content Include="Contents\Css\jcrop.css" />
+    <Content Include="Contents\Css\job_edit.css" />
+    <Content Include="Contents\Css\job_list.css" />
+    <Content Include="Contents\Css\jquery-ui-1.9.1.custom.css" />
+    <Content Include="Contents\Css\main.css" />
+    <Content Include="Contents\Css\Mobile\about.css" />
+    <Content Include="Contents\Css\Mobile\main.css" />
+    <Content Include="Contents\Css\Mobile\shop_detail.css" />
+    <Content Include="Contents\Css\noheader_main.css" />
+    <Content Include="Contents\Css\shop_detail.css" />
+    <Content Include="Contents\Css\shop_edit.css" />
+    <Content Include="Contents\Css\uploadify.css" />
+    <Content Include="Contents\Css\user.css" />
+    <Content Include="Contents\Css\user_reg.css" />
+    <Content Include="Contents\Images\404_error.gif" />
+    <Content Include="Contents\Images\500_error.gif" />
+    <Content Include="Contents\Images\add.png" />
+    <Content Include="Contents\Images\arrow_red.png" />
+    <Content Include="Contents\Images\button_green.png" />
+    <Content Include="Contents\Images\check_mark_bg.gif" />
+    <Content Include="Contents\Images\close_14.png" />
+    <Content Include="Contents\Images\cmt_pt.png" />
+    <Content Include="Contents\Images\comment_star.png" />
+    <Content Include="Contents\Images\default_user_photo.png" />
+    <Content Include="Contents\Images\delete_red.png" />
+    <Content Include="Contents\Images\dishe_order_body.jpg" />
+    <Content Include="Contents\Images\dishe_order_foot.gif" />
+    <Content Include="Contents\Images\dish_order_btn.jpg" />
+    <Content Include="Contents\Images\edit.png" />
+    <Content Include="Contents\Images\favicon.ico" />
+    <Content Include="Contents\Images\favorite_off.png" />
+    <Content Include="Contents\Images\favorite_on.png" />
+    <Content Include="Contents\Images\hidden.png" />
+    <Content Include="Contents\Images\ico_sidebar.png" />
+    <Content Include="Contents\Images\ipad4.jpg" />
+    <Content Include="Contents\Images\ipad4_small.jpg" />
+    <Content Include="Contents\Images\iPhone4S.jpg" />
+    <Content Include="Contents\Images\iPhone4S_small.jpg" />
+    <Content Include="Contents\Images\Jcrop.gif" />
+    <Content Include="Contents\Images\chosen-sprite%402x.png" />
+    <Content Include="Contents\Images\chosen-sprite.png" />
+    <Content Include="Contents\Images\jquery_ui\ui-bg_diagonals-thick_75_f3d8d8_40x40.png" />
+    <Content Include="Contents\Images\jquery_ui\ui-bg_dots-small_65_a6a6a6_2x2.png" />
+    <Content Include="Contents\Images\jquery_ui\ui-bg_flat_0_333333_40x100.png" />
+    <Content Include="Contents\Images\jquery_ui\ui-bg_flat_65_ffffff_40x100.png" />
+    <Content Include="Contents\Images\jquery_ui\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Contents\Images\jquery_ui\ui-bg_glass_55_fbf8ee_1x400.png" />
+    <Content Include="Contents\Images\jquery_ui\ui-bg_highlight-hard_100_eeeeee_1x100.png" />
+    <Content Include="Contents\Images\jquery_ui\ui-bg_highlight-hard_100_f6f6f6_1x100.png" />
+    <Content Include="Contents\Images\jquery_ui\ui-bg_highlight-soft_15_cc0000_1x100.png" />
+    <Content Include="Contents\Images\jquery_ui\ui-icons_004276_256x240.png" />
+    <Content Include="Contents\Images\jquery_ui\ui-icons_cc0000_256x240.png" />
+    <Content Include="Contents\Images\jquery_ui\ui-icons_ffffff_256x240.png" />
+    <Content Include="Contents\Images\loading.gif" />
+    <Content Include="Contents\Images\logo.gif" />
+    <Content Include="Contents\Images\logo.png" />
+    <Content Include="Contents\Images\main_bg.jpg" />
+    <Content Include="Contents\Images\minus.png" />
+    <Content Include="Contents\Images\m_bg.png" />
+    <Content Include="Contents\Images\nav.png" />
+    <Content Include="Contents\Images\next.png" />
+    <Content Include="Contents\Images\nojob.png" />
+    <Content Include="Contents\Images\phone.png" />
+    <Content Include="Contents\Images\phone_icon.png" />
+    <Content Include="Contents\Images\photo.png" />
+    <Content Include="Contents\Images\plus.png" />
+    <Content Include="Contents\Images\prev.png" />
+    <Content Include="Contents\Images\raster.png" />
+    <Content Include="Contents\Images\search.png" />
+    <Content Include="Contents\Images\shop_category_bg_b.png" />
+    <Content Include="Contents\Images\shop_category_bg_w.png" />
+    <Content Include="Contents\Images\star-off-small.png" />
+    <Content Include="Contents\Images\star-off.png" />
+    <Content Include="Contents\Images\star-on-small.png" />
+    <Content Include="Contents\Images\star-on.png" />
+    <Content Include="Contents\Images\super-button-overlay.png" />
+    <Content Include="Contents\Images\title_bg.png" />
+    <Content Include="Contents\Images\transparent.gif" />
+    <Content Include="Contents\Images\undo.png" />
+    <Content Include="Contents\Images\uploadify-cancel.png" />
+    <Content Include="Contents\Images\view.png" />
+    <Content Include="Contents\ShopImages\01413467-f374-40cb-8d77-125e9e84408f.jpg" />
+    <Content Include="Contents\ShopImages\02d64fac-c38b-491b-81d5-a75da1153f87.jpg" />
+    <Content Include="Contents\ShopImages\05e7bdc4-4f51-4da6-8000-74b5cb7df594.jpg" />
+    <Content Include="Contents\ShopImages\0700f49a-48ab-4994-ada5-90eaaf754b95.jpg" />
+    <Content Include="Contents\ShopImages\08d0eb1b-817d-471c-9dee-8764eb561274.jpg" />
+    <Content Include="Contents\ShopImages\095d29c1-bbca-40dd-93d6-3ab41ab648dd.jpg" />
+    <Content Include="Contents\ShopImages\0a77221e-224f-4e1b-ba84-391657a4b446.jpg" />
+    <Content Include="Contents\ShopImages\0bc5bfc7-d77b-4430-b718-f69cc684accc.png" />
+    <Content Include="Contents\ShopImages\0c3f122e-b853-4fc8-af15-c4bde1fb32f2.jpg" />
+    <Content Include="Contents\ShopImages\0e214fca-5b77-40e2-a705-ca08bf5a8117.jpg" />
+    <Content Include="Contents\ShopImages\0ea23ce1-ded6-4929-b3cb-eaecadf5b8c7.jpg" />
+    <Content Include="Contents\ShopImages\0f3d3854-eb92-4c8f-855e-c6360edaf170.jpg" />
+    <Content Include="Contents\ShopImages\1.jpg" />
+    <Content Include="Contents\ShopImages\111ad2fa-3636-483f-98f5-7d94fa2b33f0.jpg" />
+    <Content Include="Contents\ShopImages\1339e958-ba2d-4e5f-b9ac-cd3f3017719f.jpg" />
+    <Content Include="Contents\ShopImages\153052e0-7e0f-42ca-85b3-c6d0b9455c53.jpg" />
+    <Content Include="Contents\ShopImages\1a6c360d-1afe-4972-9303-e3fe8998203b.jpg" />
+    <Content Include="Contents\ShopImages\1ba18cda-5297-467e-b1d9-147460ae0341.gif" />
+    <Content Include="Contents\ShopImages\1e4ab3b9-3c41-4437-8cbe-b32aba2932fd.jpg" />
+    <Content Include="Contents\ShopImages\2.jpg" />
+    <Content Include="Contents\ShopImages\21a68eb3-913e-447a-a9b4-b44b593efcbb.jpg" />
+    <Content Include="Contents\ShopImages\261f88ea-54ed-41b5-b369-556589db75e0.gif" />
+    <Content Include="Contents\ShopImages\2b0c3335-5447-428a-b829-378acabdac48.JPG" />
+    <Content Include="Contents\ShopImages\2cc419f9-6a49-4674-ac12-565773c055e0.gif" />
+    <Content Include="Contents\ShopImages\3.jpg" />
+    <Content Include="Contents\ShopImages\31d557ba-62e7-4422-b2e0-ed5a33cb2813.jpg" />
+    <Content Include="Contents\ShopImages\38821fea-76f9-49ab-b065-82e728287c2c.jpg" />
+    <Content Include="Contents\ShopImages\39153090-9dbd-44cb-ab81-32555fb8d4ac.jpg" />
+    <Content Include="Contents\ShopImages\39a486ba-f5ca-4c6d-b3cd-b8d746af25b6.jpg" />
+    <Content Include="Contents\ShopImages\3a65d967-22c4-403d-9017-5114fde95db7.jpg" />
+    <Content Include="Contents\ShopImages\3bd7ed26-9747-4e45-9f2f-a02e5f3ecdc3.jpg" />
+    <Content Include="Contents\ShopImages\3d902b34-b675-4d5b-831c-e79505ec9a8b.jpg" />
+    <Content Include="Contents\ShopImages\3e642a60-f434-44df-acbf-1cd6775a3fd4.jpg" />
+    <Content Include="Contents\ShopImages\4.jpg" />
+    <Content Include="Contents\ShopImages\415664ca-d91e-4fb0-95d8-84ef969a5b53.jpg" />
+    <Content Include="Contents\ShopImages\41ed6adf-edf7-46fc-8593-9798919bac60.jpg" />
+    <Content Include="Contents\ShopImages\42f3b1f4-38e1-47f0-a363-bd3a836d87d0.jpg" />
+    <Content Include="Contents\ShopImages\467a04c8-457e-4edf-a8b3-b4dc314ea9c0.jpg" />
+    <Content Include="Contents\ShopImages\46b71d9e-fca1-4269-a66a-2fe01a2287a1.jpg" />
+    <Content Include="Contents\ShopImages\4e2a4641-6e7e-4deb-8d8c-15a3ecb5f9d1.jpg" />
+    <Content Include="Contents\ShopImages\5.jpg" />
+    <Content Include="Contents\ShopImages\54150785-b656-4b4f-826f-31ed4d06d7f4.jpg" />
+    <Content Include="Contents\ShopImages\567df0ea-e1c0-4753-ae51-4d2f8e746b4d.jpg" />
+    <Content Include="Contents\ShopImages\5d46e6f7-cf93-497c-81c6-81d969fdf4a1.jpg" />
+    <Content Include="Contents\ShopImages\6.jpg" />
+    <Content Include="Contents\ShopImages\625d4c75-852a-476d-a651-1a5e4ce31a12.jpg" />
+    <Content Include="Contents\ShopImages\62c54266-2146-47a8-a89e-8f1c8b783cc7.jpg" />
+    <Content Include="Contents\ShopImages\64fd44b9-2ca8-4c48-9c1f-75026a249c8a.jpg" />
+    <Content Include="Contents\ShopImages\69071929-5295-419f-a659-62e82ff322f0.jpg" />
+    <Content Include="Contents\ShopImages\6d23a096-f9bb-49d6-82be-8ccaaef2a024.jpg" />
+    <Content Include="Contents\ShopImages\6d7a4c2e-ba35-4f20-80b4-6b91353f8395.jpg" />
+    <Content Include="Contents\ShopImages\6edc6ecb-50f5-46bb-a66c-8feca99f8f82.jpg" />
+    <Content Include="Contents\ShopImages\712b1238-b52e-43e7-ae8b-c1b11535fab2.jpg" />
+    <Content Include="Contents\ShopImages\731e7b0f-774b-4e2d-9c85-9a7b9b35f1af.jpg" />
+    <Content Include="Contents\ShopImages\7464d42b-0b30-481f-843f-6cdc06e471a1.jpg" />
+    <Content Include="Contents\ShopImages\7d6ce7b6-5172-46f2-a3df-d5eb1bfa9afc.jpg" />
+    <Content Include="Contents\ShopImages\7ece7bbe-74b3-4bae-8bf4-8f051cbfb7f3.jpg" />
+    <Content Include="Contents\ShopImages\7f7c74f3-dc6e-4dda-bccd-ef3ec3bf80d5.jpg" />
+    <Content Include="Contents\ShopImages\8045a4ef-1647-471e-a23a-40ca581ac0ef.jpg" />
+    <Content Include="Contents\ShopImages\80baf6b5-2380-4655-b17d-38072dd55a4f.jpg" />
+    <Content Include="Contents\ShopImages\837b483d-cb7e-4380-9277-0689559b2b98.jpg" />
+    <Content Include="Contents\ShopImages\8d587c8e-543c-48be-87ef-11942f33394c.jpg" />
+    <Content Include="Contents\ShopImages\8d65db67-5258-405b-ab16-7e7d900994b1.jpg" />
+    <Content Include="Contents\ShopImages\909a651f-558b-4b00-a77a-51b03a2bbd94.jpg" />
+    <Content Include="Contents\ShopImages\974724cb-0a90-4527-91fe-56f219e2cffc.jpg" />
+    <Content Include="Contents\ShopImages\9a9be7ea-b402-4037-a713-1e6ab770d447.jpg" />
+    <Content Include="Contents\ShopImages\9be86722-379c-4760-84ac-90197f32dbc3.jpg" />
+    <Content Include="Contents\ShopImages\a2e632bf-e287-4840-a24a-def8e53bad78.jpg" />
+    <Content Include="Contents\ShopImages\a2f772ae-5473-4c2f-826a-9032de5b8eda.jpg" />
+    <Content Include="Contents\ShopImages\a3f56d0f-976c-4e3f-829c-0cc4f59d09db.jpg" />
+    <Content Include="Contents\ShopImages\a98c089e-7e28-4379-a9e4-3d868f9cb443.jpg" />
+    <Content Include="Contents\ShopImages\ab317da3-a80d-4ebb-8cfb-88bce919701e.jpg" />
+    <Content Include="Contents\ShopImages\acb9e719-dd00-41a8-905e-51b6175a9f33.jpg" />
+    <Content Include="Contents\ShopImages\afb96d36-90dd-4bb4-9351-56fda31a2ab8.jpg" />
+    <Content Include="Contents\ShopImages\b1db93bf-d5d4-4dd9-ad20-3d4e50053eae.jpg" />
+    <Content Include="Contents\ShopImages\b7a5cc00-0880-49a6-9e32-d6d2435fa356.jpg" />
+    <Content Include="Contents\ShopImages\bbc17e17-717e-4200-9183-6a4bf8cc650b.jpg" />
+    <Content Include="Contents\ShopImages\bc76f88b-627e-4921-a880-508bccef3d41.jpg" />
+    <Content Include="Contents\ShopImages\bd383c9f-8ab6-4723-92ea-bf8adc0896ed.jpg" />
+    <Content Include="Contents\ShopImages\bfd7d3f6-e493-4c9a-95d6-b100fc543697.jpg" />
+    <Content Include="Contents\ShopImages\c03b10f2-5987-44a5-a5a6-80f6ea29bfeb.jpg" />
+    <Content Include="Contents\ShopImages\c0966720-e6f5-4640-b76d-18c333828a9b.jpg" />
+    <Content Include="Contents\ShopImages\cb383c46-77ee-4ec6-a56c-7429347735e6.gif" />
+    <Content Include="Contents\ShopImages\d64ee743-94ab-4d4d-9a83-09c25aed3c06.jpg" />
+    <Content Include="Contents\ShopImages\db7ed2c9-1bb1-4f3b-9590-0a0408414785.jpg" />
+    <Content Include="Contents\ShopImages\df2cf0c8-2540-4ccd-9b25-a92fd1da5469.jpg" />
+    <Content Include="Contents\ShopImages\e3dcad49-fe1d-47b9-ac7d-0d79ad75dce7.jpg" />
+    <Content Include="Contents\ShopImages\e3fca67c-c344-401a-a9d9-93802853395b.jpg" />
+    <Content Include="Contents\ShopImages\e7fe4749-53dd-4c37-be7b-9681466803ac.jpg" />
+    <Content Include="Contents\ShopImages\e890c550-f48b-4323-a221-14aecc46820d.jpg" />
+    <Content Include="Contents\ShopImages\ed2393aa-2ee4-4aeb-be08-e0a630e1358f.jpg" />
+    <Content Include="Contents\ShopImages\ede3040b-459f-4ca9-8f2e-d9ad2411e932.jpg" />
+    <Content Include="Contents\ShopImages\ef7f64e8-3c41-4b83-a35e-50735108937c.jpg" />
+    <Content Include="Contents\ShopImages\f089e190-6915-49e9-800e-9be8a71d6fb1.jpg" />
+    <Content Include="Contents\ShopImages\f207823c-2dba-4fa8-9800-69d4125bf46f.jpg" />
+    <Content Include="Contents\ShopImages\f26c6b30-b267-4d3e-9000-1ce8268a4748.jpg" />
+    <Content Include="Contents\ShopImages\f2cfbec8-9b1c-44d6-b653-e34024d03537.jpg" />
+    <Content Include="Contents\ShopImages\f40c866f-b9e7-4f6c-a300-3a7b97248360.jpg" />
+    <Content Include="Contents\ShopImages\f45f5d98-af63-430c-9fe7-d9f10ed59fc8.jpg" />
+    <Content Include="Contents\ShopImages\f487e2d6-a1f2-4886-aa1c-8f3429b106a6.jpg" />
+    <Content Include="Contents\ShopImages\f49250ba-a8ac-4ba9-97b3-800c24e694b1.jpg" />
+    <Content Include="Contents\ShopImages\f56e6335-4335-4365-8cbb-9996bf9287ab.jpg" />
+    <Content Include="Contents\ShopImages\f63a462e-3ca4-4cb4-9319-dff59bc054e8.jpg" />
+    <Content Include="Contents\ShopImages\f9cd8ca1-cd8b-4dc4-bba8-1235a4cf8274.jpg" />
+    <Content Include="Contents\ShopImages\fa87e36f-a5a6-41aa-9d20-fa3b66eef0ed.jpg" />
+    <Content Include="Contents\ShopImages\fc8a6aac-73a6-4345-867d-82634d598a97.jpg" />
+    <Content Include="Contents\ShopImages\ff93480a-2b56-4101-952a-3e51adbbc29d.jpg" />
+    <Content Include="Contents\Uploads\0a7bb3db-09ad-40db-89e0-a429a1aa9411.gif" />
+    <Content Include="Contents\Uploads\2b505e4b-a4ad-45e0-933c-f3238b30b079.gif" />
+    <Content Include="Contents\Uploads\2d74c7e3-77e6-4ed4-9de8-90d95d56881b.gif" />
+    <Content Include="Contents\Uploads\32fceda5-4e79-4a35-bcfe-6c2d46b2a406.gif" />
+    <Content Include="Contents\Uploads\4627c467-dbec-4844-bb5f-43f17edd5da1.gif" />
+    <Content Include="Contents\Uploads\67bdc82c-44e0-44d7-9175-6d5cb51384eb.gif" />
+    <Content Include="Contents\Uploads\722b7ca1-c536-4c06-87d2-4b3e6445cc91.gif" />
+    <Content Include="Contents\Uploads\76b583c1-8fc6-47f6-a3c1-d287b592e03e.gif" />
+    <Content Include="Contents\Uploads\77dda115-69c5-4c59-b252-e15ba004ee92.gif" />
+    <Content Include="Contents\Uploads\81864250-4051-4cfe-bae1-942d9ffcb0ed.gif" />
+    <Content Include="Contents\Uploads\915d26c5-34df-4e27-87b0-cd69cb3482bb.gif" />
+    <Content Include="Contents\Uploads\9f107c15-c4e8-4441-9b67-e78ca313c598.gif" />
+    <Content Include="Contents\Uploads\c27d5e78-f9d5-46e9-949f-a48923ac1ea5.gif" />
+    <Content Include="Contents\Uploads\c368381f-3b2e-440b-a9b8-afbf01e50fda.gif" />
+    <Content Include="Contents\Uploads\dfa4cc95-b21e-49be-a2fc-391b6aa6b969.gif" />
+    <Content Include="Contents\Uploads\e6fa1a82-b7bd-407a-9cc7-a1998f3bed1a.png" />
+    <Content Include="Contents\UserPhotos\10201.jpg" />
+    <Content Include="Contents\UserPhotos\10223.jpg" />
+    <Content Include="Contents\UserPhotos\10236.jpg" />
+    <Content Include="Contents\UserPhotos\10258.jpg" />
+    <Content Include="Contents\UserPhotos\10269.jpg" />
+    <Content Include="Contents\UserPhotos\10286.jpg" />
+    <Content Include="Contents\UserPhotos\10300.gif" />
+    <Content Include="Contents\UserPhotos\10300.jpg" />
+    <Content Include="Contents\UserPhotos\10329.jpg" />
+    <Content Include="Contents\UserPhotos\10341.jpg" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\auto-order.js" />
+    <Content Include="Scripts\chosen.jquery.js" />
+    <Content Include="Scripts\jcrop\color.js" />
+    <Content Include="Scripts\jcrop\jcrop.js" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\jQuery-1.8.2.min.js" />
+    <Content Include="Scripts\jquery-ui-1.9.1.custom.min.js" />
+    <Content Include="Scripts\jquery.elastislide.js" />
+    <Content Include="Scripts\jquery.rate.min.js" />
+    <Content Include="Scripts\jquery.signalR-2.0.0.js" />
+    <Content Include="Scripts\jquery.signalR-2.0.0.min.js" />
+    <Content Include="Scripts\jquery.tipTip.minified.js" />
+    <Content Include="Scripts\modernizr.custom.js" />
+    <Content Include="Scripts\register.js" />
+    <Content Include="Scripts\shop_detail.js" />
+    <Content Include="Scripts\uploadify\jquery.uploadify-3.2.min.js" />
+    <Content Include="Scripts\uploadify\uploadify.swf" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="aspnet_client\system_web\4_0_30319\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\About\Contact.cshtml" />
+    <Content Include="Views\About\Index.cshtml" />
+    <Content Include="Views\About\Join.cshtml" />
+    <Content Include="Views\Activity\Index.cshtml" />
+    <Content Include="Views\Shop\Detail.cshtml" />
+    <Content Include="Views\Shop\Index.cshtml" />
+    <Content Include="Views\Shop\Mobile\Detail.cshtml" />
+    <Content Include="Views\Shop\Mobile\Index.cshtml" />
+    <Content Include="Views\Shop\Mobile\Search.cshtml" />
+    <Content Include="Views\Shop\Search.cshtml" />
+    <Content Include="Views\User\ChangePassword.cshtml" />
+    <Content Include="Views\User\Comments.cshtml" />
+    <Content Include="Views\User\FindPassword.cshtml" />
+    <Content Include="Views\User\FindPasswordStep2.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\User\Login.cshtml" />
+    <Content Include="Views\User\Messages.cshtml" />
+    <Content Include="Views\User\Points.cshtml" />
+    <Content Include="Views\User\Register.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Shared\_LoginLayout.cshtml" />
+    <Content Include="Views\Shared\_MobileFooter.cshtml" />
+    <Content Include="Views\Shared\_MobileLayout.cshtml" />
+    <Content Include="Views\Shared\_UserLayout.cshtml" />
+    <Content Include="Views\Shop\Edit.cshtml" />
+    <Content Include="Views\Shared\_NoHeaderLayout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\User\FavoriteShops.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_NoParamsPageIndex.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Job\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Job\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ChangeArea\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shop\CheckOut.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shop\CheckOutDone.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ZsfData\ZsfData.csproj">
+      <Project>{58a33318-6420-4b80-8fba-3c9ac68d9281}</Project>
+      <Name>ZsfData</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shop\UserOderManage.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>8000</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:8000/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

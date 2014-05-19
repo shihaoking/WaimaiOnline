@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+    <meta http-equiv="Content-Language" content="zh-CN" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>@(ViewBag.Title)</title>
+    <script src="@Url.Content("~/Scripts/jquery-1.8.2.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/chosen.jquery.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/uploadify/jquery.uploadify-3.2.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jcrop/jcrop.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jcrop/color.js")" type="text/javascript"></script>
+    <link href="@Url.Content("~/Contents/Css/noheader_main.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Contents/Css/uploadify.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Contents/Css/jcrop.css")" rel="stylesheet" type="text/css" />
+    @switch(ViewContext.RouteData.Values["controller"].ToString().ToLower())
+    {
+        case "shop":
+            <link href="@Url.Content("~/Contents/Css/shop_edit.css")" rel="stylesheet" type="text/css" />
+            break;
+        case "job":
+            <link href="@Url.Content("~/Contents/Css/job_edit.css")" rel="stylesheet" type="text/css" />
+            break;
+    }
+    <link type="text/css" href="@Url.Content("~/Contents/Css/chosen.css")" rel="Stylesheet" />
+</head>
+<body>
+    <div class="content">
+        @RenderBody()
+    </div>
+    <div class="footer">
+        @RenderPage("~/Views/Shared/_Footer.cshtml")
+    </div>
+    <div class="shadow"></div>
+    <script type="text/javascript">
+        function AddCookie(cookieVal, expDay) {
+            var dayDate = new Date();
+            dayDate.setDate(dayDate.getDate() + expDay);
+            document.cookie = cookieVal + ";expires=" + dayDate.toGMTString() + ";path=/;domain=@(ZsfProject.Models.BaseDataModel.CookieDomain)";
+        }
+    </script>
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-36449164-1']);
+        _gaq.push(['_setDomainName', 'zhaishifu.com']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+</body>
