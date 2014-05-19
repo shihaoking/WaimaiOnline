@@ -1,0 +1,95 @@
+﻿@model ZsfProject.Models.LoginModel
+@{
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+    string returlUrl = Request.QueryString["ReturnUrl"];   
+    ViewBag.Title = "用户登录";        
+}
+<div class="login_form">
+    <form action="Login" id="loginForm" method="post" >
+        @Html.Hidden("returnUrl", returlUrl)
+        <table border="0" cellspacing="0" cellpadding="0">
+            <thead>
+                <tr>
+                    <th colspan="2" style="text-align:center">用户登录</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="lb">@Html.LabelFor(m => m.UserName)： </td>
+                    <td class="info">@Html.TextBoxFor(m => m.UserName,
+                        new
+                        {
+                            @class = "name",
+                            @value = "用户名 / 邮箱",
+                            @onfocus = "if(this.value=='用户名 / 邮箱'){this.value='';this.style.color='#333'}",
+                            @onblur = "if(this.value==''){this.value='用户名 / 邮箱';this.style.color='#999'}"
+                        })</td>
+                </tr>
+                <tr class="error">
+                    <td></td>
+                    <td class="errorname"></td>
+                </tr>
+                <tr class="pwd">
+                    <td class="lb">@Html.LabelFor(m => m.Password)：</td>
+                    <td class="info">@Html.PasswordFor(m => m.Password, new { @class = "pwd"})<a href="/user/findpassword" class="find_pwd">忘记密码？</a></td>
+                </tr>
+                <tr class="error">
+                    <td></td>
+                    <td class="errorpwd"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="rem"><label> @Html.CheckBoxFor(m => m.RememberMe, new { @checked = "checked" })@Html.LabelFor(m => m.RememberMe)</label>
+                        @Html.ActionLink("立即注册", "Register", new { returnUrl = returlUrl }, new { @class = "reg_lk" })
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="btn"><input type="submit" id="Btn" class="green_btn" value="登陆"/></td>
+                </tr>
+                <tr>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
+<script type="text/javascript" src="@Url.Content("~/Scripts/jquery-1.8.2.min.js")"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#UserName').val('用户名 / 邮箱').css('color', '#999');
+
+        $('#loginForm').submit(function () {
+            var userName = $('#UserName').val();
+            var userPwd = $('#Password').val();
+
+            if (userName == '' || userName == '用户名 / 邮箱') {
+                $('.errorname').html('用户名不能为空');
+                return false;
+            } else {
+                $('.errorname').html('');
+            }
+
+            if (userPwd == '') {
+                $('.errorpwd').html('密码不能为空');
+                return false;
+            } else {
+                $('.errorpwd').html('');
+            }
+
+
+            $.ajax({
+                type: 'POST',
+                url: 'Login',
+                data: $(this).serialize(),
+                dataType: "json",
+                success: function (data) {
+                    if (data.key == 0) {
+                        $('.errorpwd').html(data.value);
+                    } else if (data.key == 1)
+                        window.location.href = data.value;
+                }
+            });
+
+            return false;
+        });
+    });
+</script>

@@ -1,0 +1,61 @@
+﻿@model  IQueryable<ZsfData.UserMessage>
+@{
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+    ViewBag.Title = "我的消息";
+}
+<div class="msg_box">
+<h4>@ViewBag.Title<span class="u_c">@(ViewBag.MessagesCount != 0 ? "(共 " + ViewBag.MessagesCount + " 条)" : null)</span></h4>
+    <div class="msg_cnt">
+        <ul class="msg_list">
+            @foreach (var item in Model)
+            {
+                <li @(item.Readed ? null : "class=unread") id="msg_@(item.Id)" onclick="ShowMsgContent(this,@(item.Id))">
+                <div class="m_title">
+                    <label><input type="checkbox" /></label>@item.MsgTitle
+                </div>
+                <div class="m_cnt">
+                <span class="c">
+                @if (item.MsgContent.Length > 101)
+                {
+                    @Html.Raw(item.MsgContent.Substring(0, 100))
+                }
+                else
+                {
+                    @Html.Raw(item.MsgContent)
+                }
+                </span><span class="t">@(item.CreateTime.Year == DateTime.Now.Year ? item.CreateTime.ToString("M月d日 HH:mm") : item.CreateTime.ToString("yyyy年M月d日 HH:mm"))</span></div>
+                <div class="clear"></div>
+                </li>
+            
+            }
+        </ul>
+    </div>
+    @RenderPage("~/Views/Shared/_NoParamsPageIndex.cshtml")
+    <div id="msgDialog" class="dialog">
+        <h3 class="hd"><span class="title"></span><span class="tm"></span><img class="close" src="/Contents/Images/close_14.png" onclick="CloseDialogBox(this)" title="关闭"><div class="clear"></div></h3>
+        <p class="dt"></p>
+        <div class="btn"><input type="button" value="关闭" onclick="CloseDialogBox(this)" /></div>
+    </div>
+    <script type="text/javascript">
+        var $msgDialog = $(document.getElementById('msgDialog'));
+        var bdWidth = $(document).width();
+        var bdHeight = $(document).height();
+        function ShowMsgContent(e, msgId) {
+            $.post('/user/GetMsgContent', { id: msgId }, function (result) {
+                if (result.key == 1) {
+                    ShowMsgDialog(result.title, result.createTime, result.content);
+                    $(e).removeClass('unread');
+                }
+            });
+        }
+
+        function ShowMsgDialog(title, ctime, cnt) {
+            $msgDialog.find('.title').text(title);
+            $msgDialog.find('.tm').text('(' + ctime + ')');
+            $msgDialog.find('p.dt').html(cnt);
+            $('.shadow').css({ 'width': bdWidth, 'height': bdHeight }).show();
+            $msgDialog.css({ 'top': '200px', 'left': (bdWidth - $msgDialog.width()) / 2 + 'px' }).show();
+
+        }
+    </script>
+</div>

@@ -1,0 +1,27 @@
+﻿@model  IQueryable<ZsfData.UserPoint>
+@{
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+    ViewBag.Title = "我的积分";
+}
+<div class="point_box">
+<h4>@ViewBag.Title<span class="u_c">@(ViewBag.UsablePointsCount != 0 ? "(共 " + ViewBag.UsablePointsCount + " 个可用)" : null)</span></h4>
+    <div class="point_cnt">
+        <div class="p_menu">
+            @Html.RouteLink("可用", "UserPoints", null, new { @class = (ViewBag.PointUsable == true ? "now" : null) })
+            @Html.RouteLink("已使用", "UserPointsUsable", new { u = false }, new { @class = (ViewBag.PointUsable == false ? "now" : null) })
+        </div>
+        <table class="point_list" border="0" cellspacing="0" cellpadding="0">
+            <tr><th>积分</th><th>来源</th>@if (!ViewBag.PointUsable) { <th>用于</th>}<th>获得日期</th></tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td class="p_c">@item.PointCount</td>
+                    <td class="p_r">@Html.Raw(item.Reason)</td>
+                    @if (!item.Usable) {<td class="u_f">@item.UsedFor</td>}
+                    <td class="p_t">@(item.CreateTime.Year == DateTime.Now.Year ? item.CreateTime.ToString("M月d日 HH:mm") : item.CreateTime.ToString("yyyy年M月d日 HH:mm"))</td>
+                </tr>
+            }
+        </table>
+    </div>
+    @RenderPage("~/Views/Shared/_NoParamsPageIndex.cshtml")
+</div>

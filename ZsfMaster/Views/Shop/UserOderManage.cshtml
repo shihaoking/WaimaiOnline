@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "UserOderManage";
+}
+
+<div class="order-manage">
+    <span class="act-btn cancel-all" onclick="CancelAllUserOrders()">取消可用订单</span>
+    <span class="act-btn create-new" onclick="CreateNewUserOrder()">生成新订单</span>
+</div>
+<script type="text/javascript">
+    function CreateNewUserOrder() {
+        $.post('/shop/CreateNewUserOrder', {},
+        function (result) {
+            if (result.status == 1)
+                alert('新订单创建成功：' + result.msg);
+            else
+                alert('有可用订单，无法创建新订单');
+        });
+    }
+
+    function CancelAllUserOrders() {
+        $.post('/shop/CancelAllUserOrders', {},
+        function (result) {
+            if (result.status == 1)
+                alert('取消可用订单成功');
+            else
+                alert('取消可用订单失败');
+        });
+    }
+</script>
