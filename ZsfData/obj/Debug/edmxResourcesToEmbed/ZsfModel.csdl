@@ -1,0 +1,707 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ZsfData" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="ZsfEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Location" EntityType="ZsfData.Location" />
+    <EntitySet Name="ServiceArea" EntityType="ZsfData.ServiceArea" />
+    <EntitySet Name="Shop" EntityType="ZsfData.Shop" />
+    <EntitySet Name="ShopCategory" EntityType="ZsfData.ShopCategory" />
+    <EntitySet Name="ShopComment" EntityType="ZsfData.ShopComment" />
+    <EntitySet Name="ShopDishe" EntityType="ZsfData.ShopDishe" />
+    <EntitySet Name="ShopDisheCategory" EntityType="ZsfData.ShopDisheCategory" />
+    <EntitySet Name="ShopRankingAttribute" EntityType="ZsfData.ShopRankingAttribute" />
+    <EntitySet Name="ShopServiceArea" EntityType="ZsfData.ShopServiceArea" />
+    <EntitySet Name="UserDefaultArea" EntityType="ZsfData.UserDefaultArea" />
+    <EntitySet Name="UserEditShopLog" EntityType="ZsfData.UserEditShopLog" />
+    <EntitySet Name="UserGradeCategory" EntityType="ZsfData.UserGradeCategory" />
+    <EntitySet Name="UserInfo" EntityType="ZsfData.UserInfo" />
+    <EntitySet Name="UserLoginLog" EntityType="ZsfData.UserLoginLog" />
+    <EntitySet Name="UserMessage" EntityType="ZsfData.UserMessage" />
+    <EntitySet Name="UserPoint" EntityType="ZsfData.UserPoint" />
+    <EntitySet Name="V_ShopComment" EntityType="ZsfData.V_ShopComment" />
+    <EntitySet Name="V_ShopDetail" EntityType="ZsfData.V_ShopDetail" />
+    <EntitySet Name="V_ShopDisheWithCategory" EntityType="ZsfData.V_ShopDisheWithCategory" />
+    <EntitySet Name="V_ShopForList" EntityType="ZsfData.V_ShopForList" />
+    <EntitySet Name="V_ShopServiceArea" EntityType="ZsfData.V_ShopServiceArea" />
+    <EntitySet Name="V_ShopWithServiceArea" EntityType="ZsfData.V_ShopWithServiceArea" />
+    <EntitySet Name="V_UserDefaultArea" EntityType="ZsfData.V_UserDefaultArea" />
+    <EntitySet Name="V_UserInfoDetail" EntityType="ZsfData.V_UserInfoDetail" />
+    <EntitySet Name="V_UserShopComment" EntityType="ZsfData.V_UserShopComment" />
+    <AssociationSet Name="FK_Area_Location" Association="ZsfData.FK_Area_Location">
+      <End Role="Location" EntitySet="Location" />
+      <End Role="ServiceArea" EntitySet="ServiceArea" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ShopServiceArea_Area" Association="ZsfData.FK_ShopServiceArea_Area">
+      <End Role="ServiceArea" EntitySet="ServiceArea" />
+      <End Role="ShopServiceArea" EntitySet="ShopServiceArea" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserDefaultArea_Area" Association="ZsfData.FK_UserDefaultArea_Area">
+      <End Role="ServiceArea" EntitySet="ServiceArea" />
+      <End Role="UserDefaultArea" EntitySet="UserDefaultArea" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ShopComment_Shop" Association="ZsfData.FK_ShopComment_Shop">
+      <End Role="Shop" EntitySet="Shop" />
+      <End Role="ShopComment" EntitySet="ShopComment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ShopDishe_Shop" Association="ZsfData.FK_ShopDishe_Shop">
+      <End Role="Shop" EntitySet="Shop" />
+      <End Role="ShopDishe" EntitySet="ShopDishe" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ShopDisheCategory_Shop" Association="ZsfData.FK_ShopDisheCategory_Shop">
+      <End Role="Shop" EntitySet="Shop" />
+      <End Role="ShopDisheCategory" EntitySet="ShopDisheCategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ShopRankingAttribute_Shop" Association="ZsfData.FK_ShopRankingAttribute_Shop">
+      <End Role="Shop" EntitySet="Shop" />
+      <End Role="ShopRankingAttribute" EntitySet="ShopRankingAttribute" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ShopServiceArea_Shop" Association="ZsfData.FK_ShopServiceArea_Shop">
+      <End Role="Shop" EntitySet="Shop" />
+      <End Role="ShopServiceArea" EntitySet="ShopServiceArea" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserEditShopLog_Shop" Association="ZsfData.FK_UserEditShopLog_Shop">
+      <End Role="Shop" EntitySet="Shop" />
+      <End Role="UserEditShopLog" EntitySet="UserEditShopLog" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ShopComment_User" Association="ZsfData.FK_ShopComment_User">
+      <End Role="UserInfo" EntitySet="UserInfo" />
+      <End Role="ShopComment" EntitySet="ShopComment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserDefaultArea_UserInfo" Association="ZsfData.FK_UserDefaultArea_UserInfo">
+      <End Role="UserInfo" EntitySet="UserInfo" />
+      <End Role="UserDefaultArea" EntitySet="UserDefaultArea" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserEditShopLog_User" Association="ZsfData.FK_UserEditShopLog_User">
+      <End Role="UserInfo" EntitySet="UserInfo" />
+      <End Role="UserEditShopLog" EntitySet="UserEditShopLog" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_UserGradeCategory" Association="ZsfData.FK_User_UserGradeCategory">
+      <End Role="UserGradeCategory" EntitySet="UserGradeCategory" />
+      <End Role="UserInfo" EntitySet="UserInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserLoginLog_User" Association="ZsfData.FK_UserLoginLog_User">
+      <End Role="UserInfo" EntitySet="UserInfo" />
+      <End Role="UserLoginLog" EntitySet="UserLoginLog" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserMail_UserMail" Association="ZsfData.FK_UserMail_UserMail">
+      <End Role="UserInfo" EntitySet="UserInfo" />
+      <End Role="UserMessage" EntitySet="UserMessage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserPoint_UserInfo" Association="ZsfData.FK_UserPoint_UserInfo">
+      <End Role="UserInfo" EntitySet="UserInfo" />
+      <End Role="UserPoint" EntitySet="UserPoint" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Location">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ParentId" Type="Int32" Nullable="false" />
+    <Property Name="Value" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="ServiceArea" Relationship="ZsfData.FK_Area_Location" FromRole="Location" ToRole="ServiceArea" />
+  </EntityType>
+  <EntityType Name="ServiceArea">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Value" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="LocationId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Location" Relationship="ZsfData.FK_Area_Location" FromRole="ServiceArea" ToRole="Location" />
+    <NavigationProperty Name="ShopServiceArea" Relationship="ZsfData.FK_ShopServiceArea_Area" FromRole="ServiceArea" ToRole="ShopServiceArea" />
+    <NavigationProperty Name="UserDefaultArea" Relationship="ZsfData.FK_UserDefaultArea_Area" FromRole="ServiceArea" ToRole="UserDefaultArea" />
+  </EntityType>
+  <EntityType Name="Shop">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Address" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Logo" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="OfficeTimeBegin" Type="Time" Nullable="false" />
+    <Property Name="OfficeTimeEnd" Type="Time" Nullable="false" />
+    <Property Name="Stars" Type="Int16" Nullable="false" />
+    <Property Name="Remark" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="ServiceRange" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="UpSendPrice" Type="Int16" />
+    <Property Name="AveragePayMoney" Type="Int16" />
+    <Property Name="DeliveryTime" Type="Int16" Nullable="false" />
+    <Property Name="Longitude" Type="Double" Nullable="false" />
+    <Property Name="Latitude" Type="Double" Nullable="false" />
+    <Property Name="CategoryId" Type="Int32" Nullable="false" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="ShopComment" Relationship="ZsfData.FK_ShopComment_Shop" FromRole="Shop" ToRole="ShopComment" />
+    <NavigationProperty Name="ShopDishe" Relationship="ZsfData.FK_ShopDishe_Shop" FromRole="Shop" ToRole="ShopDishe" />
+    <NavigationProperty Name="ShopDisheCategory" Relationship="ZsfData.FK_ShopDisheCategory_Shop" FromRole="Shop" ToRole="ShopDisheCategory" />
+    <NavigationProperty Name="ShopRankingAttribute" Relationship="ZsfData.FK_ShopRankingAttribute_Shop" FromRole="Shop" ToRole="ShopRankingAttribute" />
+    <NavigationProperty Name="ShopServiceArea" Relationship="ZsfData.FK_ShopServiceArea_Shop" FromRole="Shop" ToRole="ShopServiceArea" />
+    <NavigationProperty Name="UserEditShopLog" Relationship="ZsfData.FK_UserEditShopLog_Shop" FromRole="Shop" ToRole="UserEditShopLog" />
+  </EntityType>
+  <EntityType Name="ShopCategory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Value" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="ShopComment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ShopId" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="Comment" Type="String" Nullable="false" MaxLength="300" Unicode="true" FixedLength="false" />
+    <Property Name="Stars" Type="Int16" Nullable="false" />
+    <Property Name="PayMoney" Type="Int16" Nullable="false" />
+    <Property Name="DeliveryTime" Type="Int16" Nullable="false" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="Shop" Relationship="ZsfData.FK_ShopComment_Shop" FromRole="ShopComment" ToRole="Shop" />
+    <NavigationProperty Name="UserInfo" Relationship="ZsfData.FK_ShopComment_User" FromRole="ShopComment" ToRole="UserInfo" />
+  </EntityType>
+  <EntityType Name="ShopDishe">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ShopId" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="false" />
+    <Property Name="Price" Type="Double" Nullable="false" />
+    <Property Name="CategoryId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Shop" Relationship="ZsfData.FK_ShopDishe_Shop" FromRole="ShopDishe" ToRole="Shop" />
+  </EntityType>
+  <EntityType Name="ShopDisheCategory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ShopId" Type="Int32" />
+    <Property Name="Value" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Shop" Relationship="ZsfData.FK_ShopDisheCategory_Shop" FromRole="ShopDisheCategory" ToRole="Shop" />
+  </EntityType>
+  <EntityType Name="ShopRankingAttribute">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ShopId" Type="Int32" Nullable="false" />
+    <Property Name="Stars" Type="Int16" Nullable="false" />
+    <Property Name="AveragePayMoney" Type="Int16" Nullable="false" />
+    <Property Name="DeliveryTime" Type="Int16" Nullable="false" />
+    <NavigationProperty Name="Shop" Relationship="ZsfData.FK_ShopRankingAttribute_Shop" FromRole="ShopRankingAttribute" ToRole="Shop" />
+  </EntityType>
+  <EntityType Name="ShopServiceArea">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ShopId" Type="Int32" Nullable="false" />
+    <Property Name="AreaId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ServiceArea" Relationship="ZsfData.FK_ShopServiceArea_Area" FromRole="ShopServiceArea" ToRole="ServiceArea" />
+    <NavigationProperty Name="Shop" Relationship="ZsfData.FK_ShopServiceArea_Shop" FromRole="ShopServiceArea" ToRole="Shop" />
+  </EntityType>
+  <EntityType Name="UserDefaultArea">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="AreaId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ServiceArea" Relationship="ZsfData.FK_UserDefaultArea_Area" FromRole="UserDefaultArea" ToRole="ServiceArea" />
+    <NavigationProperty Name="UserInfo" Relationship="ZsfData.FK_UserDefaultArea_UserInfo" FromRole="UserDefaultArea" ToRole="UserInfo" />
+  </EntityType>
+  <EntityType Name="UserEditShopLog">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="ShopId" Type="Int32" Nullable="false" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="Shop" Relationship="ZsfData.FK_UserEditShopLog_Shop" FromRole="UserEditShopLog" ToRole="Shop" />
+    <NavigationProperty Name="UserInfo" Relationship="ZsfData.FK_UserEditShopLog_User" FromRole="UserEditShopLog" ToRole="UserInfo" />
+  </EntityType>
+  <EntityType Name="UserGradeCategory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GradeName" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="GradeLevel" Type="Int16" Nullable="false" />
+    <NavigationProperty Name="UserInfo" Relationship="ZsfData.FK_User_UserGradeCategory" FromRole="UserGradeCategory" ToRole="UserInfo" />
+  </EntityType>
+  <EntityType Name="UserInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="32" Unicode="false" FixedLength="false" />
+    <Property Name="Gender" Type="Boolean" Nullable="false" />
+    <Property Name="Birthday" Type="DateTime" Nullable="false" />
+    <Property Name="Photo" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="GradeId" Type="Int16" Nullable="false" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="ShopComment" Relationship="ZsfData.FK_ShopComment_User" FromRole="UserInfo" ToRole="ShopComment" />
+    <NavigationProperty Name="UserDefaultArea" Relationship="ZsfData.FK_UserDefaultArea_UserInfo" FromRole="UserInfo" ToRole="UserDefaultArea" />
+    <NavigationProperty Name="UserEditShopLog" Relationship="ZsfData.FK_UserEditShopLog_User" FromRole="UserInfo" ToRole="UserEditShopLog" />
+    <NavigationProperty Name="UserGradeCategory" Relationship="ZsfData.FK_User_UserGradeCategory" FromRole="UserInfo" ToRole="UserGradeCategory" />
+    <NavigationProperty Name="UserLoginLog" Relationship="ZsfData.FK_UserLoginLog_User" FromRole="UserInfo" ToRole="UserLoginLog" />
+    <NavigationProperty Name="UserMessage" Relationship="ZsfData.FK_UserMail_UserMail" FromRole="UserInfo" ToRole="UserMessage" />
+    <NavigationProperty Name="UserPoint" Relationship="ZsfData.FK_UserPoint_UserInfo" FromRole="UserInfo" ToRole="UserPoint" />
+  </EntityType>
+  <EntityType Name="UserLoginLog">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="UserInfo" Relationship="ZsfData.FK_UserLoginLog_User" FromRole="UserLoginLog" ToRole="UserInfo" />
+  </EntityType>
+  <EntityType Name="UserMessage">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="MsgTitle" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="MsgContent" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="Readed" Type="Boolean" Nullable="false" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="UserInfo" Relationship="ZsfData.FK_UserMail_UserMail" FromRole="UserMessage" ToRole="UserInfo" />
+  </EntityType>
+  <EntityType Name="UserPoint">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="PointCount" Type="Int16" Nullable="false" />
+    <Property Name="Reason" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Usable" Type="Boolean" Nullable="false" />
+    <Property Name="UsedFor" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="UserInfo" Relationship="ZsfData.FK_UserPoint_UserInfo" FromRole="UserPoint" ToRole="UserInfo" />
+  </EntityType>
+  <EntityType Name="V_ShopComment">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="ShopId" />
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="Comment" />
+      <PropertyRef Name="Stars" />
+      <PropertyRef Name="CreateTime" />
+      <PropertyRef Name="UserName" />
+      <PropertyRef Name="UserPhoto" />
+      <PropertyRef Name="UserGrade" />
+      <PropertyRef Name="DeliveryTime" />
+      <PropertyRef Name="PayMoney" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="ShopId" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="Comment" Type="String" Nullable="false" MaxLength="300" Unicode="true" FixedLength="false" />
+    <Property Name="Stars" Type="Int16" Nullable="false" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="UserPhoto" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="UserGrade" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="DeliveryTime" Type="Int16" Nullable="false" />
+    <Property Name="PayMoney" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="V_ShopDetail">
+    <Key>
+      <PropertyRef Name="Stars" />
+      <PropertyRef Name="AveragePayMoney" />
+      <PropertyRef Name="DeliveryTime" />
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="Address" />
+      <PropertyRef Name="PhoneNumber" />
+      <PropertyRef Name="OfficeTimeBegin" />
+      <PropertyRef Name="OfficeTimeEnd" />
+    </Key>
+    <Property Name="Stars" Type="Int16" Nullable="false" />
+    <Property Name="AveragePayMoney" Type="Int16" Nullable="false" />
+    <Property Name="DeliveryTime" Type="Int16" Nullable="false" />
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Address" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Logo" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="OfficeTimeBegin" Type="Time" Nullable="false" />
+    <Property Name="OfficeTimeEnd" Type="Time" Nullable="false" />
+    <Property Name="Remark" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="ServiceRange" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="UpSendPrice" Type="Int16" />
+  </EntityType>
+  <EntityType Name="V_ShopDisheWithCategory">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="ShopId" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="Price" />
+      <PropertyRef Name="CategoryId" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="ShopId" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="false" />
+    <Property Name="Price" Type="Double" Nullable="false" />
+    <Property Name="CategoryId" Type="Int32" Nullable="false" />
+    <Property Name="CategoryValue" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="V_ShopForList">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="Address" />
+      <PropertyRef Name="PhoneNumber" />
+      <PropertyRef Name="OfficeTimeBegin" />
+      <PropertyRef Name="OfficeTimeEnd" />
+      <PropertyRef Name="CategoryId" />
+      <PropertyRef Name="CreateTime" />
+      <PropertyRef Name="AreaId" />
+      <PropertyRef Name="Category" />
+      <PropertyRef Name="Longitude" />
+      <PropertyRef Name="Latitude" />
+      <PropertyRef Name="Stars" />
+      <PropertyRef Name="AveragePayMoney" />
+      <PropertyRef Name="DeliveryTime" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Address" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Logo" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="OfficeTimeBegin" Type="Time" Nullable="false" />
+    <Property Name="OfficeTimeEnd" Type="Time" Nullable="false" />
+    <Property Name="Remark" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="ServiceRange" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="UpSendPrice" Type="Int16" />
+    <Property Name="CategoryId" Type="Int32" Nullable="false" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" />
+    <Property Name="AreaId" Type="Int32" Nullable="false" />
+    <Property Name="Category" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="false" />
+    <Property Name="Longitude" Type="Double" Nullable="false" />
+    <Property Name="Latitude" Type="Double" Nullable="false" />
+    <Property Name="Stars" Type="Int16" Nullable="false" />
+    <Property Name="AveragePayMoney" Type="Int16" Nullable="false" />
+    <Property Name="DeliveryTime" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="V_ShopServiceArea">
+    <Key>
+      <PropertyRef Name="ShopId" />
+      <PropertyRef Name="AreaId" />
+      <PropertyRef Name="ServiceArea" />
+    </Key>
+    <Property Name="ShopId" Type="Int32" Nullable="false" />
+    <Property Name="AreaId" Type="Int32" Nullable="false" />
+    <Property Name="ServiceArea" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="V_ShopWithServiceArea">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="Address" />
+      <PropertyRef Name="PhoneNumber" />
+      <PropertyRef Name="OfficeTimeBegin" />
+      <PropertyRef Name="OfficeTimeEnd" />
+      <PropertyRef Name="Stars" />
+      <PropertyRef Name="Longitude" />
+      <PropertyRef Name="Latitude" />
+      <PropertyRef Name="CategoryId" />
+      <PropertyRef Name="CreateTime" />
+      <PropertyRef Name="AreaId" />
+      <PropertyRef Name="Category" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Address" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Logo" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="OfficeTimeBegin" Type="Time" Nullable="false" />
+    <Property Name="OfficeTimeEnd" Type="Time" Nullable="false" />
+    <Property Name="Stars" Type="Int16" Nullable="false" />
+    <Property Name="Remark" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="ServiceRange" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="UpSendPrice" Type="Int16" />
+    <Property Name="Longitude" Type="Double" Nullable="false" />
+    <Property Name="Latitude" Type="Double" Nullable="false" />
+    <Property Name="CategoryId" Type="Int32" Nullable="false" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" />
+    <Property Name="AreaId" Type="Int32" Nullable="false" />
+    <Property Name="Category" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="V_UserDefaultArea">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="UserName" />
+      <PropertyRef Name="AreaValue" />
+      <PropertyRef Name="AreaId" />
+      <PropertyRef Name="LocationId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="AreaValue" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="AreaId" Type="Int32" Nullable="false" />
+    <Property Name="LocationId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="V_UserInfoDetail">
+    <Key>
+      <PropertyRef Name="GradeName" />
+      <PropertyRef Name="GradeLevel" />
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="Email" />
+      <PropertyRef Name="Gender" />
+      <PropertyRef Name="Birthday" />
+      <PropertyRef Name="Photo" />
+      <PropertyRef Name="CreateTime" />
+      <PropertyRef Name="GradeId" />
+    </Key>
+    <Property Name="GradeName" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="GradeLevel" Type="Int16" Nullable="false" />
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="Gender" Type="Boolean" Nullable="false" />
+    <Property Name="Birthday" Type="DateTime" Nullable="false" />
+    <Property Name="Photo" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" />
+    <Property Name="GradeId" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="V_UserShopComment">
+    <Key>
+      <PropertyRef Name="UserName" />
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="ShopId" />
+      <PropertyRef Name="Comment" />
+      <PropertyRef Name="Stars" />
+      <PropertyRef Name="CreateTime" />
+      <PropertyRef Name="ShopName" />
+    </Key>
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="ShopId" Type="Int32" Nullable="false" />
+    <Property Name="Comment" Type="String" Nullable="false" MaxLength="300" Unicode="true" FixedLength="false" />
+    <Property Name="Stars" Type="Int16" Nullable="false" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" />
+    <Property Name="ShopName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_Area_Location">
+    <End Role="Location" Type="ZsfData.Location" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ServiceArea" Type="ZsfData.ServiceArea" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Location">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ServiceArea">
+        <PropertyRef Name="LocationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ShopServiceArea_Area">
+    <End Role="ServiceArea" Type="ZsfData.ServiceArea" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ShopServiceArea" Type="ZsfData.ShopServiceArea" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ServiceArea">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ShopServiceArea">
+        <PropertyRef Name="AreaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserDefaultArea_Area">
+    <End Role="ServiceArea" Type="ZsfData.ServiceArea" Multiplicity="1" />
+    <End Role="UserDefaultArea" Type="ZsfData.UserDefaultArea" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ServiceArea">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserDefaultArea">
+        <PropertyRef Name="AreaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ShopComment_Shop">
+    <End Role="Shop" Type="ZsfData.Shop" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ShopComment" Type="ZsfData.ShopComment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Shop">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ShopComment">
+        <PropertyRef Name="ShopId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ShopDishe_Shop">
+    <End Role="Shop" Type="ZsfData.Shop" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ShopDishe" Type="ZsfData.ShopDishe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Shop">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ShopDishe">
+        <PropertyRef Name="ShopId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ShopDisheCategory_Shop">
+    <End Role="Shop" Type="ZsfData.Shop" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ShopDisheCategory" Type="ZsfData.ShopDisheCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Shop">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ShopDisheCategory">
+        <PropertyRef Name="ShopId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ShopRankingAttribute_Shop">
+    <End Role="Shop" Type="ZsfData.Shop" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ShopRankingAttribute" Type="ZsfData.ShopRankingAttribute" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Shop">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ShopRankingAttribute">
+        <PropertyRef Name="ShopId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ShopServiceArea_Shop">
+    <End Role="Shop" Type="ZsfData.Shop" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ShopServiceArea" Type="ZsfData.ShopServiceArea" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Shop">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ShopServiceArea">
+        <PropertyRef Name="ShopId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserEditShopLog_Shop">
+    <End Role="Shop" Type="ZsfData.Shop" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="UserEditShopLog" Type="ZsfData.UserEditShopLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Shop">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserEditShopLog">
+        <PropertyRef Name="ShopId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ShopComment_User">
+    <End Role="UserInfo" Type="ZsfData.UserInfo" Multiplicity="1" />
+    <End Role="ShopComment" Type="ZsfData.ShopComment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ShopComment">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserDefaultArea_UserInfo">
+    <End Role="UserInfo" Type="ZsfData.UserInfo" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="UserDefaultArea" Type="ZsfData.UserDefaultArea" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserDefaultArea">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserEditShopLog_User">
+    <End Role="UserInfo" Type="ZsfData.UserInfo" Multiplicity="1" />
+    <End Role="UserEditShopLog" Type="ZsfData.UserEditShopLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserEditShopLog">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_UserGradeCategory">
+    <End Role="UserGradeCategory" Type="ZsfData.UserGradeCategory" Multiplicity="1" />
+    <End Role="UserInfo" Type="ZsfData.UserInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserGradeCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserInfo">
+        <PropertyRef Name="GradeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserLoginLog_User">
+    <End Role="UserInfo" Type="ZsfData.UserInfo" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="UserLoginLog" Type="ZsfData.UserLoginLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserLoginLog">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserMail_UserMail">
+    <End Role="UserInfo" Type="ZsfData.UserInfo" Multiplicity="1" />
+    <End Role="UserMessage" Type="ZsfData.UserMessage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserMessage">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserPoint_UserInfo">
+    <End Role="UserInfo" Type="ZsfData.UserInfo" Multiplicity="1" />
+    <End Role="UserPoint" Type="ZsfData.UserPoint" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserPoint">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

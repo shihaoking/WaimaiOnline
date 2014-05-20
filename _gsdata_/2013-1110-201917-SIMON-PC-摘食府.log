@@ -1,0 +1,21 @@
+2013-11-10 20:19:18: ----- ：任务 '摘食府'：计算机 'SIMON-PC' 上的分析操作已由 User 所启动 (GoodSync v 9.5.9.5) -----
+2013-11-10 20:19:18: E:\Projects\ZsfProject <-> gstp://112.124.20.57/file:///D:/ZsfCode
+2013-11-10 20:19:18: 左侧：文件： 677 (已排除 2)。文件夹： 96 (已排除 2)。 E: NTFS, 可用空间：233 GB，总计空间：277 GB
+2013-11-10 20:19:26: 右侧：文件： 676 (已排除 2)。文件夹： 96 (已排除 1)。 AY130807160336Z D: NTFS, 可用空间：9.82 GB，总计空间：9.99 GB
+2013-11-10 20:19:26: /SignalRTutorial/SignalRTutorial.csproj: 冲突：文件两侧都进行了改动
+2013-11-10 20:19:26: 分析完毕并发现冲突情况。如需解决冲突请选择正常的同步方向。
+2013-11-10 20:19:26: 变更：4， 冲突：1， 复制时间：， 复制状态：/， 错误： 
+2013-11-10 20:19:26: Right to Left: Copy File: 2 Delete File: 1 
+2013-11-10 20:19:26: ----- ：分析已结束。 历时 00:00:09， 速度： 86 个文件/秒 -----
+2013-11-10 20:19:26: 
+2013-11-10 20:21:01: ===== ：任务 '摘食府'：同步已被 User 所启动，位于计算机 'SIMON-PC' =====
+2013-11-10 20:21:01: E:\Projects\ZsfProject <-> gstp://112.124.20.57/file:///D:/ZsfCode
+2013-11-10 20:21:01: 删除文件 'E:\Projects\ZsfProject\ZsfData\App_Data\Zsf.mdf'
+2013-11-10 20:21:01: /SignalRTutorial/SignalRTutorial.csproj: unresolved conflict results in No Copy
+2013-11-10 20:21:40: 新建复制 'gstp://112.124.20.57/file:///D:/ZsfCode/ZsfData/App_Data/Zsf_Data.mdf' -> 'E:\Projects\ZsfProject\ZsfData\App_Data\Zsf_Data.mdf'
+2013-11-10 20:21:58: 覆盖复制 'gstp://112.124.20.57/file:///D:/ZsfCode/ZsfData/App_Data/Zsf_Log.ldf' -> 'E:\Projects\ZsfProject\ZsfData\App_Data\Zsf_Log.ldf'
+2013-11-10 20:21:59: 保存状态文件 gstp://112.124.20.57/file:///D:/ZsfCode/_gsdata_/_file_state_v4._gs
+2013-11-10 20:21:59: 同步完成，未解决的冲突数为 1 。点击冲突按钮即可查看未解决的冲突情况。
+2013-11-10 20:21:59: 项目同步未必： 3，错误： 
+2013-11-10 20:21:59: ===== ：同步完毕。时间：00:00:59，速度： 150 KB/s (179 KB/s) =====
+2013-11-10 20:22:00: 

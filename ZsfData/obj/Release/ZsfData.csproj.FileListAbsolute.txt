@@ -1,0 +1,11 @@
+E:\项目代码\ZsfProject\ZsfData\bin\Release\ZsfData.dll.config
+E:\项目代码\ZsfProject\ZsfData\bin\Release\ZsfData.dll
+E:\项目代码\ZsfProject\ZsfData\bin\Release\ZsfData.pdb
+E:\项目代码\ZsfProject\ZsfData\obj\Release\ResolveAssemblyReference.cache
+E:\项目代码\ZsfProject\ZsfData\obj\Release\ZsfData.dll
+E:\项目代码\ZsfProject\ZsfData\obj\Release\ZsfData.pdb
+E:\Projects\ZsfProject\ZsfData\bin\Release\ZsfData.dll.config
+E:\Projects\ZsfProject\ZsfData\bin\Release\ZsfData.dll
+E:\Projects\ZsfProject\ZsfData\bin\Release\ZsfData.pdb
+E:\Projects\ZsfProject\ZsfData\obj\Release\ZsfData.dll
+E:\Projects\ZsfProject\ZsfData\obj\Release\ZsfData.pdb

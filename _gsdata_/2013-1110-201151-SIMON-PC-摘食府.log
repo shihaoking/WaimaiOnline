@@ -1,0 +1,74 @@
+2013-11-10 20:11:52: ----- ：任务 '摘食府'：计算机 'SIMON-PC' 上的分析操作已由 User 所启动 (GoodSync v 9.5.9.5) -----
+2013-11-10 20:11:52: E:\Projects\ZsfProject <-> gstp://112.124.20.57/file:///D:/ZsfCode
+2013-11-10 20:11:52: 左侧：文件： 674 (已排除 2)。文件夹： 96 (已排除 2)。 E: NTFS, 可用空间：233 GB，总计空间：277 GB
+2013-11-10 20:12:00: 右侧：文件： 676 (已排除 2)。文件夹： 96 (已排除 1)。 AY130807160336Z D: NTFS, 可用空间：9.83 GB，总计空间：9.99 GB
+2013-11-10 20:12:00: /SignalRTutorial/SignalRTutorial.csproj: 冲突：文件两侧都进行了改动
+2013-11-10 20:12:01: 分析完毕并发现冲突情况。如需解决冲突请选择正常的同步方向。
+2013-11-10 20:12:01: 变更：5， 冲突：1， 复制时间：， 复制状态：/， 错误： 
+2013-11-10 20:12:01: Right to Left: Copy File: 4 
+2013-11-10 20:12:01: ----- ：分析已结束。 历时 00:00:10， 速度： 77 个文件/秒 -----
+2013-11-10 20:12:01: 
+2013-11-10 20:14:28: ===== ：任务 '摘食府'：同步已被 User 所启动，位于计算机 'SIMON-PC' =====
+2013-11-10 20:14:28: E:\Projects\ZsfProject <-> gstp://112.124.20.57/file:///D:/ZsfCode
+2013-11-10 20:14:28: /SignalRTutorial/SignalRTutorial.csproj: unresolved conflict results in No Copy
+2013-11-10 20:14:29: 新建复制 'gstp://112.124.20.57/file:///D:/ZsfCode/ZsfMaster/new.asp' -> 'E:\Projects\ZsfProject\ZsfMaster\new.asp'
+2013-11-10 20:14:30: 新建复制 'gstp://112.124.20.57/file:///D:/ZsfCode/ZsfMaster/new.aspx' -> 'E:\Projects\ZsfProject\ZsfMaster\new.aspx'
+2013-11-10 20:14:30: 新建复制 'gstp://112.124.20.57/file:///D:/ZsfCode/ZsfMaster/put5warn.asp' -> 'E:\Projects\ZsfProject\ZsfMaster\put5warn.asp'
+2013-11-10 20:14:30: 覆盖复制 'gstp://112.124.20.57/file:///D:/ZsfCode/ZsfMaster/put5warn.txt' -> 'E:\Projects\ZsfProject\ZsfMaster\put5warn.txt'
+2013-11-10 20:14:31: 保存状态文件 gstp://112.124.20.57/file:///D:/ZsfCode/_gsdata_/_file_state_v4._gs
+2013-11-10 20:14:32: 同步完成，未解决的冲突数为 1 。点击冲突按钮即可查看未解决的冲突情况。
+2013-11-10 20:14:33: Deleted Recycled: gstp://112.124.20.57/file:///D:/ZsfCode/_gsdata_/_saved_/ZsfMaster/Contents/Css/noheader_main.css
+2013-11-10 20:14:33: Deleted Recycled: gstp://112.124.20.57/file:///D:/ZsfCode/_gsdata_/_saved_/ZsfMaster/Contents/Css/user_reg.css
+2013-11-10 20:14:34: Deleted Recycled: gstp://112.124.20.57/file:///D:/ZsfCode/_gsdata_/_saved_/ZsfData/bin/Debug/ZsfData.pdb
+2013-11-10 20:14:34: Deleted Recycled: gstp://112.124.20.57/file:///D:/ZsfCode/_gsdata_/_saved_/SignalRTutorial/obj/Debug/SignalRTutorial.csproj.FileListAbsolute.txt
+2013-11-10 20:14:34: Deleted Recycled: gstp://112.124.20.57/file:///D:/ZsfCode/_gsdata_/_saved_/SignalRTutorial/bin/SignalRTutorial.dll
+2013-11-10 20:14:35: Deleted Recycled: gstp://112.124.20.57/file:///D:/ZsfCode/_gsdata_/_saved_/ZsfData/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+2013-11-10 20:14:35: Deleted Recycled: gstp://112.124.20.57/file:///D:/ZsfCode/_gsdata_/_saved_/ZsfMaster/Scripts/jquery-ui-1.9.1.custom.min.js
+2013-11-10 20:14:36: Deleted Recycled: gstp://112.124.20.57/file:///D:/ZsfCode/_gsdata_/_saved_/ZsfMaster/Views/Shared/_Layout.cshtml
+2013-11-10 20:14:36: Deleted Recycled: gstp://112.124.20.57/file:///D:/ZsfCode/_gsdata_/_saved_/ZsfMaster/Contents/Css/shop_detail.css
+2013-11-10 20:14:36: Deleted Recycled: gstp://112.124.20.57/file:///D:/ZsfCode/_gsdata_/_saved_/ZsfMaster/Views/Shared/_NoHeaderLayout.cshtml
+2013-11-10 20:14:36: Deleted Recycled: gstp://112.124.20.57/file:///D:/ZsfCode/_gsdata_/_saved_/ZsfMaster/Models/JobModel.cs
+2013-11-10 20:14:36: Deleted Recycled: gstp://112.124.20.57/file:///D:/ZsfCode/_gsdata_/_saved_/SignalRTutorial/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+2013-11-10 20:14:36: Deleted Recycled: gstp://112.124.20.57/file:///D:/ZsfCode/_gsdata_/_saved_/ZsfData/obj/Debug/edmxResourcesToEmbed/ZsfDB.ssdl
+2013-11-10 20:14:36: Deleted Recycled: gstp://112.124.20.57/file:///D:/ZsfCode/_gsdata_/_saved_/ZsfMaster/bin/ZsfMaster.pdb
+2013-11-10 20:14:37: Deleted Recycled: gstp://112.124.20.57/file:///D:/ZsfCode/_gsdata_/_saved_/ZsfMaster/obj/Debug/ResolveAssemblyReference.cache
+2013-11-10 20:14:37: Deleted Recycled: gstp://112.124.20.57/file:///D:/ZsfCode/_gsdata_/_saved_/ZsfMaster/Models/BaseDataModel.cs
+2013-11-10 20:14:37: Deleted Recycled: gstp://112.124.20.57/file:///D:/ZsfCode/_gsdata_/_saved_/ZsfData/obj/Debug/edmxResourcesToEmbed/ZsfDB.csdl
+2013-11-10 20:14:38: Deleted Recycled: gstp://112.124.20.57/file:///D:/ZsfCode/_gsdata_/_saved_/ZsfData/obj/Debug/ZsfData.csproj.FileListAbsolute.txt
+2013-11-10 20:14:38: Deleted Recycled: gstp://112.124.20.57/file:///D:/ZsfCode/_gsdata_/_saved_/ZsfMaster/obj/Debug/ZsfMaster.dll
+2013-11-10 20:14:39: Deleted Recycled: gstp://112.124.20.57/file:///D:/ZsfCode/_gsdata_/_saved_/ZsfMaster/Contents/Images/check_mark_bg.gif
+2013-11-10 20:14:40: Deleted Recycled: gstp://112.124.20.57/file:///D:/ZsfCode/_gsdata_/_saved_/ZsfMaster/Views/Shop/Detail.cshtml
+2013-11-10 20:14:41: Deleted Recycled: gstp://112.124.20.57/file:///D:/ZsfCode/_gsdata_/_saved_/ZsfMaster/Views/Shop/Index.cshtml
+2013-11-10 20:14:41: Deleted Recycled: gstp://112.124.20.57/file:///D:/ZsfCode/_gsdata_/_saved_/ZsfData/obj/Debug/ZsfData.dll
+2013-11-10 20:14:42: Deleted Recycled: gstp://112.124.20.57/file:///D:/ZsfCode/_gsdata_/_saved_/SignalRTutorial/bin/SignalRTutorial.pdb
+2013-11-10 20:14:42: Deleted Recycled: gstp://112.124.20.57/file:///D:/ZsfCode/_gsdata_/_saved_/ZsfMaster/Views/Shop/Search.cshtml
+2013-11-10 20:14:43: Deleted Recycled: gstp://112.124.20.57/file:///D:/ZsfCode/_gsdata_/_saved_/ZsfMaster/ZsfPorject.csproj.user
+2013-11-10 20:14:43: Deleted Recycled: gstp://112.124.20.57/file:///D:/ZsfCode/_gsdata_/_saved_/ZsfData/obj/Debug/TempPE/ZsfDB.Designer.cs.dll
+2013-11-10 20:14:43: Deleted Recycled: gstp://112.124.20.57/file:///D:/ZsfCode/_gsdata_/_saved_/ZsfMaster/bin/ZsfData.dll
+2013-11-10 20:14:44: Deleted Recycled: gstp://112.124.20.57/file:///D:/ZsfCode/_gsdata_/_saved_/ZsfMaster/obj/Debug/ZsfPorject.csproj.FileListAbsolute.txt
+2013-11-10 20:14:44: Deleted Recycled: gstp://112.124.20.57/file:///D:/ZsfCode/_gsdata_/_saved_/SignalRTutorial/obj/Debug/SignalRTutorial.dll
+2013-11-10 20:14:44: Deleted Recycled: gstp://112.124.20.57/file:///D:/ZsfCode/_gsdata_/_saved_/ZsfMaster/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+2013-11-10 20:14:44: Deleted Recycled: gstp://112.124.20.57/file:///D:/ZsfCode/_gsdata_/_saved_/ZsfMaster/Views/Shared/_MobileLayout.cshtml
+2013-11-10 20:14:44: Deleted Recycled: gstp://112.124.20.57/file:///D:/ZsfCode/_gsdata_/_saved_/ZsfMaster/Views/Shop/Edit.cshtml
+2013-11-10 20:14:45: Deleted Recycled: gstp://112.124.20.57/file:///D:/ZsfCode/_gsdata_/_saved_/ZsfData/ZsfDB.edmx
+2013-11-10 20:14:45: Deleted Recycled: gstp://112.124.20.57/file:///D:/ZsfCode/_gsdata_/_saved_/ZsfMaster/Global.asax.cs
+2013-11-10 20:14:46: Deleted Recycled: gstp://112.124.20.57/file:///D:/ZsfCode/_gsdata_/_saved_/ZsfData/bin/Debug/ZsfData.dll
+2013-11-10 20:14:46: Deleted Recycled: gstp://112.124.20.57/file:///D:/ZsfCode/_gsdata_/_saved_/ZsfMaster/Controllers/ShopController.cs
+2013-11-10 20:14:47: Deleted Recycled: gstp://112.124.20.57/file:///D:/ZsfCode/_gsdata_/_saved_/ZsfData/obj/Debug/edmxResourcesToEmbed/ZsfDB.msl
+2013-11-10 20:14:47: Deleted Recycled: gstp://112.124.20.57/file:///D:/ZsfCode/_gsdata_/_saved_/ZsfMaster/obj/Debug/ZsfMaster.pdb
+2013-11-10 20:14:48: Deleted Recycled: gstp://112.124.20.57/file:///D:/ZsfCode/_gsdata_/_saved_/ZsfMaster/Contents/Css/jquery-ui-1.9.1.custom.css
+2013-11-10 20:14:48: Deleted Recycled: gstp://112.124.20.57/file:///D:/ZsfCode/_gsdata_/_saved_/ZsfMaster/Models/ShopModel.cs
+2013-11-10 20:14:49: Deleted Recycled: gstp://112.124.20.57/file:///D:/ZsfCode/_gsdata_/_saved_/ZsfMaster/ZsfPorject.csproj
+2013-11-10 20:14:49: Deleted Recycled: gstp://112.124.20.57/file:///D:/ZsfCode/_gsdata_/_saved_/SignalRTutorial/SignalRTutorial.csproj.user
+2013-11-10 20:14:49: Deleted Recycled: gstp://112.124.20.57/file:///D:/ZsfCode/_gsdata_/_saved_/SignalRTutorial/obj/Debug/ResolveAssemblyReference.cache
+2013-11-10 20:14:49: Deleted Recycled: gstp://112.124.20.57/file:///D:/ZsfCode/_gsdata_/_saved_/ZsfMaster/Controllers/UserController.cs
+2013-11-10 20:14:49: Deleted Recycled: gstp://112.124.20.57/file:///D:/ZsfCode/_gsdata_/_saved_/ZsfMaster/bin/ZsfMaster.dll
+2013-11-10 20:14:50: Deleted Recycled: gstp://112.124.20.57/file:///D:/ZsfCode/_gsdata_/_saved_/ZsfData/obj/Debug/ZsfData.pdb
+2013-11-10 20:14:51: Deleted Recycled: gstp://112.124.20.57/file:///D:/ZsfCode/_gsdata_/_saved_/ZsfMaster/Contents/Css/main.css
+2013-11-10 20:14:53: Deleted Recycled: gstp://112.124.20.57/file:///D:/ZsfCode/_gsdata_/_saved_/ZsfMaster/bin/ZsfData.pdb
+2013-11-10 20:14:54: Deleted Recycled: gstp://112.124.20.57/file:///D:/ZsfCode/_gsdata_/_saved_/ZsfMaster/Views/User/Login.cshtml
+2013-11-10 20:14:56: Deleted Recycled: gstp://112.124.20.57/file:///D:/ZsfCode/_gsdata_/_saved_/ZsfData/ZsfDB.Designer.cs
+2013-11-10 20:14:57: Deleted Recycled: gstp://112.124.20.57/file:///D:/ZsfCode/_gsdata_/_saved_/SignalRTutorial/obj/Debug/SignalRTutorial.pdb
+2013-11-10 20:14:59: 项目同步未必： 4，错误： 
+2013-11-10 20:14:59: ===== ：同步完毕。时间：00:00:32，速度： 33.6 KB/s (130 KB/s) =====
+2013-11-10 20:15:00: 

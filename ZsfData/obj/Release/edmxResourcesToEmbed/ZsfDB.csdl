@@ -1,0 +1,1047 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ZsfModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="ZsfEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Location" EntityType="ZsfModel.Location" />
+    <EntitySet Name="ShopCategory" EntityType="ZsfModel.ShopCategory" />
+    <EntitySet Name="ShopComment" EntityType="ZsfModel.ShopComment" />
+    <EntitySet Name="ShopDishe" EntityType="ZsfModel.ShopDishe" />
+    <EntitySet Name="ShopDisheCategory" EntityType="ZsfModel.ShopDisheCategory" />
+    <EntitySet Name="ShopRankingAttribute" EntityType="ZsfModel.ShopRankingAttribute" />
+    <EntitySet Name="ShopServiceArea" EntityType="ZsfModel.ShopServiceArea" />
+    <EntitySet Name="UserGradeCategory" EntityType="ZsfModel.UserGradeCategory" />
+    <EntitySet Name="UserInfo" EntityType="ZsfModel.UserInfo" />
+    <EntitySet Name="UserLoginLog" EntityType="ZsfModel.UserLoginLog" />
+    <EntitySet Name="UserMessage" EntityType="ZsfModel.UserMessage" />
+    <EntitySet Name="UserPoint" EntityType="ZsfModel.UserPoint" />
+    <EntitySet Name="V_ShopComment" EntityType="ZsfModel.V_ShopComment" />
+    <EntitySet Name="V_ShopWithServiceArea" EntityType="ZsfModel.V_ShopWithServiceArea" />
+    <EntitySet Name="V_UserInfoDetail" EntityType="ZsfModel.V_UserInfoDetail" />
+    <EntitySet Name="V_UserShopComment" EntityType="ZsfModel.V_UserShopComment" />
+    <AssociationSet Name="FK_ShopComment_User" Association="ZsfModel.FK_ShopComment_User">
+      <End Role="UserInfo" EntitySet="UserInfo" />
+      <End Role="ShopComment" EntitySet="ShopComment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_UserGradeCategory" Association="ZsfModel.FK_User_UserGradeCategory">
+      <End Role="UserGradeCategory" EntitySet="UserGradeCategory" />
+      <End Role="UserInfo" EntitySet="UserInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserLoginLog_User" Association="ZsfModel.FK_UserLoginLog_User">
+      <End Role="UserInfo" EntitySet="UserInfo" />
+      <End Role="UserLoginLog" EntitySet="UserLoginLog" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserMail_UserMail" Association="ZsfModel.FK_UserMail_UserMail">
+      <End Role="UserInfo" EntitySet="UserInfo" />
+      <End Role="UserMessage" EntitySet="UserMessage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserPoint_UserInfo" Association="ZsfModel.FK_UserPoint_UserInfo">
+      <End Role="UserInfo" EntitySet="UserInfo" />
+      <End Role="UserPoint" EntitySet="UserPoint" />
+    </AssociationSet>
+    <EntitySet Name="UserFavoriteShop" EntityType="ZsfModel.UserFavoriteShop" />
+    <AssociationSet Name="FK_UserFollowShop_UserInfo" Association="ZsfModel.FK_UserFollowShop_UserInfo">
+      <End Role="UserInfo" EntitySet="UserInfo" />
+      <End Role="UserFavoriteShop" EntitySet="UserFavoriteShop" />
+    </AssociationSet>
+    <EntitySet Name="ServiceArea" EntityType="ZsfModel.ServiceArea" />
+    <AssociationSet Name="FK_ServiceArea_Location" Association="ZsfModel.FK_ServiceArea_Location">
+      <End Role="Location" EntitySet="Location" />
+      <End Role="ServiceArea" EntitySet="ServiceArea" />
+    </AssociationSet>
+    <EntitySet Name="V_UserDefaultArea" EntityType="ZsfModel.V_UserDefaultArea" />
+    <EntitySet Name="UserDefaultArea" EntityType="ZsfModel.UserDefaultArea" />
+    <AssociationSet Name="FK_UserDefaultArea_ServiceArea" Association="ZsfModel.FK_UserDefaultArea_ServiceArea">
+      <End Role="ServiceArea" EntitySet="ServiceArea" />
+      <End Role="UserDefaultArea" EntitySet="UserDefaultArea" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserDefaultArea_UserInfo" Association="ZsfModel.FK_UserDefaultArea_UserInfo">
+      <End Role="UserInfo" EntitySet="UserInfo" />
+      <End Role="UserDefaultArea" EntitySet="UserDefaultArea" />
+    </AssociationSet>
+    <EntitySet Name="V_ShopServiceArea" EntityType="ZsfModel.V_ShopServiceArea" />
+    <EntitySet Name="V_ShopDisheWithCategory" EntityType="ZsfModel.V_ShopDisheWithCategory" />
+    <EntitySet Name="V_UserFavoriteShopForList" EntityType="ZsfModel.V_UserFavoriteShopForList" />
+    <EntitySet Name="V_ShopDetail" EntityType="ZsfModel.V_ShopDetail" />
+    <EntitySet Name="ShopJobAd" EntityType="ZsfModel.ShopJobAd" />
+    <EntitySet Name="ShopJobAdModifyLog" EntityType="ZsfModel.ShopJobAdModifyLog" />
+    <AssociationSet Name="FK_ShopJobAd_UserInfo" Association="ZsfModel.FK_ShopJobAd_UserInfo">
+      <End Role="UserInfo" EntitySet="UserInfo" />
+      <End Role="ShopJobAd" EntitySet="ShopJobAd" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ShopJobAdModifyLog_ShopJobAd" Association="ZsfModel.FK_ShopJobAdModifyLog_ShopJobAd">
+      <End Role="ShopJobAd" EntitySet="ShopJobAd" />
+      <End Role="ShopJobAdModifyLog" EntitySet="ShopJobAdModifyLog" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ShopJobAdModifyLog_UserInfo" Association="ZsfModel.FK_ShopJobAdModifyLog_UserInfo">
+      <End Role="UserInfo" EntitySet="UserInfo" />
+      <End Role="ShopJobAdModifyLog" EntitySet="ShopJobAdModifyLog" />
+    </AssociationSet>
+    <EntitySet Name="V_ShopJobAd" EntityType="ZsfModel.V_ShopJobAd" />
+    <EntitySet Name="Shop" EntityType="ZsfModel.Shop" />
+    <EntitySet Name="V_ShopForList" EntityType="ZsfModel.V_ShopForList" />
+    <AssociationSet Name="FK_ShopComment_Shop" Association="ZsfModel.FK_ShopComment_Shop">
+      <End Role="Shop" EntitySet="Shop" />
+      <End Role="ShopComment" EntitySet="ShopComment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ShopDishe_Shop" Association="ZsfModel.FK_ShopDishe_Shop">
+      <End Role="Shop" EntitySet="Shop" />
+      <End Role="ShopDishe" EntitySet="ShopDishe" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ShopDisheCategory_Shop" Association="ZsfModel.FK_ShopDisheCategory_Shop">
+      <End Role="Shop" EntitySet="Shop" />
+      <End Role="ShopDisheCategory" EntitySet="ShopDisheCategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ShopJobAds_Shop" Association="ZsfModel.FK_ShopJobAds_Shop">
+      <End Role="Shop" EntitySet="Shop" />
+      <End Role="ShopJobAd" EntitySet="ShopJobAd" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ShopRankingAttribute_Shop" Association="ZsfModel.FK_ShopRankingAttribute_Shop">
+      <End Role="Shop" EntitySet="Shop" />
+      <End Role="ShopRankingAttribute" EntitySet="ShopRankingAttribute" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ShopServiceArea_Shop" Association="ZsfModel.FK_ShopServiceArea_Shop">
+      <End Role="Shop" EntitySet="Shop" />
+      <End Role="ShopServiceArea" EntitySet="ShopServiceArea" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserFollowShop_Shop" Association="ZsfModel.FK_UserFollowShop_Shop">
+      <End Role="Shop" EntitySet="Shop" />
+      <End Role="UserFavoriteShop" EntitySet="UserFavoriteShop" />
+    </AssociationSet>
+    <EntitySet Name="ShopModifyLog" EntityType="ZsfModel.ShopModifyLog" />
+    <AssociationSet Name="FK_UserEditShopLog_Shop" Association="ZsfModel.FK_UserEditShopLog_Shop">
+      <End Role="Shop" EntitySet="Shop" />
+      <End Role="ShopModifyLog" EntitySet="ShopModifyLog" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserEditShopLog_User" Association="ZsfModel.FK_UserEditShopLog_User">
+      <End Role="UserInfo" EntitySet="UserInfo" />
+      <End Role="ShopModifyLog" EntitySet="ShopModifyLog" />
+    </AssociationSet>
+    <EntitySet Name="UserOrder" EntityType="ZsfModel.UserOrder" />
+    <EntitySet Name="UserOrderDetail" EntityType="ZsfModel.UserOrderDetail" />
+    <AssociationSet Name="FK_UserOrder_Shop" Association="ZsfModel.FK_UserOrder_Shop">
+      <End Role="Shop" EntitySet="Shop" />
+      <End Role="UserOrderDetail" EntitySet="UserOrderDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserOrder_ShopDishe" Association="ZsfModel.FK_UserOrder_ShopDishe">
+      <End Role="ShopDishe" EntitySet="ShopDishe" />
+      <End Role="UserOrderDetail" EntitySet="UserOrderDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserOrder_UserInfo" Association="ZsfModel.FK_UserOrder_UserInfo">
+      <End Role="UserInfo" EntitySet="UserInfo" />
+      <End Role="UserOrderDetail" EntitySet="UserOrderDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserOrder_UserInfo1" Association="ZsfModel.FK_UserOrder_UserInfo1">
+      <End Role="UserInfo" EntitySet="UserInfo" />
+      <End Role="UserOrder" EntitySet="UserOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserOrderDetail_UserOrder" Association="ZsfModel.FK_UserOrderDetail_UserOrder">
+      <End Role="UserOrder" EntitySet="UserOrder" />
+      <End Role="UserOrderDetail" EntitySet="UserOrderDetail" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Location">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="ParentId" Nullable="false" />
+    <Property Type="String" Name="Value" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ServiceArea" Relationship="ZsfModel.FK_ServiceArea_Location" FromRole="Location" ToRole="ServiceArea" />
+  </EntityType>
+  <EntityType Name="ShopCategory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Value" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ShopComment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="ShopId" Nullable="false" />
+    <Property Type="Int32" Name="UserId" Nullable="false" />
+    <Property Type="String" Name="Comment" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Type="Int16" Name="Stars" Nullable="false" />
+    <Property Type="Int16" Name="PayMoney" Nullable="false" />
+    <Property Type="Int16" Name="DeliveryTime" Nullable="false" />
+    <Property Type="DateTime" Name="CreateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="UserInfo" Relationship="ZsfModel.FK_ShopComment_User" FromRole="ShopComment" ToRole="UserInfo" />
+    <NavigationProperty Name="Shop" Relationship="ZsfModel.FK_ShopComment_Shop" FromRole="ShopComment" ToRole="Shop" />
+  </EntityType>
+  <EntityType Name="ShopDishe">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="ShopId" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Type="Double" Name="Price" Nullable="false" />
+    <Property Type="Int32" Name="CategoryId" Nullable="false" />
+    <Property Type="String" Name="Remark" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Gift" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Type="Int16" Name="OrderIndex" Nullable="false" />
+    <NavigationProperty Name="Shop" Relationship="ZsfModel.FK_ShopDishe_Shop" FromRole="ShopDishe" ToRole="Shop" />
+    <NavigationProperty Name="UserOrderDetail" Relationship="ZsfModel.FK_UserOrder_ShopDishe" FromRole="ShopDishe" ToRole="UserOrderDetail" />
+  </EntityType>
+  <EntityType Name="ShopDisheCategory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="ShopId" />
+    <Property Type="String" Name="Value" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Type="Int16" Name="OrderIndex" Nullable="false" />
+    <NavigationProperty Name="Shop" Relationship="ZsfModel.FK_ShopDisheCategory_Shop" FromRole="ShopDisheCategory" ToRole="Shop" />
+  </EntityType>
+  <EntityType Name="ShopRankingAttribute">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="ShopId" Nullable="false" />
+    <Property Type="Int16" Name="Stars" Nullable="false" />
+    <Property Type="Int16" Name="AveragePayMoney" Nullable="false" />
+    <Property Type="Int16" Name="DeliveryTime" Nullable="false" />
+    <Property Type="Int16" Name="Visits" Nullable="false" />
+    <NavigationProperty Name="Shop" Relationship="ZsfModel.FK_ShopRankingAttribute_Shop" FromRole="ShopRankingAttribute" ToRole="Shop" />
+  </EntityType>
+  <EntityType Name="ShopServiceArea">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="ShopId" Nullable="false" />
+    <Property Type="Int32" Name="AreaId" Nullable="false" />
+    <NavigationProperty Name="Shop" Relationship="ZsfModel.FK_ShopServiceArea_Shop" FromRole="ShopServiceArea" ToRole="Shop" />
+  </EntityType>
+  <EntityType Name="UserGradeCategory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int16" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="GradeName" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="Int16" Name="GradeLevel" Nullable="false" />
+    <NavigationProperty Name="UserInfo" Relationship="ZsfModel.FK_User_UserGradeCategory" FromRole="UserGradeCategory" ToRole="UserInfo" />
+  </EntityType>
+  <EntityType Name="UserInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Email" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Password" Nullable="false" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="Gender" Nullable="false" />
+    <Property Type="DateTime" Name="Birthday" Nullable="false" Precision="0" />
+    <Property Type="String" Name="Photo" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Int16" Name="GradeId" Nullable="false" />
+    <Property Type="DateTime" Name="CreateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="ShopComment" Relationship="ZsfModel.FK_ShopComment_User" FromRole="UserInfo" ToRole="ShopComment" />
+    <NavigationProperty Name="UserGradeCategory" Relationship="ZsfModel.FK_User_UserGradeCategory" FromRole="UserInfo" ToRole="UserGradeCategory" />
+    <NavigationProperty Name="UserLoginLog" Relationship="ZsfModel.FK_UserLoginLog_User" FromRole="UserInfo" ToRole="UserLoginLog" />
+    <NavigationProperty Name="UserMessage" Relationship="ZsfModel.FK_UserMail_UserMail" FromRole="UserInfo" ToRole="UserMessage" />
+    <NavigationProperty Name="UserPoint" Relationship="ZsfModel.FK_UserPoint_UserInfo" FromRole="UserInfo" ToRole="UserPoint" />
+    <NavigationProperty Name="UserFavoriteShop" Relationship="ZsfModel.FK_UserFollowShop_UserInfo" FromRole="UserInfo" ToRole="UserFavoriteShop" />
+    <NavigationProperty Name="UserDefaultArea" Relationship="ZsfModel.FK_UserDefaultArea_UserInfo" FromRole="UserInfo" ToRole="UserDefaultArea" />
+    <NavigationProperty Name="ShopJobAd" Relationship="ZsfModel.FK_ShopJobAd_UserInfo" FromRole="UserInfo" ToRole="ShopJobAd" />
+    <NavigationProperty Name="ShopJobAdModifyLog" Relationship="ZsfModel.FK_ShopJobAdModifyLog_UserInfo" FromRole="UserInfo" ToRole="ShopJobAdModifyLog" />
+    <NavigationProperty Name="ShopModifyLog" Relationship="ZsfModel.FK_UserEditShopLog_User" FromRole="UserInfo" ToRole="ShopModifyLog" />
+    <NavigationProperty Name="UserOrderDetail" Relationship="ZsfModel.FK_UserOrder_UserInfo" FromRole="UserInfo" ToRole="UserOrderDetail" />
+    <NavigationProperty Name="UserOrder" Relationship="ZsfModel.FK_UserOrder_UserInfo1" FromRole="UserInfo" ToRole="UserOrder" />
+  </EntityType>
+  <EntityType Name="UserLoginLog">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="UserId" Nullable="false" />
+    <Property Type="DateTime" Name="CreateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="UserInfo" Relationship="ZsfModel.FK_UserLoginLog_User" FromRole="UserLoginLog" ToRole="UserInfo" />
+  </EntityType>
+  <EntityType Name="UserMessage">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="UserId" Nullable="false" />
+    <Property Type="String" Name="MsgTitle" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="MsgContent" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="Readed" Nullable="false" />
+    <Property Type="DateTime" Name="CreateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="UserInfo" Relationship="ZsfModel.FK_UserMail_UserMail" FromRole="UserMessage" ToRole="UserInfo" />
+  </EntityType>
+  <EntityType Name="UserPoint">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="UserId" Nullable="false" />
+    <Property Type="Int16" Name="PointCount" Nullable="false" />
+    <Property Type="String" Name="Reason" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Boolean" Name="Usable" Nullable="false" />
+    <Property Type="String" Name="UsedFor" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CreateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="UserInfo" Relationship="ZsfModel.FK_UserPoint_UserInfo" FromRole="UserPoint" ToRole="UserInfo" />
+  </EntityType>
+  <EntityType Name="V_ShopComment">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="ShopId" />
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="Comment" />
+      <PropertyRef Name="Stars" />
+      <PropertyRef Name="CreateTime" />
+      <PropertyRef Name="UserName" />
+      <PropertyRef Name="UserPhoto" />
+      <PropertyRef Name="UserGrade" />
+      <PropertyRef Name="DeliveryTime" />
+      <PropertyRef Name="PayMoney" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="Int32" Name="ShopId" Nullable="false" />
+    <Property Type="Int32" Name="UserId" Nullable="false" />
+    <Property Type="String" Name="Comment" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Type="Int16" Name="Stars" Nullable="false" />
+    <Property Type="DateTime" Name="CreateTime" Nullable="false" Precision="0" />
+    <Property Type="String" Name="UserName" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="UserPhoto" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="UserGrade" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="Int16" Name="DeliveryTime" Nullable="false" />
+    <Property Type="Int16" Name="PayMoney" Nullable="false" />
+  </EntityType>
+  <EntityType Name="V_ShopWithServiceArea">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="Address" />
+      <PropertyRef Name="PhoneNumber" />
+      <PropertyRef Name="OfficeTimeBegin" />
+      <PropertyRef Name="OfficeTimeEnd" />
+      <PropertyRef Name="Stars" />
+      <PropertyRef Name="Longitude" />
+      <PropertyRef Name="Latitude" />
+      <PropertyRef Name="CategoryId" />
+      <PropertyRef Name="CreateTime" />
+      <PropertyRef Name="AreaId" />
+      <PropertyRef Name="Category" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Address" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Logo" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="PhoneNumber" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Time" Name="OfficeTimeBegin" Nullable="false" Precision="0" />
+    <Property Type="Time" Name="OfficeTimeEnd" Nullable="false" Precision="0" />
+    <Property Type="Int16" Name="Stars" Nullable="false" />
+    <Property Type="String" Name="Remark" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Int16" Name="UpSendPrice" />
+    <Property Type="Double" Name="Longitude" Nullable="false" />
+    <Property Type="Double" Name="Latitude" Nullable="false" />
+    <Property Type="Int32" Name="CategoryId" Nullable="false" />
+    <Property Type="DateTime" Name="CreateTime" Nullable="false" Precision="0" />
+    <Property Type="Int32" Name="AreaId" Nullable="false" />
+    <Property Type="String" Name="Category" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="V_UserInfoDetail">
+    <Key>
+      <PropertyRef Name="GradeName" />
+      <PropertyRef Name="GradeLevel" />
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="Email" />
+      <PropertyRef Name="Gender" />
+      <PropertyRef Name="Birthday" />
+      <PropertyRef Name="Photo" />
+      <PropertyRef Name="CreateTime" />
+      <PropertyRef Name="GradeId" />
+    </Key>
+    <Property Type="String" Name="GradeName" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="Int16" Name="GradeLevel" Nullable="false" />
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Email" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="Gender" Nullable="false" />
+    <Property Type="DateTime" Name="Birthday" Nullable="false" Precision="0" />
+    <Property Type="String" Name="Photo" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CreateTime" Nullable="false" Precision="0" />
+    <Property Type="Int16" Name="GradeId" Nullable="false" />
+  </EntityType>
+  <EntityType Name="V_UserShopComment">
+    <Key>
+      <PropertyRef Name="UserName" />
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="ShopId" />
+      <PropertyRef Name="Comment" />
+      <PropertyRef Name="Stars" />
+      <PropertyRef Name="CreateTime" />
+      <PropertyRef Name="ShopName" />
+    </Key>
+    <Property Type="String" Name="UserName" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="UserId" Nullable="false" />
+    <Property Type="Int32" Name="ShopId" Nullable="false" />
+    <Property Type="String" Name="Comment" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Type="Int16" Name="Stars" Nullable="false" />
+    <Property Type="DateTime" Name="CreateTime" Nullable="false" Precision="0" />
+    <Property Type="String" Name="ShopName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_ShopComment_User">
+    <End Type="ZsfModel.UserInfo" Role="UserInfo" Multiplicity="1" />
+    <End Type="ZsfModel.ShopComment" Role="ShopComment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ShopComment">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_UserGradeCategory">
+    <End Type="ZsfModel.UserGradeCategory" Role="UserGradeCategory" Multiplicity="1" />
+    <End Type="ZsfModel.UserInfo" Role="UserInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserGradeCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserInfo">
+        <PropertyRef Name="GradeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserLoginLog_User">
+    <End Type="ZsfModel.UserInfo" Role="UserInfo" Multiplicity="1" />
+    <End Type="ZsfModel.UserLoginLog" Role="UserLoginLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserLoginLog">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserMail_UserMail">
+    <End Type="ZsfModel.UserInfo" Role="UserInfo" Multiplicity="1" />
+    <End Type="ZsfModel.UserMessage" Role="UserMessage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserMessage">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserPoint_UserInfo">
+    <End Type="ZsfModel.UserInfo" Role="UserInfo" Multiplicity="1" />
+    <End Type="ZsfModel.UserPoint" Role="UserPoint" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserPoint">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="UserFavoriteShop">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="UserId" Nullable="false" />
+    <Property Type="Int32" Name="ShopId" Nullable="false" />
+    <Property Type="DateTime" Name="CreateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="UserInfo" Relationship="ZsfModel.FK_UserFollowShop_UserInfo" FromRole="UserFavoriteShop" ToRole="UserInfo" />
+    <NavigationProperty Name="Shop" Relationship="ZsfModel.FK_UserFollowShop_Shop" FromRole="UserFavoriteShop" ToRole="Shop" />
+  </EntityType>
+  <Association Name="FK_UserFollowShop_UserInfo">
+    <End Type="ZsfModel.UserInfo" Role="UserInfo" Multiplicity="1" />
+    <End Type="ZsfModel.UserFavoriteShop" Role="UserFavoriteShop" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserFavoriteShop">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="ServiceArea">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Value" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="ParentId" Nullable="false" />
+    <Property Type="String" Name="AreaType" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="Location" Relationship="ZsfModel.FK_ServiceArea_Location" FromRole="ServiceArea" ToRole="Location" />
+    <NavigationProperty Name="UserDefaultArea" Relationship="ZsfModel.FK_UserDefaultArea_ServiceArea" FromRole="ServiceArea" ToRole="UserDefaultArea" />
+  </EntityType>
+  <Association Name="FK_ServiceArea_Location">
+    <End Type="ZsfModel.Location" Role="Location" Multiplicity="1" />
+    <End Type="ZsfModel.ServiceArea" Role="ServiceArea" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Location">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ServiceArea">
+        <PropertyRef Name="ParentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="V_UserDefaultArea">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="UserName" />
+      <PropertyRef Name="AreaValue" />
+      <PropertyRef Name="AreaId" />
+    </Key>
+    <Property Type="Int32" Name="UserId" Nullable="false" />
+    <Property Type="String" Name="UserName" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="AreaValue" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="AreaId" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserDefaultArea">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="UserId" Nullable="false" />
+    <Property Type="Int32" Name="AreaId" Nullable="false" />
+    <NavigationProperty Name="ServiceArea" Relationship="ZsfModel.FK_UserDefaultArea_ServiceArea" FromRole="UserDefaultArea" ToRole="ServiceArea" />
+    <NavigationProperty Name="UserInfo" Relationship="ZsfModel.FK_UserDefaultArea_UserInfo" FromRole="UserDefaultArea" ToRole="UserInfo" />
+  </EntityType>
+  <Association Name="FK_UserDefaultArea_ServiceArea">
+    <End Type="ZsfModel.ServiceArea" Role="ServiceArea" Multiplicity="1" />
+    <End Type="ZsfModel.UserDefaultArea" Role="UserDefaultArea" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ServiceArea">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserDefaultArea">
+        <PropertyRef Name="AreaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserDefaultArea_UserInfo">
+    <End Type="ZsfModel.UserInfo" Role="UserInfo" Multiplicity="1" />
+    <End Type="ZsfModel.UserDefaultArea" Role="UserDefaultArea" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserDefaultArea">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="V_ShopServiceArea">
+    <Key>
+      <PropertyRef Name="ShopId" />
+      <PropertyRef Name="AreaId" />
+      <PropertyRef Name="ServiceArea" />
+      <PropertyRef Name="ParentId" />
+      <PropertyRef Name="AreaType" />
+    </Key>
+    <Property Type="Int32" Name="ShopId" Nullable="false" />
+    <Property Type="Int32" Name="AreaId" Nullable="false" />
+    <Property Type="String" Name="ServiceArea" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="ParentId" Nullable="false" />
+    <Property Type="String" Name="AreaType" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="V_ShopDisheWithCategory">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="ShopId" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="Price" />
+      <PropertyRef Name="CategoryId" />
+      <PropertyRef Name="DisheCategoryOrder" />
+      <PropertyRef Name="DisheOrder" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="Int32" Name="ShopId" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Type="Double" Name="Price" Nullable="false" />
+    <Property Type="Int32" Name="CategoryId" Nullable="false" />
+    <Property Type="String" Name="CategoryValue" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Remark" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Gift" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Type="Int16" Name="DisheCategoryOrder" Nullable="false" />
+    <Property Type="Int16" Name="DisheOrder" Nullable="false" />
+  </EntityType>
+  <EntityType Name="V_UserFavoriteShopForList">
+    <Key>
+      <PropertyRef Name="FavoriteId" />
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="ShopId" />
+      <PropertyRef Name="ShopName" />
+      <PropertyRef Name="Address" />
+      <PropertyRef Name="OfficeTimeBegin" />
+      <PropertyRef Name="OfficeTimeEnd" />
+      <PropertyRef Name="UpSendPrice" />
+      <PropertyRef Name="ShopCategoryId" />
+      <PropertyRef Name="Longitude" />
+      <PropertyRef Name="Latitude" />
+      <PropertyRef Name="Stars" />
+      <PropertyRef Name="AveragePayMoney" />
+      <PropertyRef Name="DeliveryTime" />
+      <PropertyRef Name="FavoriteCreateTime" />
+      <PropertyRef Name="Visits" />
+    </Key>
+    <Property Type="Int32" Name="FavoriteId" Nullable="false" />
+    <Property Type="Int32" Name="UserId" Nullable="false" />
+    <Property Type="Int32" Name="ShopId" Nullable="false" />
+    <Property Type="String" Name="ShopName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Address" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Logo" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="Time" Name="OfficeTimeBegin" Nullable="false" Precision="0" />
+    <Property Type="Time" Name="OfficeTimeEnd" Nullable="false" Precision="0" />
+    <Property Type="Int16" Name="UpSendPrice" Nullable="false" />
+    <Property Type="Int32" Name="ShopCategoryId" Nullable="false" />
+    <Property Type="Double" Name="Longitude" Nullable="false" />
+    <Property Type="Double" Name="Latitude" Nullable="false" />
+    <Property Type="Int16" Name="Stars" Nullable="false" />
+    <Property Type="Int16" Name="AveragePayMoney" Nullable="false" />
+    <Property Type="Int16" Name="DeliveryTime" Nullable="false" />
+    <Property Type="DateTime" Name="FavoriteCreateTime" Nullable="false" Precision="3" />
+    <Property Type="Int16" Name="Visits" Nullable="false" />
+  </EntityType>
+  <EntityType Name="V_ShopDetail">
+    <Key>
+      <PropertyRef Name="Stars" />
+      <PropertyRef Name="AveragePayMoney" />
+      <PropertyRef Name="DeliveryTime" />
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="Address" />
+      <PropertyRef Name="PhoneNumber" />
+      <PropertyRef Name="OfficeTimeBegin" />
+      <PropertyRef Name="OfficeTimeEnd" />
+      <PropertyRef Name="UpSendPrice" />
+      <PropertyRef Name="Longitude" />
+      <PropertyRef Name="Latitude" />
+      <PropertyRef Name="Hidden" />
+      <PropertyRef Name="CreateBy" />
+    </Key>
+    <Property Type="Int16" Name="Stars" Nullable="false" />
+    <Property Type="Int16" Name="AveragePayMoney" Nullable="false" />
+    <Property Type="Int16" Name="DeliveryTime" Nullable="false" />
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Address" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Logo" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="PhoneNumber" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Time" Name="OfficeTimeBegin" Nullable="false" Precision="0" />
+    <Property Type="Time" Name="OfficeTimeEnd" Nullable="false" Precision="0" />
+    <Property Type="String" Name="Remark" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Int16" Name="UpSendPrice" Nullable="false" />
+    <Property Type="Double" Name="Longitude" Nullable="false" />
+    <Property Type="Double" Name="Latitude" Nullable="false" />
+    <Property Type="Boolean" Name="Hidden" Nullable="false" />
+    <Property Type="Int32" Name="CreateBy" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ShopJobAd">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="ShopId" Nullable="false" />
+    <Property Type="String" Name="JobTitle" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Type="Int16" Name="SalaryMin" Nullable="false" />
+    <Property Type="Int16" Name="SalaryMax" Nullable="false" />
+    <Property Type="String" Name="ContactPhone" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="WorkPlace" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="PublishedAt" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="DateDue" Nullable="false" Precision="0" />
+    <Property Type="Int32" Name="PublishedBy" Nullable="false" />
+    <Property Type="Int16" Name="OrderIndex" Nullable="false" />
+    <NavigationProperty Name="UserInfo" Relationship="ZsfModel.FK_ShopJobAd_UserInfo" FromRole="ShopJobAd" ToRole="UserInfo" />
+    <NavigationProperty Name="ShopJobAdModifyLog" Relationship="ZsfModel.FK_ShopJobAdModifyLog_ShopJobAd" FromRole="ShopJobAd" ToRole="ShopJobAdModifyLog" />
+    <Property Type="DateTime" Name="LastModifyAt" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="LastModifyBy" Nullable="false" />
+    <Property Type="String" Name="JobType" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="Shop" Relationship="ZsfModel.FK_ShopJobAds_Shop" FromRole="ShopJobAd" ToRole="Shop" />
+  </EntityType>
+  <EntityType Name="ShopJobAdModifyLog">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="JobId" Nullable="false" />
+    <Property Type="DateTime" Name="ModifyAt" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="ModifyBy" Nullable="false" />
+    <NavigationProperty Name="ShopJobAd" Relationship="ZsfModel.FK_ShopJobAdModifyLog_ShopJobAd" FromRole="ShopJobAdModifyLog" ToRole="ShopJobAd" />
+    <NavigationProperty Name="UserInfo" Relationship="ZsfModel.FK_ShopJobAdModifyLog_UserInfo" FromRole="ShopJobAdModifyLog" ToRole="UserInfo" />
+  </EntityType>
+  <Association Name="FK_ShopJobAd_UserInfo">
+    <End Type="ZsfModel.UserInfo" Role="UserInfo" Multiplicity="1" />
+    <End Type="ZsfModel.ShopJobAd" Role="ShopJobAd" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ShopJobAd">
+        <PropertyRef Name="PublishedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ShopJobAdModifyLog_ShopJobAd">
+    <End Type="ZsfModel.ShopJobAd" Role="ShopJobAd" Multiplicity="1" />
+    <End Type="ZsfModel.ShopJobAdModifyLog" Role="ShopJobAdModifyLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ShopJobAd">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ShopJobAdModifyLog">
+        <PropertyRef Name="JobId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ShopJobAdModifyLog_UserInfo">
+    <End Type="ZsfModel.UserInfo" Role="UserInfo" Multiplicity="1" />
+    <End Type="ZsfModel.ShopJobAdModifyLog" Role="ShopJobAdModifyLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ShopJobAdModifyLog">
+        <PropertyRef Name="ModifyBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="V_ShopJobAd">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="ShopId" />
+      <PropertyRef Name="ShopName" />
+      <PropertyRef Name="JobTitle" />
+      <PropertyRef Name="Description" />
+      <PropertyRef Name="PublishedAt" />
+      <PropertyRef Name="DateDue" />
+      <PropertyRef Name="PublishedByUserId" />
+      <PropertyRef Name="PublishedByUserName" />
+      <PropertyRef Name="SalaryMin" />
+      <PropertyRef Name="SalaryMax" />
+      <PropertyRef Name="ShopLocation" />
+      <PropertyRef Name="OrderIndex" />
+      <PropertyRef Name="AreaId" />
+      <PropertyRef Name="ContactPhone" />
+      <PropertyRef Name="LastModifyAt" />
+      <PropertyRef Name="LastModifyByUserId" />
+      <PropertyRef Name="LastModifyByUserName" />
+      <PropertyRef Name="JobType" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="Int32" Name="ShopId" Nullable="false" />
+    <Property Type="String" Name="ShopName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="JobTitle" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="PublishedAt" Nullable="false" Precision="3" />
+    <Property Type="DateTime" Name="DateDue" Nullable="false" Precision="0" />
+    <Property Type="Int32" Name="PublishedByUserId" Nullable="false" />
+    <Property Type="String" Name="PublishedByUserName" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="Int16" Name="SalaryMin" Nullable="false" />
+    <Property Type="Int16" Name="SalaryMax" Nullable="false" />
+    <Property Type="String" Name="ShopLocation" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Int16" Name="OrderIndex" Nullable="false" />
+    <Property Type="Int32" Name="AreaId" Nullable="false" />
+    <Property Type="String" Name="ContactPhone" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="WorkPlace" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="LastModifyAt" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="LastModifyByUserId" Nullable="false" />
+    <Property Type="String" Name="LastModifyByUserName" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="JobType" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Shop">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Address" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Logo" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="PhoneNumber" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Time" Name="OfficeTimeBegin" Nullable="false" Precision="0" />
+    <Property Type="Time" Name="OfficeTimeEnd" Nullable="false" Precision="0" />
+    <Property Type="Int16" Name="Stars" Nullable="false" />
+    <Property Type="String" Name="Remark" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="Int16" Name="UpSendPrice" Nullable="false" />
+    <Property Type="Int16" Name="AveragePayMoney" />
+    <Property Type="Int16" Name="DeliveryTime" Nullable="false" />
+    <Property Type="Double" Name="Longitude" Nullable="false" />
+    <Property Type="Double" Name="Latitude" Nullable="false" />
+    <Property Type="Int32" Name="CategoryId" Nullable="false" />
+    <Property Type="Boolean" Name="Hidden" Nullable="false" />
+    <Property Type="DateTime" Name="CreateTime" Nullable="false" Precision="0" />
+    <Property Type="Int32" Name="CreateBy" Nullable="false" />
+    <Property Type="Int32" Name="LastModifyBy" Nullable="false" />
+    <Property Type="DateTime" Name="LastModifyAt" Nullable="false" Precision="3" />
+    <NavigationProperty Name="ShopComment" Relationship="ZsfModel.FK_ShopComment_Shop" FromRole="Shop" ToRole="ShopComment" />
+    <NavigationProperty Name="ShopDishe" Relationship="ZsfModel.FK_ShopDishe_Shop" FromRole="Shop" ToRole="ShopDishe" />
+    <NavigationProperty Name="ShopDisheCategory" Relationship="ZsfModel.FK_ShopDisheCategory_Shop" FromRole="Shop" ToRole="ShopDisheCategory" />
+    <NavigationProperty Name="ShopJobAd" Relationship="ZsfModel.FK_ShopJobAds_Shop" FromRole="Shop" ToRole="ShopJobAd" />
+    <NavigationProperty Name="ShopRankingAttribute" Relationship="ZsfModel.FK_ShopRankingAttribute_Shop" FromRole="Shop" ToRole="ShopRankingAttribute" />
+    <NavigationProperty Name="ShopServiceArea" Relationship="ZsfModel.FK_ShopServiceArea_Shop" FromRole="Shop" ToRole="ShopServiceArea" />
+    <NavigationProperty Name="UserFavoriteShop" Relationship="ZsfModel.FK_UserFollowShop_Shop" FromRole="Shop" ToRole="UserFavoriteShop" />
+    <NavigationProperty Name="ShopModifyLog" Relationship="ZsfModel.FK_UserEditShopLog_Shop" FromRole="Shop" ToRole="ShopModifyLog" />
+    <NavigationProperty Name="UserOrderDetail" Relationship="ZsfModel.FK_UserOrder_Shop" FromRole="Shop" ToRole="UserOrderDetail" />
+  </EntityType>
+  <EntityType Name="V_ShopForList">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="Address" />
+      <PropertyRef Name="PhoneNumber" />
+      <PropertyRef Name="OfficeTimeBegin" />
+      <PropertyRef Name="OfficeTimeEnd" />
+      <PropertyRef Name="UpSendPrice" />
+      <PropertyRef Name="CategoryId" />
+      <PropertyRef Name="CreateTime" />
+      <PropertyRef Name="AreaId" />
+      <PropertyRef Name="Category" />
+      <PropertyRef Name="Longitude" />
+      <PropertyRef Name="Latitude" />
+      <PropertyRef Name="Stars" />
+      <PropertyRef Name="AveragePayMoney" />
+      <PropertyRef Name="DeliveryTime" />
+      <PropertyRef Name="Hidden" />
+      <PropertyRef Name="Visits" />
+      <PropertyRef Name="CreateByUserName" />
+      <PropertyRef Name="CreateBy" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Address" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Logo" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="PhoneNumber" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Time" Name="OfficeTimeBegin" Nullable="false" Precision="0" />
+    <Property Type="Time" Name="OfficeTimeEnd" Nullable="false" Precision="0" />
+    <Property Type="Int16" Name="UpSendPrice" Nullable="false" />
+    <Property Type="Int32" Name="CategoryId" Nullable="false" />
+    <Property Type="DateTime" Name="CreateTime" Nullable="false" Precision="0" />
+    <Property Type="Int32" Name="AreaId" Nullable="false" />
+    <Property Type="String" Name="Category" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Type="Double" Name="Longitude" Nullable="false" />
+    <Property Type="Double" Name="Latitude" Nullable="false" />
+    <Property Type="Int16" Name="Stars" Nullable="false" />
+    <Property Type="Int16" Name="AveragePayMoney" Nullable="false" />
+    <Property Type="Int16" Name="DeliveryTime" Nullable="false" />
+    <Property Type="Boolean" Name="Hidden" Nullable="false" />
+    <Property Type="Int16" Name="Visits" Nullable="false" />
+    <Property Type="Int32" Name="JobsCount" />
+    <Property Type="String" Name="CreateByUserName" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="CreateBy" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_ShopComment_Shop">
+    <End Type="ZsfModel.Shop" Role="Shop" Multiplicity="1" />
+    <End Type="ZsfModel.ShopComment" Role="ShopComment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Shop">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ShopComment">
+        <PropertyRef Name="ShopId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ShopDishe_Shop">
+    <End Type="ZsfModel.Shop" Role="Shop" Multiplicity="1" />
+    <End Type="ZsfModel.ShopDishe" Role="ShopDishe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Shop">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ShopDishe">
+        <PropertyRef Name="ShopId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ShopDisheCategory_Shop">
+    <End Type="ZsfModel.Shop" Role="Shop" Multiplicity="0..1" />
+    <End Type="ZsfModel.ShopDisheCategory" Role="ShopDisheCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Shop">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ShopDisheCategory">
+        <PropertyRef Name="ShopId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ShopJobAds_Shop">
+    <End Type="ZsfModel.Shop" Role="Shop" Multiplicity="1" />
+    <End Type="ZsfModel.ShopJobAd" Role="ShopJobAd" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Shop">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ShopJobAd">
+        <PropertyRef Name="ShopId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ShopRankingAttribute_Shop">
+    <End Type="ZsfModel.Shop" Role="Shop" Multiplicity="1" />
+    <End Type="ZsfModel.ShopRankingAttribute" Role="ShopRankingAttribute" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Shop">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ShopRankingAttribute">
+        <PropertyRef Name="ShopId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ShopServiceArea_Shop">
+    <End Type="ZsfModel.Shop" Role="Shop" Multiplicity="1" />
+    <End Type="ZsfModel.ShopServiceArea" Role="ShopServiceArea" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Shop">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ShopServiceArea">
+        <PropertyRef Name="ShopId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserFollowShop_Shop">
+    <End Type="ZsfModel.Shop" Role="Shop" Multiplicity="1" />
+    <End Type="ZsfModel.UserFavoriteShop" Role="UserFavoriteShop" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Shop">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserFavoriteShop">
+        <PropertyRef Name="ShopId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="ShopModifyLog">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="ShopId" Nullable="false" />
+    <Property Type="Int32" Name="ModifyBy" Nullable="false" />
+    <Property Type="DateTime" Name="ModifyAt" Nullable="false" Precision="0" />
+    <NavigationProperty Name="Shop" Relationship="ZsfModel.FK_UserEditShopLog_Shop" FromRole="ShopModifyLog" ToRole="Shop" />
+    <NavigationProperty Name="UserInfo" Relationship="ZsfModel.FK_UserEditShopLog_User" FromRole="ShopModifyLog" ToRole="UserInfo" />
+  </EntityType>
+  <Association Name="FK_UserEditShopLog_Shop">
+    <End Type="ZsfModel.Shop" Role="Shop" Multiplicity="1" />
+    <End Type="ZsfModel.ShopModifyLog" Role="ShopModifyLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Shop">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ShopModifyLog">
+        <PropertyRef Name="ShopId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserEditShopLog_User">
+    <End Type="ZsfModel.UserInfo" Role="UserInfo" Multiplicity="1" />
+    <End Type="ZsfModel.ShopModifyLog" Role="ShopModifyLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ShopModifyLog">
+        <PropertyRef Name="ModifyBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="UserOrder">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Boolean" Name="Available" Nullable="false" />
+    <Property Type="Int32" Name="CreateBy" Nullable="false" />
+    <Property Type="DateTime" Name="CreateTime" Nullable="false" />
+    <NavigationProperty Name="UserInfo" Relationship="ZsfModel.FK_UserOrder_UserInfo1" FromRole="UserOrder" ToRole="UserInfo" />
+    <NavigationProperty Name="UserOrderDetail" Relationship="ZsfModel.FK_UserOrderDetail_UserOrder" FromRole="UserOrder" ToRole="UserOrderDetail" />
+  </EntityType>
+  <EntityType Name="UserOrderDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="OrderId" Nullable="false" />
+    <Property Type="Int32" Name="ShopId" Nullable="false" />
+    <Property Type="Int32" Name="DisheId" Nullable="false" />
+    <Property Type="Int32" Name="UserId" Nullable="false" />
+    <Property Type="Int16" Name="Price" Nullable="false" />
+    <Property Type="Int16" Name="OrderCount" Nullable="false" />
+    <Property Type="Int16" Name="UserGroup" Nullable="false" />
+    <Property Type="DateTime" Name="CreateDate" Nullable="false" />
+    <NavigationProperty Name="Shop" Relationship="ZsfModel.FK_UserOrder_Shop" FromRole="UserOrderDetail" ToRole="Shop" />
+    <NavigationProperty Name="ShopDishe" Relationship="ZsfModel.FK_UserOrder_ShopDishe" FromRole="UserOrderDetail" ToRole="ShopDishe" />
+    <NavigationProperty Name="UserInfo" Relationship="ZsfModel.FK_UserOrder_UserInfo" FromRole="UserOrderDetail" ToRole="UserInfo" />
+    <NavigationProperty Name="UserOrder" Relationship="ZsfModel.FK_UserOrderDetail_UserOrder" FromRole="UserOrderDetail" ToRole="UserOrder" />
+  </EntityType>
+  <Association Name="FK_UserOrder_Shop">
+    <End Type="ZsfModel.Shop" Role="Shop" Multiplicity="1" />
+    <End Type="ZsfModel.UserOrderDetail" Role="UserOrderDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Shop">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserOrderDetail">
+        <PropertyRef Name="ShopId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserOrder_ShopDishe">
+    <End Type="ZsfModel.ShopDishe" Role="ShopDishe" Multiplicity="1" />
+    <End Type="ZsfModel.UserOrderDetail" Role="UserOrderDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ShopDishe">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserOrderDetail">
+        <PropertyRef Name="DisheId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserOrder_UserInfo">
+    <End Type="ZsfModel.UserInfo" Role="UserInfo" Multiplicity="1" />
+    <End Type="ZsfModel.UserOrderDetail" Role="UserOrderDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserOrderDetail">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserOrder_UserInfo1">
+    <End Type="ZsfModel.UserInfo" Role="UserInfo" Multiplicity="1" />
+    <End Type="ZsfModel.UserOrder" Role="UserOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserInfo">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserOrder">
+        <PropertyRef Name="CreateBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserOrderDetail_UserOrder">
+    <End Type="ZsfModel.UserOrder" Role="UserOrder" Multiplicity="1" />
+    <End Type="ZsfModel.UserOrderDetail" Role="UserOrderDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserOrder">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserOrderDetail">
+        <PropertyRef Name="OrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
