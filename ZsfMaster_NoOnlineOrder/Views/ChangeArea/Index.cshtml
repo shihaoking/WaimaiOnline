@@ -1,0 +1,59 @@
+﻿@using ZsfData;
+@using ZsfProject.Models;
+@{
+    ViewBag.Title = "选择地点";
+    Layout = "~/Views/Shared/_NoHeaderLayout.cshtml";
+    BaseDataModel baseModel = new BaseDataModel();
+    int[] bList = { 54, 51, 37, 27, 60 };
+    var serviceAreaBList = baseModel.GetServiceAreas().Where(r => bList.Contains(r.Id)).Select(r => new { r.Id, r.Value }).OrderBy(r => r.Id);
+    var serviceAreaBSubList = baseModel.GetServiceAreas().Where(r => bList.Contains(r.ParentId)).Select(r => new { r.Id, r.Value, r.ParentId }).OrderBy(r => r.Id).ToList();
+}
+
+<div class="area_box">
+    <h3>选择最近的地点</h3>
+    <ul class="a_list">
+        <li class="a_list_item b">
+            <span class="title">商圈</span>
+            <ul class="a_d_list b" style="_height:114px;*height:114px">
+                @foreach(var item in serviceAreaBList)
+                {
+                   <li class="a_b_item" areaid="@item.Id">@item.Value</li>
+                }
+            </ul>
+            @foreach(int bId in bList)
+            {
+                <ul class="a_d_list o" bid="@bId">
+                    @foreach(var oItem in serviceAreaBSubList.Where(r=>r.ParentId == bId))
+                    {
+                        <li class="a_d_item" areaid="@oItem.Id">@oItem.Value</li>
+                    }
+                </ul>
+            }
+        </li>
+        <li class="a_list_item u">
+            <span class="title">大学</span>
+            <ul class="a_d_list" style="_height: 76px; *height: 76px">
+                <li class="a_d_item" areaid="6">宁波大学(本部)</li>
+                <li class="a_d_item" areaid="16">宁波大学科学技术学院</li>
+                <li class="a_d_item" areaid="26">浙江纺织服装职业技术学院</li>
+                <li class="a_d_item" areaid="24">浙江万里学院</li>
+                <li class="a_d_item" areaid="25">浙江医药高等专科学校</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<script type="text/javascript">
+    $('.a_d_list.b .a_b_item').click(function () {
+        $('.a_d_list.b .a_b_item').removeClass('hover');
+        $(this).addClass('hover');
+        $('.a_d_list.o').hide();
+        $('.a_d_list.o[bid=' + $(this).attr('areaid') + ']').show();
+    });
+
+    $('.a_d_item').click(function () {
+        $.post('/User/ChangeUserServiceArea', { 'areaId': $(this).attr('areaid') }, function () {
+            window.open('/', '_self');
+        });
+    });
+</script>
+

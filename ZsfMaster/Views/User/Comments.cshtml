@@ -1,0 +1,29 @@
+﻿@model IQueryable<ZsfData.V_UserShopComment>
+@{
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+    ViewBag.Title = "我的评论";
+}
+<div class="cmt_box">
+<h4>@ViewBag.Title<span class="u_c">@(ViewBag.CommentsCount != 0 ? "(共 " + ViewBag.CommentsCount + " 条)" : null)</span></h4>
+    <div class="cmt_cnt">
+        <ul class="cmt_list">
+            @foreach (var item in Model)
+            {
+                <li>
+                    <div class="m_title">@Html.RouteLink(item.ShopName, "ShopDetail", new { id = item.ShopId }, new { @target = "_blank" })</div>
+                    <div class="m_cnt">
+                        <div class="h">
+                            <div class="stars stars@(item.Stars)"></div><div class="t">@(item.CreateTime.Year == DateTime.Now.Year ? item.CreateTime.ToString("M月d日 HH:mm") : item.CreateTime.ToString("yyyy年M月d日 HH:mm"))</div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="bd">
+                            @Html.Raw(item.Comment)
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </li>
+            }
+        </ul>
+    </div>
+    @RenderPage("~/Views/Shared/_NoParamsPageIndex.cshtml")
+</div>

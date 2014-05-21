@@ -1,0 +1,20 @@
+﻿.content{ margin-top:80px}
+.fieldset { padding:0;margin:0 auto 20px;width:800px}
+.fieldset h4{ margin-top:0; margin-bottom:0; height:35px; line-height:35px; background-color:#26221F; color:White; padding-left:10px; cursor:pointer; border-left:7px solid #CF2329}
+.fieldset table { background-color:white;}
+.fieldset table td{ padding:7px 0 7px 10px;}
+.fieldset table td:first-child{ text-align:right}
+.fieldset table td.in_val{ width:320px; }
+.fieldset table td .chzn-container-multi{background-color:#F0EDE1}
+.fieldset table td .chzn-container-multi .chzn-choices{ background-color:#F0EDE1!important; background-image:none!important}
+.fieldset table td.tip{ width:350px; padding-left:10px;color:#8D8D8D; font-size:13px}
+.fieldset table td.in_val .chzn-single{background-color:#F0EDE1}
+.fieldset table td.in_val input.text-box{ width:300px; height:25px; border: 1px solid #AAA; background-color:#F0EDE1; width:98%; padding-left:5px;}
+.fieldset table td.in_val textarea{ width:98%;border: 1px solid #AAA;background-color:#f0ede1; padding-top:3px ; padding-left:5px; height:100px}
+.fieldset table td.in_val.saly input{ width:33%}
+.fieldset table td.in_val.saly span{ font-size:14px}
+.fieldset table td.in_val label{ font-size:12px; margin-right:5px}
+.fieldset table td.in_val .chzn-container{ margin:5px 0}
+.sb_form{ text-align:center; padding:15px 0; background-color:white} 
+.sb_form input{ background-color:#CF2329; color:White; border:none; height:35px; width:80px; border-radius:5px; font-size:16px; cursor:pointer}
+.sb_form input:hover{ background-color:#E93E44}

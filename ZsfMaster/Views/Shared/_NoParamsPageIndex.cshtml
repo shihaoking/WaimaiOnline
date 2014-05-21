@@ -1,0 +1,36 @@
+﻿<div class="page_list">
+    <ul class="pg_ul">
+        @if(ViewBag.PageNowIndex > 1)
+            {
+                if(ViewBag.PagesCount > 9)
+                {
+            <li class="f">@Html.ActionLink("首页", null, new { p = 1 })</li>
+                }
+            <li class="p">@Html.ActionLink("上一页", null, new { p = ViewBag.PageNowIndex - 1 })</li>
+            }
+        @if(ViewBag.PagesCount != 1)
+            {
+                for(int i = ViewBag.PageStartIndex; i <= ViewBag.PageEndIndex; i++)
+                {
+            <li class="i">
+                @if(i == ViewBag.PageNowIndex)
+                    {
+                    <strong>@i</strong>
+                    }
+                    else
+                    {
+                    @Html.ActionLink(i.ToString(), null, new { p = i });
+                    }
+            </li>
+                }
+            }
+        @if(ViewBag.PagesCount > ViewBag.PageNowIndex)
+            {
+            <li class="n">@Html.ActionLink("下一页", null, new { p = ViewBag.PageNowIndex + 1 })</li>
+                if(ViewBag.PagesCount > 9)
+                {
+            <li class="l">@Html.ActionLink("末页", null, new { p = ViewBag.PagesCount })</li>
+                }
+            }
+    </ul>
+</div>

@@ -1,0 +1,114 @@
+﻿@model ZsfProject.Models.ShopDetailModel
+@{
+    var shopInfo = Model.ShopInfo;
+    var shopDishes = Model.ShopDishesList.ToList();
+    var shopDisheCategories = shopDishes.GroupBy(r => new { Id = r.CategoryId, Value = r.CategoryValue }).Select(r => new { r.Key.Id, r.Key.Value });
+    var shopComments = Model.ShopComments;
+    ViewBag.Title = shopInfo.Name + "外卖电话和菜单 ";
+    ViewBag.Description = shopInfo.Name + "最新的外卖菜单、订餐电话、送餐详情。";
+    ViewBag.KeyWords = shopInfo.Name + "外卖电话 " + shopInfo.Name + "外卖菜单 ";
+}
+<div class="shop_box">
+        <div class="sh_info">
+            <div class="info_box">
+            <div class="sh_name">
+                <h3 class="title">@shopInfo.Name</h3>
+                <div class="sh_stars">
+                    <div class="stars"><div class="stars_on" style="width:@(shopInfo.Stars * 100 / 5)%"></div></div>
+                </div>
+            </div>
+            <div class="sh_phone">
+                <span class="p">@shopInfo.PhoneNumber</span>
+            </div>
+            <div class="sh_detail">
+                <table border="0" cellspacing="0" cellpadding="0">
+                    <tbody>
+                        <tr>
+                            <td>商家地址：</td>
+                            <td>@shopInfo.Address</td>
+                        </tr>
+                        <tr>
+                            <td>营业时间：</td>
+                            <td>@shopInfo.OfficeTimeBegin.ToString(@"h\:mm")~@shopInfo.OfficeTimeEnd.ToString(@"h\:mm")</td>
+                        </tr>
+                        <tr>
+                            <td>起送价格：</td>
+                            <td>@(shopInfo.UpSendPrice)元</td>
+                        </tr>
+                        <tr>
+                            <td>人均消费：</td>
+                            <td>@(shopInfo.AveragePayMoney)元</td>
+                        </tr>
+                        <tr>
+                            <td>送餐速度：</td>
+                            <td>平均@(shopInfo.DeliveryTime)分钟</td>
+                        </tr>
+                        @if(!String.IsNullOrWhiteSpace(shopInfo.Remark))
+                        {
+                        <tr>
+                            <td>备注：</td>
+                            <td>@shopInfo.Remark</td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            </div>
+        </div>
+        <div class="show_lb" id="show_lb">
+            <a href="javascript:void(0)" class="menu now" target="sh_dishes">菜单</a>
+        </div>
+        <div class="sh_m">
+            <div class="sh_dishes">
+                <ul class="cat">
+                    <li><a class="dishe_cat now" href="javascript:void(0);" cid="-1">全部</a></li>
+                    @foreach (var category in shopDisheCategories)
+                    {
+                        <li><a class="dishe_cat" href="javascript:void(0);" cid="@category.Id">@category.Value</a></li>
+                    }
+                    <div class="clear"></div>
+                </ul>
+                <div class="dtl">
+                    @foreach (var cat in shopDisheCategories)
+                    {
+                        <ul class="dishe_ls" cid="@cat.Id">
+                            <li>
+                                <h4>@cat.Value</h4>
+                                <ul class="dishe_dt">
+                                    @foreach (var dishe in shopDishes.Where(r => r.CategoryId == cat.Id))
+                                    {
+                                        <li id="dishe_@(dishe.Id)" price="@dishe.Price" name="@dishe.Name" class="dishe">
+                                        <span class="d_name">@dishe.Name</span><span class="d_price">@(dishe.Price)元</span>
+                                        <div class="clear"></div>
+                                        </li>
+                                    }
+                                    <div class="clear"></div>
+                                </ul>
+                            </li>
+                        </ul>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.dishe_cat').click(function () {
+            if ($(this).hasClass('now'))
+                return false;
+
+            $('.dishe_cat.now').removeClass('now');
+            $(this).addClass('now');
+
+            var cid = $(this).attr('cid');
+
+            if (cid == -1)
+                $('ul.dishe_ls').show();
+            else {
+                $('ul.dishe_ls[cid=' + cid + ']').show();
+                $('ul.dishe_ls[cid!=' + cid + ']').hide();
+            }
+            return false;
+        });
+    });
+</script>

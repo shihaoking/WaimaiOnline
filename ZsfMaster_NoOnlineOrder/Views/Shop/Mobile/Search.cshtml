@@ -1,0 +1,107 @@
+﻿@model ZsfProject.Models.ShopsListModel
+@{
+    string areaId = "", areaName = "", searchName = "";
+    int shopsCount = ViewBag.ShopsCount;
+    int pageNowIndex = ViewBag.PageNowIndex;
+    int pageSize = ViewBag.PageSize;
+    int pagesCount = ViewBag.PagesCount;
+    int pageStartIndex = ViewBag.PageStartIndex;
+    int pageEndIndex = ViewBag.PageEndIndex;
+    
+    ZsfProject.Models.UserModel.GetUserDefaultAreaSetting(ref areaId, ref areaName);
+    searchName = ViewBag.SearchName;
+    string title = "名为" + searchName + "的外卖店_";
+    string description = "宅食府为您找到了" + shopsCount + "家";
+
+    ViewBag.KeyWords = searchName + "外卖 " + searchName + "外卖电话 " + searchName + "外卖信息 ";
+    if(!String.IsNullOrWhiteSpace(areaName))
+    {
+        title = areaName + "周边" + title;
+        description += areaName + "周边";
+    }
+
+    ViewBag.Title = title;
+    ViewBag.Description = description + "名为" + searchName + "的外卖店";
+
+}
+<link href="@Url.Content("~/Contents/Css/Mobile/shop_list.css")" rel="stylesheet" type="text/css" />
+<div  class="shop_list_box">
+<div class="ctg_list">
+    <ul>
+        <li><a href="/" class="@(ViewBag.CategoryId == 0 ? "now" : "")">全部</a><span>(@ViewBag.TotalShopsCount)</span></li>
+        @foreach (var item in Model.ShopCategoriesList)
+        {
+            <li>@Html.RouteLink(item.CategoryValue, "ShopList", new { id = item.CategoryId}, new { @class = (ViewBag.CategoryId == item.CategoryId ? "now" : "") })
+                <span>(@item.CoverShopsCount)</span></li>
+        }
+        <div class="clear"></div>
+    </ul>
+</div>
+<div class="list_box">
+    <div class="order_by">
+        排序：@Html.RouteLink("默认", "ShopSearchPage", new { id = ViewBag.CategoryId, p = pageNowIndex }, new { @class = (ViewBag.SortBy == "default" ? "now" : "") })
+        @Html.ActionLink("评分最高", null, new { id = ViewBag.CategoryId, p = pageNowIndex, s = "grade" }, new { @class = (ViewBag.SortBy == "grade" ? "now" : "") })
+        @Html.ActionLink("速度最快", null, new { id = ViewBag.CategoryId, p = pageNowIndex, s = "speed" }, new { @class = (ViewBag.SortBy == "speed" ? "now" : "") })
+        @Html.ActionLink("人均消费最低", null, new { id = ViewBag.CategoryId, p = pageNowIndex, s = "paymoney" }, new { @class = (ViewBag.SortBy == "paymoney" ? "now" : "") })
+        @Html.ActionLink("起送价最低", null, new { id = ViewBag.CategoryId, p = pageNowIndex, s = "price" }, new { @class = (ViewBag.SortBy == "price" ? "now" : "") })
+    </div>
+    <div class="shop_ls">
+        @{int shopIndex = 1;}
+        @foreach (var item in Model.ShopsList)
+        {
+            <a class="@(shopIndex % 4 == 0 ? "shop last" : "shop")" href="/shop/detail/@item.Id">
+                <span class="name">@item.Name</span>
+                <span class="star">
+                    @{string starStr = "";}
+                    @for (int i = item.Stars; i > 0; i--)
+                    {
+                        starStr += "★";
+                    }
+                    @starStr
+                </span>
+                <span class="up_price">@(item.UpSendPrice)元起送，人均消费@(item.AveragePayMoney)元</span>
+                <span class="sped">大约@(item.DeliveryTime)内送到</span>
+            </a>
+                    shopIndex++;
+        }
+    </div>
+    <div class="page_list">
+        <ul class="pg_ul">
+            @if (pageNowIndex > 1)
+            {
+                if (pagesCount > 9)
+                {
+                <li class="f">@Html.ActionLink("首页", null, new { id = ViewBag.CategoryId, p = 1, s = ViewBag.SortBy })</li>
+                }
+                <li class="p">@Html.ActionLink("<<", null, new { id = ViewBag.CategoryId, p = pageNowIndex - 1, s = ViewBag.SortBy })</li>
+            }
+            @if (pagesCount != 1)
+            {
+                for (int i = pageStartIndex; i <= pageEndIndex; i++)
+                {
+                <li class="i">
+                    @if (i == pageNowIndex)
+                    {
+                        <strong>@i</strong>
+                    }
+                    else
+                    {
+                        @Html.ActionLink(i.ToString(), null, new { id = ViewBag.CategoryId, p = i, s = ViewBag.SortBy });
+                    }
+                </li>
+                }
+            }
+            @if (pagesCount > pageNowIndex)
+            {
+                <li class="n">@Html.ActionLink(">>", null, new { id = ViewBag.CategoryId, p = pageNowIndex + 1, s = ViewBag.SortBy })</li>
+                if (pagesCount > 9)
+                {
+                <li class="l">@Html.ActionLink("末页", null, new { id = ViewBag.CategoryId, p = pagesCount, s = ViewBag.SortBy })</li>
+                }
+            }
+        </ul>
+    </div>
+</div>
+<div class="clear">
+</div>
+</div>

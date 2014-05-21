@@ -1,0 +1,249 @@
+﻿@model ZsfProject.Models.ShopsListModel
+@{
+    string areaName = ViewBag.ServiceAreaName;
+    string title = "";
+    string description = "宅食府为您找到了" + ViewBag.TotalShopsCount + "家";
+    if(!String.IsNullOrWhiteSpace(areaName))
+    {
+        title = areaName + "周边外卖店_";
+        description += areaName + "周边";
+        ViewBag.KeyWords = areaName + "周边外卖 " + areaName + "周边外卖电话 " + areaName + "周边外卖信息";
+    }
+    if(!String.IsNullOrWhiteSpace(ViewBag.ShopSearchName))
+    {
+        title = "名为" + ViewBag.ShopSearchName + "的外卖店_";
+        description += "名为" + ViewBag.ShopSearchName + "的";
+    }
+    ViewBag.Title = title;
+    ViewBag.Description = description + "外卖店。";
+
+    int pageNowIndex = ViewBag.PageNowIndex;
+    int pageSize = ViewBag.PageSize;
+    int pagesCount = ViewBag.PagesCount;
+    int pageStartIndex = ViewBag.PageStartIndex;
+    int pageEndIndex = ViewBag.PageEndIndex;
+    string shopImagePath = System.Configuration.ConfigurationManager.AppSettings["ShopImagePath"];
+    
+    List<int> favoriteShopsId = Model.FavoriteShopList.Select(r => r.ShopId).ToList();
+    int userLevel = int.Parse(ZsfProject.Models.ZsfAuthorizeAttribute.GetRole(User.Identity.Name));
+    RouteValueDictionary routeValues = ViewContext.RouteData.Values;
+    string urlBaseAction = "";
+    urlBaseAction += (routeValues["shopName"] != null ? "search/" + ViewBag.ShopSearchName : "list");
+}
+<div class="shop_list_box">
+@if(User.Identity.IsAuthenticated)
+{
+    var statusStr = ViewBag.FavoriteListShow == true ? "点击可收起" : "点击可展开";
+    <h3 class="list_box_title fav_tl @(ViewBag.FavoriteListShow == false ? "open" : "close")" toggle="@(ViewBag.FavoriteListShow == false ? 0 : 1)">我的收藏 <span style="font-size:12px">(@statusStr)</span></h3>
+    <div class="list_box fav_shop_lsit" @(ViewBag.FavoriteListShow == false ? "style=display:none" : null)>
+        <ul id="carousel" class="elastislide-list">
+            @foreach(var item in Model.FavoriteShopList)
+            {
+                bool shopNameOutLeng = item.ShopName.Length < 9 ? false : true;
+                <li class="elastislide-item"><ul class="shop" shopid="@item.ShopId">
+                    <li class="sh_pic"><a href="/shop/detail/@item.ShopId" target="_blank"><img src="@Url.Content(shopImagePath + item.Logo)" alt="@item.ShopName" /></a> </li>
+                    <li class="vl name"><a href="/shop/detail/@item.ShopId" target="_blank" @(shopNameOutLeng ? "title=" + item.ShopName + " class=sh_name" : null)>@(shopNameOutLeng ? item.ShopName.Substring(0, 8) + "..." : item.ShopName)</a></li>
+                    <li class="vl ads"><span>@(item.UpSendPrice)元</span>起送，约<span>@(item.DeliveryTime)分钟</span>送到</li>
+                    @if(userLevel == 9)
+                    {
+                        <li class="vl"><strong>@item.Visits</strong>人访问<span class="sh_action_icon hide_icon" onclick="ToggleShopHidden(this,@item.ShopId)"></span><a href="/shop/edit/@item.ShopId" class="sh_action_icon edit_icon" title="编辑店铺" target="_blank"></a><div
+                            class="clear">
+                        </div>
+                        </li>
+                    }
+                    <li class="vl star">
+                        <div class="stars small"><div class="stars_on" style="width:@(item.Stars * 100 / 5)%"></div></div><div class="fav fav_on" shopid="@item.ShopId"><span>已收藏</span></div>
+                        <div class="clear"></div>
+                    </li>
+                </ul></li>
+            }
+        </ul>
+
+    </div>
+    <h3 class="list_box_title nm_tl">所有店铺</h3>
+}
+    <div class="list_box shop_list">
+        <div class="menu ctg_list">
+            <strong style="font-size:15px;">店铺类别：</strong><a @(ViewBag.CategoryId == 0 ? "class=now" : null) href="/@(routeValues["shopName"] != null ? "shop/" + urlBaseAction : null)">全部 <span>(@ViewBag.TotalShopsCount)</span></a>
+            @foreach(var item in Model.ShopCategoriesList)
+            {
+                <a href="/shop/@urlBaseAction/@item.CategoryId" @(ViewBag.CategoryId == item.CategoryId ? "class=now" : null)>@item.CategoryValue <span>(@item.CoverShopsCount)</span></a>
+            }
+        </div>
+        <div class="menu order_by">
+            <strong>排序方式：</strong>@Html.RouteLink("默认", "ShopListPage", new { id = ViewBag.CategoryId, p = pageNowIndex }, new { @class = (ViewBag.SortBy == "default" ? "now" : "") })
+            @Html.ActionLink("评分最高", null, new { id = ViewBag.CategoryId, p = pageNowIndex, s = "grade" }, new { @class = (ViewBag.SortBy == "grade" ? "now" : "") })
+            @Html.ActionLink("速度最快", null, new { id = ViewBag.CategoryId, p = pageNowIndex, s = "speed" }, new { @class = (ViewBag.SortBy == "speed" ? "now" : "") })
+            @Html.ActionLink("起送价最低", null, new { id = ViewBag.CategoryId, p = pageNowIndex, s = "price" }, new { @class = (ViewBag.SortBy == "price" ? "now" : "") })
+        </div>
+        <div class="list_cnt">
+        @{int shopIndex = 1;}
+        @foreach(var item in Model.ShopsList)
+        {
+            bool shopNameOutLeng = item.Name.Length < 9 ? false : true;
+            <ul class="@(shopIndex % 5 == 0 ? "shop last" : "shop")" shopid="@item.Id">
+                <li class="sh_pic"><a href="/shop/detail/@item.Id" target="_blank"><img src="@Url.Content(shopImagePath + item.Logo)" alt="@item.Name" /></a>
+                    @if(item.JobsCount != 0)
+                    {
+                        <a class="jobct" href="/job/list/@item.Id" target="_blank">招聘<br /><span style="font-weight:bold">@item.JobsCount</span></a>
+                    }
+                    @if(userLevel == 9 || (ViewBag.UserId == item.CreateBy && userLevel == 4))
+                    {
+                        <span class="sh_action_icon hide_icon@(item.Hidden ? " hidden" : null)" onclick="ToggleShopHidden(this,@item.Id)" title="@(item.Hidden ? "显示" : "隐藏")"></span>
+                        <a href="/shop/edit/@item.Id" class="sh_action_icon edit_icon" title="编辑店铺" target="_blank"></a><div class="clear"></div>
+                    }
+                </li>
+                <li class="vl name"><a href="/shop/detail/@item.Id" target="_blank" @(shopNameOutLeng ? "title=" + item.Name + " class=sh_name" : null)>@(shopNameOutLeng ? item.Name.Substring(0, 8) + "..." : item.Name)</a></li>
+                <li class="vl ads"><span>@(item.UpSendPrice)元</span>起送，约<span>@(item.DeliveryTime)分钟</span>送到</li>
+                @if(userLevel == 9)
+                {
+                    <li class="vl"><strong>@item.Visits</strong>人访问</li>
+                }
+                <li class="vl star">
+                    <div class="stars small"><div class="stars_on" style="width:@(item.Stars * 100 / 5)%"></div></div>
+                    @if(favoriteShopsId.Contains(item.Id))
+                    {
+                        <div class="fav fav_on" shopid="@item.Id"><span>已收藏</span></div>
+                    }
+                    else
+                    {
+                        <div class="fav fav_off" shopid="@item.Id"><span>收藏</span></div>
+                    }
+                    <div class="clear"></div>
+                </li>
+            </ul>
+                    shopIndex++;
+        }
+        <div class="clear"></div>
+    </div>
+    <div class="page_list">
+    <ul class="pg_ul">
+        @if(pageNowIndex > 1)
+        {
+            if(pagesCount > 9)
+            {
+            <li class="f">@Html.ActionLink("首页", null, new { id = ViewBag.CategoryId, p = 1, s = ViewBag.SortBy })</li>
+            }
+            <li class="p">@Html.ActionLink("上一页", null, new { id = ViewBag.CategoryId, p = pageNowIndex - 1, s = ViewBag.SortBy })</li>
+        }
+        @if(pagesCount != 1)
+        {
+            for(int i = pageStartIndex; i <= pageEndIndex; i++)
+            {
+            <li class="i">
+                @if(i == pageNowIndex)
+                {
+                    <strong>@i</strong>
+                }
+                else
+                {
+                    @Html.ActionLink(i.ToString(), null, new { id = ViewBag.CategoryId, p = i, s = ViewBag.SortBy });
+                }
+            </li>
+            }
+        }
+        @if(pagesCount > pageNowIndex)
+        {
+            <li class="n">@Html.ActionLink("下一页", null, new { id = ViewBag.CategoryId, p = pageNowIndex + 1, s = ViewBag.SortBy })</li>
+            if(pagesCount > 9)
+            {
+            <li class="l">@Html.ActionLink("末页", null, new { id = ViewBag.CategoryId, p = pagesCount, s = ViewBag.SortBy })</li>
+            }
+        }
+    </ul>
+    </div>
+</div>
+</div>
+<script type="text/javascript" src="@Url.Content("~/Scripts/modernizr.custom.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/jquery.elastislide.js")"></script>
+<script type="text/javascript">
+    var favoriteShopList;
+    $(document).ready(function () {
+        favoriteShopList = $('#carousel').elastislide();
+        $('.list_box_title.fav_tl').click(function () {
+            $('.fav_shop_lsit').toggle(300);
+            var toggle = $(this).attr('toggle');
+            var statusStr = toggle == 0 ? "点击可收起" : "点击可展开";
+            $(this).attr({ 'toggle': toggle == 1 ? 0 : 1 });
+            if (toggle == 1)
+                $(this).removeClass('close').addClass('open');
+            else
+                $(this).removeClass('open').addClass('close');
+
+            $(this).find('span').text("(" + statusStr + ")");
+            AddCookie("favShopsToggle=" + $(this).attr('toggle'), 365);
+        });
+
+        $('ul.shop').hover(function () {
+            $(this).find('.fav_off').show();
+        }, function () {
+            $(this).find('.fav_off').hide();
+        });
+    });
+
+    $(function () {
+        $('.sh_name').tipTip({ delay: 0 });
+        $('.sh_action_icon').tipTip({ delay: 0 });
+    });
+
+    $('.fav_on').bind('click', function () { CancelFavoriteShop(this) })
+    .bind('mouseenter', function () { $(this).text('取消收藏'); })
+    .bind('mouseleave', function () { $(this).text('已收藏'); });
+
+    $('.fav_off').bind('click', function () { AddFavoriteShop(this) });
+
+    function AddFavoriteShop(e) {
+        $.post('/user/AddFavoriteShop', { 'shopId': $(e).attr('shopid') }, function (result) {
+            if (result.type == 1) {
+                $(e).removeClass('fav_off').addClass('fav_on').text('已收藏').unbind()
+                .bind('mouseenter', function () { $(this).text('取消收藏'); })
+                .bind('mouseleave', function () { $(this).text('已收藏'); })
+                .bind('click', function () { CancelFavoriteShop(this) });
+
+                var shopForm = $(e).parents('ul.shop').clone().css('margin-right', '15px')
+                .hover(function () {
+                    $(this).find('.fav_off').show();
+                }, function () {
+                    $(this).find('.fav_off').hide();
+                });
+
+                shopForm.find('.fav').unbind()
+                .bind('mouseenter', function () { $(this).text('取消收藏'); })
+                .bind('mouseleave', function () { $(this).text('已收藏'); })
+                .bind('click', function () { CancelFavoriteShop(this) });
+
+                $('.fav_shop_lsit .elastislide-list').append('<li class="elastislide-item"></li>');
+                $('.fav_shop_lsit .elastislide-list .elastislide-item:last').append(shopForm);
+                if ($('.elastislide-wrapper').length == 0)
+                    favoriteShopList = $('#carousel').elastislide();
+                else {
+                    favoriteShopList.add();
+                    favoriteShopList.slideEnd();
+                }
+            }
+            else if (result.type == 0)
+                alert("添加失败，请稍后重试！");
+            else if (result.type == 2) {
+                ShowUserLoginDialog();
+            }
+        });
+    }
+
+    function CancelFavoriteShop(e) {
+        var shopId = $(e).attr('shopid');
+        $.post('/user/CancelFavoriteShop', { 'shopId': shopId }, function (result) {
+            if (result.type == 1) {
+                $(e).removeClass('fav_on').addClass('fav_off').text('收藏').unbind()
+                .bind('click', function () { AddFavoriteShop(this) });
+
+                $('.fav_shop_lsit .shop[shopid=' + shopId + ']').parent().remove();
+
+                $('.shop_list .shop[shopid=' + shopId + ']').find('.fav')
+                .removeClass('fav_on').addClass('fav_off').text('收藏').unbind()
+                .bind('click', function () { AddFavoriteShop(this) });
+
+                favoriteShopList.add();
+            }
+        });
+    }
+</script>

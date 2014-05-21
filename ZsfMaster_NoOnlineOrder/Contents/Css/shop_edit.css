@@ -1,0 +1,48 @@
+﻿.fieldset { padding:0; margin-bottom:20px}
+.fieldset h4{ margin-top:0; margin-bottom:0; height:35px; line-height:35px; background-color:#26221F; color:White; padding-left:10px; cursor:pointer; border-left:7px solid #CF2329}
+.fieldset table { background-color:white;}
+.fieldset table td{ padding:7px 0 7px 10px;}
+.fieldset table td:first-child{ text-align:right}
+.fieldset table td.in_val{ width:320px; }
+.fieldset table td .chzn-container-multi{background-color:#F0EDE1}
+.fieldset table td .chzn-container-multi .chzn-choices{ background-color:#F0EDE1!important; background-image:none!important}
+.fieldset table td.tip{ width:520px; padding-left:10px;color:#8D8D8D; font-size:13px}
+.fieldset table td.in_val .chzn-single{background-color:#F0EDE1}
+.fieldset table td.in_val input.text-box{ width:300px; height:25px; border: 1px solid #AAA; background-color:#F0EDE1; width:98%; padding-left:5px;}
+.fieldset table td.in_val textarea{ width:98%;border: 1px solid #AAA;background-color:#f0ede1; padding-top:3px ; padding-left:5px}
+.fieldset table.dishe td.in_val input[type=text]{height:25px; border: 1px solid #AAA; background-color:#F0EDE1; padding-left:5px;}
+.fieldset table.dishe td.in_val .disheCategoryName{ width:87%}
+.fieldset table.dishe .chzn-container{ margin-top:10px}
+td.dishe_editor label{ font-size:13px}
+td.dishe_editor input[type=text]{ width:195px; margin-left:10px; margin-bottom:10px}
+.fieldset table.dishe td.in_val  textarea{ width:265px; max-width:265px; vertical-align:middle; margin-left:10px}
+.dishe_dt_editor{ width:840px}
+.sb_form{ text-align:center} 
+.sb_form input{ background-color:#CF2329; color:White; border:none; height:35px; width:80px; border-radius:5px; font-size:16px; cursor:pointer}
+.sb_form input:hover{ background-color:#E93E44}
+.add_btn{ background-image:url(/Contents/Images/add.png); background-color:#1BA1E2}
+.edit_btn{ background-image:url(/Contents/Images/edit.png); background-color:#99CC00 }
+.undo_btn{background-image:url(/Contents/Images/undo.png);background-color:#999}
+.act_btn{background-repeat: no-repeat; border-radius:2px; background-position: center center; width:23px; height:23px; padding:0; margin-left:10px; vertical-align:text-top; cursor:pointer; display: inline-block;}
+.cat_item_list{ min-height:30px; font-size:0}
+.cat_item_list li{ list-style:none; line-height:25px; height:25px; margin-bottom:5px; margin-right:10px; display:inline-block; background-color:#EAF0F7; padding:0 5px; cursor: default;color:#1BA1E2}
+.cat_item_list li:hover{ background-color:#1BA1E2; color:white}
+.cat_item_list li.hover{background-color:#1BA1E2; color:white}
+.cat_item_list li span{ display:inline-block; height:100%; float:left;font-size:12px;}
+.cat_item_list li span.d{ width:16px; background:url(/Contents/Images/delete_red.png) no-repeat center center; margin-left:5px; cursor:pointer}
+
+.shadow{ background-color:black;opacity:0.5;filter:alpha(opacity=50); zoom:1; z-index:2; display:none; display:block; top:0; left:0; position:absolute}
+.file_upload{border-radius: 5px;color: white;border: none;background-color: #1BA1E2;width: 70px;height: 30px; margin-left:10px}
+.img_upload_box{ position:absolute; display:none; background-color:White;top:100px;  border:3px solid #d5d5d5; z-index:90; padding:10px 20px 20px;}
+.img_upload_box h3{ text-align:center}
+.img_upload_box .new_img_box{ float:left;  border:2px solid #adadad;}
+.img_upload_box .new_img_box .new_img_div{width:200px; height:150px; position:relative; overflow:hidden}
+.img_upload_box .new_img_box .new_img_div .new_img{ height:auto}
+.img_upload_box .new_img_box img{ position:absolute;top:0; left:0}
+.img_upload_box .org_img_box {  border:2px solid #adadad; float:left; margin-left:20px}
+.img_upload_box .org_img_box .org_img_div{ height:300px; width:400px;border-bottom:1px solid #adadad}
+.uploadify-queue{ min-width:250px; background-color:#EAF5FD!important; border:2px solid #1BA1E2; display:none;}
+.img_upload_box .btn{ text-align:center; padding-top:25px;}
+.img_upload_box .btn input{height:30px; width:80px;  color:White; font-size:14px; font-weight:bold; border:none; border-radius:3px; cursor: pointer}
+.img_upload_box .btn #cancel{ background-color:#C0262C}
+.img_upload_box .btn #saveImg{background-color:#45AB34; margin-left:50px}

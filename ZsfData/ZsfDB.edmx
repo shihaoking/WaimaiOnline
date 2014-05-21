@@ -1,0 +1,3055 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ZsfModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="ZsfModelStoreContainer">
+          <EntitySet Name="Location" EntityType="ZsfModel.Store.Location" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ServiceArea" EntityType="ZsfModel.Store.ServiceArea" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Shop" EntityType="ZsfModel.Store.Shop" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ShopCategory" EntityType="ZsfModel.Store.ShopCategory" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ShopComment" EntityType="ZsfModel.Store.ShopComment" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ShopDishe" EntityType="ZsfModel.Store.ShopDishe" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ShopDisheCategory" EntityType="ZsfModel.Store.ShopDisheCategory" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ShopJobAd" EntityType="ZsfModel.Store.ShopJobAd" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ShopJobAdModifyLog" EntityType="ZsfModel.Store.ShopJobAdModifyLog" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ShopModifyLog" EntityType="ZsfModel.Store.ShopModifyLog" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ShopRankingAttribute" EntityType="ZsfModel.Store.ShopRankingAttribute" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ShopServiceArea" EntityType="ZsfModel.Store.ShopServiceArea" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserDefaultArea" EntityType="ZsfModel.Store.UserDefaultArea" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserFavoriteShop" EntityType="ZsfModel.Store.UserFavoriteShop" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserGradeCategory" EntityType="ZsfModel.Store.UserGradeCategory" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserInfo" EntityType="ZsfModel.Store.UserInfo" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserLoginLog" EntityType="ZsfModel.Store.UserLoginLog" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserMessage" EntityType="ZsfModel.Store.UserMessage" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserOrder" EntityType="ZsfModel.Store.UserOrder" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserOrderDetail" EntityType="ZsfModel.Store.UserOrderDetail" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserPoint" EntityType="ZsfModel.Store.UserPoint" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="V_ShopComment" EntityType="ZsfModel.Store.V_ShopComment" store:Type="Views" store:Schema="dbo" store:Name="V_ShopComment">
+            <DefiningQuery>SELECT 
+      [V_ShopComment].[Id] AS [Id], 
+      [V_ShopComment].[ShopId] AS [ShopId], 
+      [V_ShopComment].[UserId] AS [UserId], 
+      [V_ShopComment].[Comment] AS [Comment], 
+      [V_ShopComment].[Stars] AS [Stars], 
+      [V_ShopComment].[CreateTime] AS [CreateTime], 
+      [V_ShopComment].[UserName] AS [UserName], 
+      [V_ShopComment].[UserPhoto] AS [UserPhoto], 
+      [V_ShopComment].[UserGrade] AS [UserGrade], 
+      [V_ShopComment].[DeliveryTime] AS [DeliveryTime], 
+      [V_ShopComment].[PayMoney] AS [PayMoney]
+      FROM [dbo].[V_ShopComment] AS [V_ShopComment]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_ShopDetail" EntityType="ZsfModel.Store.V_ShopDetail" store:Type="Views" store:Schema="dbo" store:Name="V_ShopDetail">
+            <DefiningQuery>SELECT 
+      [V_ShopDetail].[Stars] AS [Stars], 
+      [V_ShopDetail].[AveragePayMoney] AS [AveragePayMoney], 
+      [V_ShopDetail].[DeliveryTime] AS [DeliveryTime], 
+      [V_ShopDetail].[Id] AS [Id], 
+      [V_ShopDetail].[Name] AS [Name], 
+      [V_ShopDetail].[Address] AS [Address], 
+      [V_ShopDetail].[Logo] AS [Logo], 
+      [V_ShopDetail].[PhoneNumber] AS [PhoneNumber], 
+      [V_ShopDetail].[OfficeTimeBegin] AS [OfficeTimeBegin], 
+      [V_ShopDetail].[OfficeTimeEnd] AS [OfficeTimeEnd], 
+      [V_ShopDetail].[Remark] AS [Remark], 
+      [V_ShopDetail].[UpSendPrice] AS [UpSendPrice], 
+      [V_ShopDetail].[Longitude] AS [Longitude], 
+      [V_ShopDetail].[Latitude] AS [Latitude], 
+      [V_ShopDetail].[Hidden] AS [Hidden], 
+      [V_ShopDetail].[CreateBy] AS [CreateBy]
+      FROM [dbo].[V_ShopDetail] AS [V_ShopDetail]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_ShopDisheWithCategory" EntityType="ZsfModel.Store.V_ShopDisheWithCategory" store:Type="Views" store:Schema="dbo" store:Name="V_ShopDisheWithCategory">
+            <DefiningQuery>SELECT 
+      [V_ShopDisheWithCategory].[Id] AS [Id], 
+      [V_ShopDisheWithCategory].[ShopId] AS [ShopId], 
+      [V_ShopDisheWithCategory].[Name] AS [Name], 
+      [V_ShopDisheWithCategory].[Price] AS [Price], 
+      [V_ShopDisheWithCategory].[CategoryId] AS [CategoryId], 
+      [V_ShopDisheWithCategory].[CategoryValue] AS [CategoryValue], 
+      [V_ShopDisheWithCategory].[Remark] AS [Remark], 
+      [V_ShopDisheWithCategory].[Gift] AS [Gift], 
+      [V_ShopDisheWithCategory].[DisheCategoryOrder] AS [DisheCategoryOrder], 
+      [V_ShopDisheWithCategory].[DisheOrder] AS [DisheOrder]
+      FROM [dbo].[V_ShopDisheWithCategory] AS [V_ShopDisheWithCategory]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_ShopForList" EntityType="ZsfModel.Store.V_ShopForList" store:Type="Views" store:Schema="dbo" store:Name="V_ShopForList">
+            <DefiningQuery>SELECT 
+      [V_ShopForList].[Id] AS [Id], 
+      [V_ShopForList].[Name] AS [Name], 
+      [V_ShopForList].[Address] AS [Address], 
+      [V_ShopForList].[Logo] AS [Logo], 
+      [V_ShopForList].[PhoneNumber] AS [PhoneNumber], 
+      [V_ShopForList].[OfficeTimeBegin] AS [OfficeTimeBegin], 
+      [V_ShopForList].[OfficeTimeEnd] AS [OfficeTimeEnd], 
+      [V_ShopForList].[UpSendPrice] AS [UpSendPrice], 
+      [V_ShopForList].[CategoryId] AS [CategoryId], 
+      [V_ShopForList].[CreateTime] AS [CreateTime], 
+      [V_ShopForList].[AreaId] AS [AreaId], 
+      [V_ShopForList].[Category] AS [Category], 
+      [V_ShopForList].[Longitude] AS [Longitude], 
+      [V_ShopForList].[Latitude] AS [Latitude], 
+      [V_ShopForList].[Stars] AS [Stars], 
+      [V_ShopForList].[AveragePayMoney] AS [AveragePayMoney], 
+      [V_ShopForList].[DeliveryTime] AS [DeliveryTime], 
+      [V_ShopForList].[Hidden] AS [Hidden], 
+      [V_ShopForList].[Visits] AS [Visits], 
+      [V_ShopForList].[JobsCount] AS [JobsCount], 
+      [V_ShopForList].[CreateByUserName] AS [CreateByUserName], 
+      [V_ShopForList].[CreateBy] AS [CreateBy]
+      FROM [dbo].[V_ShopForList] AS [V_ShopForList]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_ShopJobAd" EntityType="ZsfModel.Store.V_ShopJobAd" store:Type="Views" store:Schema="dbo" store:Name="V_ShopJobAd">
+            <DefiningQuery>SELECT 
+      [V_ShopJobAd].[Id] AS [Id], 
+      [V_ShopJobAd].[ShopId] AS [ShopId], 
+      [V_ShopJobAd].[ShopName] AS [ShopName], 
+      [V_ShopJobAd].[JobTitle] AS [JobTitle], 
+      [V_ShopJobAd].[Description] AS [Description], 
+      [V_ShopJobAd].[PublishedAt] AS [PublishedAt], 
+      [V_ShopJobAd].[DateDue] AS [DateDue], 
+      [V_ShopJobAd].[PublishedByUserId] AS [PublishedByUserId], 
+      [V_ShopJobAd].[PublishedByUserName] AS [PublishedByUserName], 
+      [V_ShopJobAd].[SalaryMin] AS [SalaryMin], 
+      [V_ShopJobAd].[SalaryMax] AS [SalaryMax], 
+      [V_ShopJobAd].[ShopLocation] AS [ShopLocation], 
+      [V_ShopJobAd].[OrderIndex] AS [OrderIndex], 
+      [V_ShopJobAd].[AreaId] AS [AreaId], 
+      [V_ShopJobAd].[ContactPhone] AS [ContactPhone], 
+      [V_ShopJobAd].[WorkPlace] AS [WorkPlace], 
+      [V_ShopJobAd].[LastModifyAt] AS [LastModifyAt], 
+      [V_ShopJobAd].[LastModifyByUserId] AS [LastModifyByUserId], 
+      [V_ShopJobAd].[LastModifyByUserName] AS [LastModifyByUserName], 
+      [V_ShopJobAd].[JobType] AS [JobType]
+      FROM [dbo].[V_ShopJobAd] AS [V_ShopJobAd]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_ShopServiceArea" EntityType="ZsfModel.Store.V_ShopServiceArea" store:Type="Views" store:Schema="dbo" store:Name="V_ShopServiceArea">
+            <DefiningQuery>SELECT 
+      [V_ShopServiceArea].[ShopId] AS [ShopId], 
+      [V_ShopServiceArea].[AreaId] AS [AreaId], 
+      [V_ShopServiceArea].[ServiceArea] AS [ServiceArea], 
+      [V_ShopServiceArea].[ParentId] AS [ParentId], 
+      [V_ShopServiceArea].[AreaType] AS [AreaType]
+      FROM [dbo].[V_ShopServiceArea] AS [V_ShopServiceArea]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_ShopWithServiceArea" EntityType="ZsfModel.Store.V_ShopWithServiceArea" store:Type="Views" store:Schema="dbo" store:Name="V_ShopWithServiceArea">
+            <DefiningQuery>SELECT 
+      [V_ShopWithServiceArea].[Id] AS [Id], 
+      [V_ShopWithServiceArea].[Name] AS [Name], 
+      [V_ShopWithServiceArea].[Address] AS [Address], 
+      [V_ShopWithServiceArea].[Logo] AS [Logo], 
+      [V_ShopWithServiceArea].[PhoneNumber] AS [PhoneNumber], 
+      [V_ShopWithServiceArea].[OfficeTimeBegin] AS [OfficeTimeBegin], 
+      [V_ShopWithServiceArea].[OfficeTimeEnd] AS [OfficeTimeEnd], 
+      [V_ShopWithServiceArea].[Stars] AS [Stars], 
+      [V_ShopWithServiceArea].[Remark] AS [Remark], 
+      [V_ShopWithServiceArea].[UpSendPrice] AS [UpSendPrice], 
+      [V_ShopWithServiceArea].[Longitude] AS [Longitude], 
+      [V_ShopWithServiceArea].[Latitude] AS [Latitude], 
+      [V_ShopWithServiceArea].[CategoryId] AS [CategoryId], 
+      [V_ShopWithServiceArea].[CreateTime] AS [CreateTime], 
+      [V_ShopWithServiceArea].[AreaId] AS [AreaId], 
+      [V_ShopWithServiceArea].[Category] AS [Category]
+      FROM [dbo].[V_ShopWithServiceArea] AS [V_ShopWithServiceArea]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_UserDefaultArea" EntityType="ZsfModel.Store.V_UserDefaultArea" store:Type="Views" store:Schema="dbo" store:Name="V_UserDefaultArea">
+            <DefiningQuery>SELECT 
+      [V_UserDefaultArea].[UserId] AS [UserId], 
+      [V_UserDefaultArea].[UserName] AS [UserName], 
+      [V_UserDefaultArea].[AreaValue] AS [AreaValue], 
+      [V_UserDefaultArea].[AreaId] AS [AreaId]
+      FROM [dbo].[V_UserDefaultArea] AS [V_UserDefaultArea]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_UserFavoriteShopForList" EntityType="ZsfModel.Store.V_UserFavoriteShopForList" store:Type="Views" store:Schema="dbo" store:Name="V_UserFavoriteShopForList">
+            <DefiningQuery>SELECT 
+      [V_UserFavoriteShopForList].[FavoriteId] AS [FavoriteId], 
+      [V_UserFavoriteShopForList].[UserId] AS [UserId], 
+      [V_UserFavoriteShopForList].[ShopId] AS [ShopId], 
+      [V_UserFavoriteShopForList].[ShopName] AS [ShopName], 
+      [V_UserFavoriteShopForList].[Address] AS [Address], 
+      [V_UserFavoriteShopForList].[Logo] AS [Logo], 
+      [V_UserFavoriteShopForList].[OfficeTimeBegin] AS [OfficeTimeBegin], 
+      [V_UserFavoriteShopForList].[OfficeTimeEnd] AS [OfficeTimeEnd], 
+      [V_UserFavoriteShopForList].[UpSendPrice] AS [UpSendPrice], 
+      [V_UserFavoriteShopForList].[ShopCategoryId] AS [ShopCategoryId], 
+      [V_UserFavoriteShopForList].[Longitude] AS [Longitude], 
+      [V_UserFavoriteShopForList].[Latitude] AS [Latitude], 
+      [V_UserFavoriteShopForList].[Stars] AS [Stars], 
+      [V_UserFavoriteShopForList].[AveragePayMoney] AS [AveragePayMoney], 
+      [V_UserFavoriteShopForList].[DeliveryTime] AS [DeliveryTime], 
+      [V_UserFavoriteShopForList].[FavoriteCreateTime] AS [FavoriteCreateTime], 
+      [V_UserFavoriteShopForList].[Visits] AS [Visits]
+      FROM [dbo].[V_UserFavoriteShopForList] AS [V_UserFavoriteShopForList]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_UserInfoDetail" EntityType="ZsfModel.Store.V_UserInfoDetail" store:Type="Views" store:Schema="dbo" store:Name="V_UserInfoDetail">
+            <DefiningQuery>SELECT 
+      [V_UserInfoDetail].[GradeName] AS [GradeName], 
+      [V_UserInfoDetail].[GradeLevel] AS [GradeLevel], 
+      [V_UserInfoDetail].[Id] AS [Id], 
+      [V_UserInfoDetail].[Name] AS [Name], 
+      [V_UserInfoDetail].[Email] AS [Email], 
+      [V_UserInfoDetail].[Gender] AS [Gender], 
+      [V_UserInfoDetail].[Birthday] AS [Birthday], 
+      [V_UserInfoDetail].[Photo] AS [Photo], 
+      [V_UserInfoDetail].[CreateTime] AS [CreateTime], 
+      [V_UserInfoDetail].[GradeId] AS [GradeId]
+      FROM [dbo].[V_UserInfoDetail] AS [V_UserInfoDetail]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_UserShopComment" EntityType="ZsfModel.Store.V_UserShopComment" store:Type="Views" store:Schema="dbo" store:Name="V_UserShopComment">
+            <DefiningQuery>SELECT 
+      [V_UserShopComment].[UserName] AS [UserName], 
+      [V_UserShopComment].[UserId] AS [UserId], 
+      [V_UserShopComment].[ShopId] AS [ShopId], 
+      [V_UserShopComment].[Comment] AS [Comment], 
+      [V_UserShopComment].[Stars] AS [Stars], 
+      [V_UserShopComment].[CreateTime] AS [CreateTime], 
+      [V_UserShopComment].[ShopName] AS [ShopName]
+      FROM [dbo].[V_UserShopComment] AS [V_UserShopComment]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_ServiceArea_Location" Association="ZsfModel.Store.FK_ServiceArea_Location">
+            <End Role="Location" EntitySet="Location" />
+            <End Role="ServiceArea" EntitySet="ServiceArea" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShopComment_Shop" Association="ZsfModel.Store.FK_ShopComment_Shop">
+            <End Role="Shop" EntitySet="Shop" />
+            <End Role="ShopComment" EntitySet="ShopComment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShopComment_User" Association="ZsfModel.Store.FK_ShopComment_User">
+            <End Role="UserInfo" EntitySet="UserInfo" />
+            <End Role="ShopComment" EntitySet="ShopComment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShopDishe_Shop" Association="ZsfModel.Store.FK_ShopDishe_Shop">
+            <End Role="Shop" EntitySet="Shop" />
+            <End Role="ShopDishe" EntitySet="ShopDishe" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShopDisheCategory_Shop" Association="ZsfModel.Store.FK_ShopDisheCategory_Shop">
+            <End Role="Shop" EntitySet="Shop" />
+            <End Role="ShopDisheCategory" EntitySet="ShopDisheCategory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShopJobAd_UserInfo" Association="ZsfModel.Store.FK_ShopJobAd_UserInfo">
+            <End Role="UserInfo" EntitySet="UserInfo" />
+            <End Role="ShopJobAd" EntitySet="ShopJobAd" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShopJobAdModifyLog_ShopJobAd" Association="ZsfModel.Store.FK_ShopJobAdModifyLog_ShopJobAd">
+            <End Role="ShopJobAd" EntitySet="ShopJobAd" />
+            <End Role="ShopJobAdModifyLog" EntitySet="ShopJobAdModifyLog" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShopJobAdModifyLog_UserInfo" Association="ZsfModel.Store.FK_ShopJobAdModifyLog_UserInfo">
+            <End Role="UserInfo" EntitySet="UserInfo" />
+            <End Role="ShopJobAdModifyLog" EntitySet="ShopJobAdModifyLog" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShopJobAds_Shop" Association="ZsfModel.Store.FK_ShopJobAds_Shop">
+            <End Role="Shop" EntitySet="Shop" />
+            <End Role="ShopJobAd" EntitySet="ShopJobAd" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShopRankingAttribute_Shop" Association="ZsfModel.Store.FK_ShopRankingAttribute_Shop">
+            <End Role="Shop" EntitySet="Shop" />
+            <End Role="ShopRankingAttribute" EntitySet="ShopRankingAttribute" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShopServiceArea_Shop" Association="ZsfModel.Store.FK_ShopServiceArea_Shop">
+            <End Role="Shop" EntitySet="Shop" />
+            <End Role="ShopServiceArea" EntitySet="ShopServiceArea" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_UserGradeCategory" Association="ZsfModel.Store.FK_User_UserGradeCategory">
+            <End Role="UserGradeCategory" EntitySet="UserGradeCategory" />
+            <End Role="UserInfo" EntitySet="UserInfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserDefaultArea_ServiceArea" Association="ZsfModel.Store.FK_UserDefaultArea_ServiceArea">
+            <End Role="ServiceArea" EntitySet="ServiceArea" />
+            <End Role="UserDefaultArea" EntitySet="UserDefaultArea" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserDefaultArea_UserInfo" Association="ZsfModel.Store.FK_UserDefaultArea_UserInfo">
+            <End Role="UserInfo" EntitySet="UserInfo" />
+            <End Role="UserDefaultArea" EntitySet="UserDefaultArea" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserEditShopLog_Shop" Association="ZsfModel.Store.FK_UserEditShopLog_Shop">
+            <End Role="Shop" EntitySet="Shop" />
+            <End Role="ShopModifyLog" EntitySet="ShopModifyLog" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserEditShopLog_User" Association="ZsfModel.Store.FK_UserEditShopLog_User">
+            <End Role="UserInfo" EntitySet="UserInfo" />
+            <End Role="ShopModifyLog" EntitySet="ShopModifyLog" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserFollowShop_Shop" Association="ZsfModel.Store.FK_UserFollowShop_Shop">
+            <End Role="Shop" EntitySet="Shop" />
+            <End Role="UserFavoriteShop" EntitySet="UserFavoriteShop" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserFollowShop_UserInfo" Association="ZsfModel.Store.FK_UserFollowShop_UserInfo">
+            <End Role="UserInfo" EntitySet="UserInfo" />
+            <End Role="UserFavoriteShop" EntitySet="UserFavoriteShop" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserLoginLog_User" Association="ZsfModel.Store.FK_UserLoginLog_User">
+            <End Role="UserInfo" EntitySet="UserInfo" />
+            <End Role="UserLoginLog" EntitySet="UserLoginLog" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserMail_UserMail" Association="ZsfModel.Store.FK_UserMail_UserMail">
+            <End Role="UserInfo" EntitySet="UserInfo" />
+            <End Role="UserMessage" EntitySet="UserMessage" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserOrder_Shop" Association="ZsfModel.Store.FK_UserOrder_Shop">
+            <End Role="Shop" EntitySet="Shop" />
+            <End Role="UserOrderDetail" EntitySet="UserOrderDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserOrder_ShopDishe" Association="ZsfModel.Store.FK_UserOrder_ShopDishe">
+            <End Role="ShopDishe" EntitySet="ShopDishe" />
+            <End Role="UserOrderDetail" EntitySet="UserOrderDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserOrder_UserInfo" Association="ZsfModel.Store.FK_UserOrder_UserInfo">
+            <End Role="UserInfo" EntitySet="UserInfo" />
+            <End Role="UserOrderDetail" EntitySet="UserOrderDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserOrder_UserInfo1" Association="ZsfModel.Store.FK_UserOrder_UserInfo1">
+            <End Role="UserInfo" EntitySet="UserInfo" />
+            <End Role="UserOrder" EntitySet="UserOrder" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserOrderDetail_UserOrder" Association="ZsfModel.Store.FK_UserOrderDetail_UserOrder">
+            <End Role="UserOrder" EntitySet="UserOrder" />
+            <End Role="UserOrderDetail" EntitySet="UserOrderDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserPoint_UserInfo" Association="ZsfModel.Store.FK_UserPoint_UserInfo">
+            <End Role="UserInfo" EntitySet="UserInfo" />
+            <End Role="UserPoint" EntitySet="UserPoint" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Location">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ParentId" Type="int" Nullable="false" />
+          <Property Name="Value" Type="nvarchar" Nullable="false" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="ServiceArea">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Value" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ParentId" Type="int" Nullable="false" />
+          <Property Name="AreaType" Type="char" Nullable="false" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="Shop">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Logo" Type="varchar" MaxLength="100" />
+          <Property Name="PhoneNumber" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="OfficeTimeBegin" Type="time" Nullable="false" Precision="0" />
+          <Property Name="OfficeTimeEnd" Type="time" Nullable="false" Precision="0" />
+          <Property Name="Stars" Type="smallint" Nullable="false" />
+          <Property Name="Remark" Type="nvarchar" MaxLength="100" />
+          <Property Name="UpSendPrice" Type="smallint" Nullable="false" />
+          <Property Name="AveragePayMoney" Type="smallint" />
+          <Property Name="DeliveryTime" Type="smallint" Nullable="false" />
+          <Property Name="Longitude" Type="float" Nullable="false" />
+          <Property Name="Latitude" Type="float" Nullable="false" />
+          <Property Name="CategoryId" Type="int" Nullable="false" />
+          <Property Name="Hidden" Type="bit" Nullable="false" />
+          <Property Name="CreateTime" Type="smalldatetime" Nullable="false" />
+          <Property Name="CreateBy" Type="int" Nullable="false" />
+          <Property Name="LastModifyBy" Type="int" Nullable="false" />
+          <Property Name="LastModifyAt" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ShopCategory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Value" Type="nvarchar" Nullable="false" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="ShopComment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ShopId" Type="int" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="Comment" Type="nvarchar" Nullable="false" MaxLength="300" />
+          <Property Name="Stars" Type="smallint" Nullable="false" />
+          <Property Name="PayMoney" Type="smallint" Nullable="false" />
+          <Property Name="DeliveryTime" Type="smallint" Nullable="false" />
+          <Property Name="CreateTime" Type="smalldatetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ShopDishe">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ShopId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="30" />
+          <Property Name="Price" Type="float" Nullable="false" />
+          <Property Name="CategoryId" Type="int" Nullable="false" />
+          <Property Name="Remark" Type="nvarchar" MaxLength="50" />
+          <Property Name="Gift" Type="nvarchar" MaxLength="30" />
+          <Property Name="OrderIndex" Type="smallint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ShopDisheCategory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ShopId" Type="int" />
+          <Property Name="Value" Type="nvarchar" MaxLength="30" />
+          <Property Name="OrderIndex" Type="smallint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ShopJobAd">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ShopId" Type="int" Nullable="false" />
+          <Property Name="JobTitle" Type="nvarchar" Nullable="false" MaxLength="30" />
+          <Property Name="SalaryMin" Type="smallint" Nullable="false" />
+          <Property Name="SalaryMax" Type="smallint" Nullable="false" />
+          <Property Name="JobType" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="ContactPhone" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="WorkPlace" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="PublishedAt" Type="datetime" Nullable="false" />
+          <Property Name="DateDue" Type="smalldatetime" Nullable="false" />
+          <Property Name="PublishedBy" Type="int" Nullable="false" />
+          <Property Name="OrderIndex" Type="smallint" Nullable="false" />
+          <Property Name="LastModifyAt" Type="datetime" Nullable="false" />
+          <Property Name="LastModifyBy" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ShopJobAdModifyLog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="JobId" Type="int" Nullable="false" />
+          <Property Name="ModifyAt" Type="datetime" Nullable="false" />
+          <Property Name="ModifyBy" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ShopModifyLog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ShopId" Type="int" Nullable="false" />
+          <Property Name="ModifyBy" Type="int" Nullable="false" />
+          <Property Name="ModifyAt" Type="smalldatetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ShopRankingAttribute">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ShopId" Type="int" Nullable="false" />
+          <Property Name="Stars" Type="smallint" Nullable="false" />
+          <Property Name="AveragePayMoney" Type="smallint" Nullable="false" />
+          <Property Name="DeliveryTime" Type="smallint" Nullable="false" />
+          <Property Name="Visits" Type="smallint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ShopServiceArea">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ShopId" Type="int" Nullable="false" />
+          <Property Name="AreaId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserDefaultArea">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="AreaId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserFavoriteShop">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="ShopId" Type="int" Nullable="false" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserGradeCategory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="GradeName" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="GradeLevel" Type="smallint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="Email" Type="varchar" Nullable="false" MaxLength="25" />
+          <Property Name="Password" Type="varchar" Nullable="false" MaxLength="32" />
+          <Property Name="Gender" Type="bit" Nullable="false" />
+          <Property Name="Birthday" Type="date" Nullable="false" />
+          <Property Name="Photo" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="GradeId" Type="smallint" Nullable="false" />
+          <Property Name="CreateTime" Type="smalldatetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserLoginLog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="CreateTime" Type="smalldatetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserMessage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="MsgTitle" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="MsgContent" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="Readed" Type="bit" Nullable="false" />
+          <Property Name="CreateTime" Type="smalldatetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserOrder">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Available" Type="bit" Nullable="false" />
+          <Property Name="CreateBy" Type="int" Nullable="false" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserOrderDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="OrderId" Type="int" Nullable="false" />
+          <Property Name="ShopId" Type="int" Nullable="false" />
+          <Property Name="DisheId" Type="int" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="Price" Type="smallint" Nullable="false" />
+          <Property Name="OrderCount" Type="smallint" Nullable="false" />
+          <Property Name="UserGroup" Type="smallint" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserPoint">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="PointCount" Type="smallint" Nullable="false" />
+          <Property Name="Reason" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Usable" Type="bit" Nullable="false" />
+          <Property Name="UsedFor" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreateTime" Type="smalldatetime" Nullable="false" />
+        </EntityType>
+        <!--生成过程中发现错误:
+      警告 6002: 表/视图“Zsf.dbo.V_ShopComment”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+        <EntityType Name="V_ShopComment">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="ShopId" />
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="Comment" />
+            <PropertyRef Name="Stars" />
+            <PropertyRef Name="CreateTime" />
+            <PropertyRef Name="UserName" />
+            <PropertyRef Name="UserPhoto" />
+            <PropertyRef Name="UserGrade" />
+            <PropertyRef Name="DeliveryTime" />
+            <PropertyRef Name="PayMoney" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="ShopId" Type="int" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="Comment" Type="nvarchar" Nullable="false" MaxLength="300" />
+          <Property Name="Stars" Type="smallint" Nullable="false" />
+          <Property Name="CreateTime" Type="smalldatetime" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="UserPhoto" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="UserGrade" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="DeliveryTime" Type="smallint" Nullable="false" />
+          <Property Name="PayMoney" Type="smallint" Nullable="false" />
+        </EntityType>
+        <!--生成过程中发现错误:
+      警告 6002: 表/视图“Zsf.dbo.V_ShopDetail”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+        <EntityType Name="V_ShopDetail">
+          <Key>
+            <PropertyRef Name="Stars" />
+            <PropertyRef Name="AveragePayMoney" />
+            <PropertyRef Name="DeliveryTime" />
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Address" />
+            <PropertyRef Name="PhoneNumber" />
+            <PropertyRef Name="OfficeTimeBegin" />
+            <PropertyRef Name="OfficeTimeEnd" />
+            <PropertyRef Name="UpSendPrice" />
+            <PropertyRef Name="Longitude" />
+            <PropertyRef Name="Latitude" />
+            <PropertyRef Name="Hidden" />
+            <PropertyRef Name="CreateBy" />
+          </Key>
+          <Property Name="Stars" Type="smallint" Nullable="false" />
+          <Property Name="AveragePayMoney" Type="smallint" Nullable="false" />
+          <Property Name="DeliveryTime" Type="smallint" Nullable="false" />
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Logo" Type="varchar" MaxLength="100" />
+          <Property Name="PhoneNumber" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="OfficeTimeBegin" Type="time" Nullable="false" Precision="0" />
+          <Property Name="OfficeTimeEnd" Type="time" Nullable="false" Precision="0" />
+          <Property Name="Remark" Type="nvarchar" MaxLength="100" />
+          <Property Name="UpSendPrice" Type="smallint" Nullable="false" />
+          <Property Name="Longitude" Type="float" Nullable="false" />
+          <Property Name="Latitude" Type="float" Nullable="false" />
+          <Property Name="Hidden" Type="bit" Nullable="false" />
+          <Property Name="CreateBy" Type="int" Nullable="false" />
+        </EntityType>
+        <!--生成过程中发现错误:
+      警告 6002: 表/视图“Zsf.dbo.V_ShopDisheWithCategory”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+        <EntityType Name="V_ShopDisheWithCategory">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="ShopId" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Price" />
+            <PropertyRef Name="CategoryId" />
+            <PropertyRef Name="DisheCategoryOrder" />
+            <PropertyRef Name="DisheOrder" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="ShopId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="30" />
+          <Property Name="Price" Type="float" Nullable="false" />
+          <Property Name="CategoryId" Type="int" Nullable="false" />
+          <Property Name="CategoryValue" Type="nvarchar" MaxLength="30" />
+          <Property Name="Remark" Type="nvarchar" MaxLength="50" />
+          <Property Name="Gift" Type="nvarchar" MaxLength="30" />
+          <Property Name="DisheCategoryOrder" Type="smallint" Nullable="false" />
+          <Property Name="DisheOrder" Type="smallint" Nullable="false" />
+        </EntityType>
+        <!--生成过程中发现错误:
+      警告 6002: 表/视图“Zsf.dbo.V_ShopForList”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+        <EntityType Name="V_ShopForList">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Address" />
+            <PropertyRef Name="PhoneNumber" />
+            <PropertyRef Name="OfficeTimeBegin" />
+            <PropertyRef Name="OfficeTimeEnd" />
+            <PropertyRef Name="UpSendPrice" />
+            <PropertyRef Name="CategoryId" />
+            <PropertyRef Name="CreateTime" />
+            <PropertyRef Name="AreaId" />
+            <PropertyRef Name="Category" />
+            <PropertyRef Name="Longitude" />
+            <PropertyRef Name="Latitude" />
+            <PropertyRef Name="Stars" />
+            <PropertyRef Name="AveragePayMoney" />
+            <PropertyRef Name="DeliveryTime" />
+            <PropertyRef Name="Hidden" />
+            <PropertyRef Name="Visits" />
+            <PropertyRef Name="CreateByUserName" />
+            <PropertyRef Name="CreateBy" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Logo" Type="varchar" MaxLength="100" />
+          <Property Name="PhoneNumber" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="OfficeTimeBegin" Type="time" Nullable="false" Precision="0" />
+          <Property Name="OfficeTimeEnd" Type="time" Nullable="false" Precision="0" />
+          <Property Name="UpSendPrice" Type="smallint" Nullable="false" />
+          <Property Name="CategoryId" Type="int" Nullable="false" />
+          <Property Name="CreateTime" Type="smalldatetime" Nullable="false" />
+          <Property Name="AreaId" Type="int" Nullable="false" />
+          <Property Name="Category" Type="nvarchar" Nullable="false" MaxLength="30" />
+          <Property Name="Longitude" Type="float" Nullable="false" />
+          <Property Name="Latitude" Type="float" Nullable="false" />
+          <Property Name="Stars" Type="smallint" Nullable="false" />
+          <Property Name="AveragePayMoney" Type="smallint" Nullable="false" />
+          <Property Name="DeliveryTime" Type="smallint" Nullable="false" />
+          <Property Name="Hidden" Type="bit" Nullable="false" />
+          <Property Name="Visits" Type="smallint" Nullable="false" />
+          <Property Name="JobsCount" Type="int" />
+          <Property Name="CreateByUserName" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="CreateBy" Type="int" Nullable="false" />
+        </EntityType>
+        <!--生成过程中发现错误:
+      警告 6002: 表/视图“Zsf.dbo.V_ShopJobAd”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+        <EntityType Name="V_ShopJobAd">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="ShopId" />
+            <PropertyRef Name="ShopName" />
+            <PropertyRef Name="JobTitle" />
+            <PropertyRef Name="Description" />
+            <PropertyRef Name="PublishedAt" />
+            <PropertyRef Name="DateDue" />
+            <PropertyRef Name="PublishedByUserId" />
+            <PropertyRef Name="PublishedByUserName" />
+            <PropertyRef Name="SalaryMin" />
+            <PropertyRef Name="SalaryMax" />
+            <PropertyRef Name="ShopLocation" />
+            <PropertyRef Name="OrderIndex" />
+            <PropertyRef Name="AreaId" />
+            <PropertyRef Name="ContactPhone" />
+            <PropertyRef Name="LastModifyAt" />
+            <PropertyRef Name="LastModifyByUserId" />
+            <PropertyRef Name="LastModifyByUserName" />
+            <PropertyRef Name="JobType" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="ShopId" Type="int" Nullable="false" />
+          <Property Name="ShopName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="JobTitle" Type="nvarchar" Nullable="false" MaxLength="30" />
+          <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="PublishedAt" Type="datetime" Nullable="false" />
+          <Property Name="DateDue" Type="smalldatetime" Nullable="false" />
+          <Property Name="PublishedByUserId" Type="int" Nullable="false" />
+          <Property Name="PublishedByUserName" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="SalaryMin" Type="smallint" Nullable="false" />
+          <Property Name="SalaryMax" Type="smallint" Nullable="false" />
+          <Property Name="ShopLocation" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="OrderIndex" Type="smallint" Nullable="false" />
+          <Property Name="AreaId" Type="int" Nullable="false" />
+          <Property Name="ContactPhone" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="WorkPlace" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastModifyAt" Type="datetime" Nullable="false" />
+          <Property Name="LastModifyByUserId" Type="int" Nullable="false" />
+          <Property Name="LastModifyByUserName" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="JobType" Type="char" Nullable="false" MaxLength="1" />
+        </EntityType>
+        <!--生成过程中发现错误:
+      警告 6002: 表/视图“Zsf.dbo.V_ShopServiceArea”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+        <EntityType Name="V_ShopServiceArea">
+          <Key>
+            <PropertyRef Name="ShopId" />
+            <PropertyRef Name="AreaId" />
+            <PropertyRef Name="ServiceArea" />
+            <PropertyRef Name="ParentId" />
+            <PropertyRef Name="AreaType" />
+          </Key>
+          <Property Name="ShopId" Type="int" Nullable="false" />
+          <Property Name="AreaId" Type="int" Nullable="false" />
+          <Property Name="ServiceArea" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ParentId" Type="int" Nullable="false" />
+          <Property Name="AreaType" Type="char" Nullable="false" MaxLength="1" />
+        </EntityType>
+        <!--生成过程中发现错误:
+      警告 6002: 表/视图“Zsf.dbo.V_ShopWithServiceArea”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+        <EntityType Name="V_ShopWithServiceArea">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Address" />
+            <PropertyRef Name="PhoneNumber" />
+            <PropertyRef Name="OfficeTimeBegin" />
+            <PropertyRef Name="OfficeTimeEnd" />
+            <PropertyRef Name="Stars" />
+            <PropertyRef Name="Longitude" />
+            <PropertyRef Name="Latitude" />
+            <PropertyRef Name="CategoryId" />
+            <PropertyRef Name="CreateTime" />
+            <PropertyRef Name="AreaId" />
+            <PropertyRef Name="Category" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Logo" Type="varchar" MaxLength="100" />
+          <Property Name="PhoneNumber" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="OfficeTimeBegin" Type="time" Nullable="false" Precision="0" />
+          <Property Name="OfficeTimeEnd" Type="time" Nullable="false" Precision="0" />
+          <Property Name="Stars" Type="smallint" Nullable="false" />
+          <Property Name="Remark" Type="nvarchar" MaxLength="100" />
+          <Property Name="UpSendPrice" Type="smallint" />
+          <Property Name="Longitude" Type="float" Nullable="false" />
+          <Property Name="Latitude" Type="float" Nullable="false" />
+          <Property Name="CategoryId" Type="int" Nullable="false" />
+          <Property Name="CreateTime" Type="smalldatetime" Nullable="false" />
+          <Property Name="AreaId" Type="int" Nullable="false" />
+          <Property Name="Category" Type="nvarchar" Nullable="false" MaxLength="30" />
+        </EntityType>
+        <!--生成过程中发现错误:
+      警告 6002: 表/视图“Zsf.dbo.V_UserDefaultArea”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+        <EntityType Name="V_UserDefaultArea">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="UserName" />
+            <PropertyRef Name="AreaValue" />
+            <PropertyRef Name="AreaId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="AreaValue" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="AreaId" Type="int" Nullable="false" />
+        </EntityType>
+        <!--生成过程中发现错误:
+      警告 6002: 表/视图“Zsf.dbo.V_UserFavoriteShopForList”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+        <EntityType Name="V_UserFavoriteShopForList">
+          <Key>
+            <PropertyRef Name="FavoriteId" />
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="ShopId" />
+            <PropertyRef Name="ShopName" />
+            <PropertyRef Name="Address" />
+            <PropertyRef Name="OfficeTimeBegin" />
+            <PropertyRef Name="OfficeTimeEnd" />
+            <PropertyRef Name="UpSendPrice" />
+            <PropertyRef Name="ShopCategoryId" />
+            <PropertyRef Name="Longitude" />
+            <PropertyRef Name="Latitude" />
+            <PropertyRef Name="Stars" />
+            <PropertyRef Name="AveragePayMoney" />
+            <PropertyRef Name="DeliveryTime" />
+            <PropertyRef Name="FavoriteCreateTime" />
+            <PropertyRef Name="Visits" />
+          </Key>
+          <Property Name="FavoriteId" Type="int" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="ShopId" Type="int" Nullable="false" />
+          <Property Name="ShopName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Logo" Type="varchar" MaxLength="100" />
+          <Property Name="OfficeTimeBegin" Type="time" Nullable="false" Precision="0" />
+          <Property Name="OfficeTimeEnd" Type="time" Nullable="false" Precision="0" />
+          <Property Name="UpSendPrice" Type="smallint" Nullable="false" />
+          <Property Name="ShopCategoryId" Type="int" Nullable="false" />
+          <Property Name="Longitude" Type="float" Nullable="false" />
+          <Property Name="Latitude" Type="float" Nullable="false" />
+          <Property Name="Stars" Type="smallint" Nullable="false" />
+          <Property Name="AveragePayMoney" Type="smallint" Nullable="false" />
+          <Property Name="DeliveryTime" Type="smallint" Nullable="false" />
+          <Property Name="FavoriteCreateTime" Type="datetime" Nullable="false" />
+          <Property Name="Visits" Type="smallint" Nullable="false" />
+        </EntityType>
+        <!--生成过程中发现错误:
+      警告 6002: 表/视图“Zsf.dbo.V_UserInfoDetail”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+        <EntityType Name="V_UserInfoDetail">
+          <Key>
+            <PropertyRef Name="GradeName" />
+            <PropertyRef Name="GradeLevel" />
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Email" />
+            <PropertyRef Name="Gender" />
+            <PropertyRef Name="Birthday" />
+            <PropertyRef Name="Photo" />
+            <PropertyRef Name="CreateTime" />
+            <PropertyRef Name="GradeId" />
+          </Key>
+          <Property Name="GradeName" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="GradeLevel" Type="smallint" Nullable="false" />
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="Email" Type="varchar" Nullable="false" MaxLength="25" />
+          <Property Name="Gender" Type="bit" Nullable="false" />
+          <Property Name="Birthday" Type="date" Nullable="false" />
+          <Property Name="Photo" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="CreateTime" Type="smalldatetime" Nullable="false" />
+          <Property Name="GradeId" Type="smallint" Nullable="false" />
+        </EntityType>
+        <!--生成过程中发现错误:
+      警告 6002: 表/视图“Zsf.dbo.V_UserShopComment”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+        <EntityType Name="V_UserShopComment">
+          <Key>
+            <PropertyRef Name="UserName" />
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="ShopId" />
+            <PropertyRef Name="Comment" />
+            <PropertyRef Name="Stars" />
+            <PropertyRef Name="CreateTime" />
+            <PropertyRef Name="ShopName" />
+          </Key>
+          <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="ShopId" Type="int" Nullable="false" />
+          <Property Name="Comment" Type="nvarchar" Nullable="false" MaxLength="300" />
+          <Property Name="Stars" Type="smallint" Nullable="false" />
+          <Property Name="CreateTime" Type="smalldatetime" Nullable="false" />
+          <Property Name="ShopName" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_ServiceArea_Location">
+          <End Role="Location" Type="ZsfModel.Store.Location" Multiplicity="1" />
+          <End Role="ServiceArea" Type="ZsfModel.Store.ServiceArea" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Location">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ServiceArea">
+              <PropertyRef Name="ParentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShopComment_Shop">
+          <End Role="Shop" Type="ZsfModel.Store.Shop" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ShopComment" Type="ZsfModel.Store.ShopComment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Shop">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ShopComment">
+              <PropertyRef Name="ShopId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShopComment_User">
+          <End Role="UserInfo" Type="ZsfModel.Store.UserInfo" Multiplicity="1" />
+          <End Role="ShopComment" Type="ZsfModel.Store.ShopComment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserInfo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ShopComment">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShopDishe_Shop">
+          <End Role="Shop" Type="ZsfModel.Store.Shop" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ShopDishe" Type="ZsfModel.Store.ShopDishe" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Shop">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ShopDishe">
+              <PropertyRef Name="ShopId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShopDisheCategory_Shop">
+          <End Role="Shop" Type="ZsfModel.Store.Shop" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ShopDisheCategory" Type="ZsfModel.Store.ShopDisheCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Shop">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ShopDisheCategory">
+              <PropertyRef Name="ShopId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShopJobAd_UserInfo">
+          <End Role="UserInfo" Type="ZsfModel.Store.UserInfo" Multiplicity="1" />
+          <End Role="ShopJobAd" Type="ZsfModel.Store.ShopJobAd" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserInfo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ShopJobAd">
+              <PropertyRef Name="PublishedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShopJobAdModifyLog_ShopJobAd">
+          <End Role="ShopJobAd" Type="ZsfModel.Store.ShopJobAd" Multiplicity="1" />
+          <End Role="ShopJobAdModifyLog" Type="ZsfModel.Store.ShopJobAdModifyLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ShopJobAd">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ShopJobAdModifyLog">
+              <PropertyRef Name="JobId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShopJobAdModifyLog_UserInfo">
+          <End Role="UserInfo" Type="ZsfModel.Store.UserInfo" Multiplicity="1" />
+          <End Role="ShopJobAdModifyLog" Type="ZsfModel.Store.ShopJobAdModifyLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserInfo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ShopJobAdModifyLog">
+              <PropertyRef Name="ModifyBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShopJobAds_Shop">
+          <End Role="Shop" Type="ZsfModel.Store.Shop" Multiplicity="1" />
+          <End Role="ShopJobAd" Type="ZsfModel.Store.ShopJobAd" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Shop">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ShopJobAd">
+              <PropertyRef Name="ShopId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShopRankingAttribute_Shop">
+          <End Role="Shop" Type="ZsfModel.Store.Shop" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ShopRankingAttribute" Type="ZsfModel.Store.ShopRankingAttribute" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Shop">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ShopRankingAttribute">
+              <PropertyRef Name="ShopId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShopServiceArea_Shop">
+          <End Role="Shop" Type="ZsfModel.Store.Shop" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ShopServiceArea" Type="ZsfModel.Store.ShopServiceArea" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Shop">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ShopServiceArea">
+              <PropertyRef Name="ShopId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_UserGradeCategory">
+          <End Role="UserGradeCategory" Type="ZsfModel.Store.UserGradeCategory" Multiplicity="1" />
+          <End Role="UserInfo" Type="ZsfModel.Store.UserInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserGradeCategory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserInfo">
+              <PropertyRef Name="GradeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserDefaultArea_ServiceArea">
+          <End Role="ServiceArea" Type="ZsfModel.Store.ServiceArea" Multiplicity="1" />
+          <End Role="UserDefaultArea" Type="ZsfModel.Store.UserDefaultArea" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ServiceArea">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserDefaultArea">
+              <PropertyRef Name="AreaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserDefaultArea_UserInfo">
+          <End Role="UserInfo" Type="ZsfModel.Store.UserInfo" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="UserDefaultArea" Type="ZsfModel.Store.UserDefaultArea" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserInfo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserDefaultArea">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserEditShopLog_Shop">
+          <End Role="Shop" Type="ZsfModel.Store.Shop" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ShopModifyLog" Type="ZsfModel.Store.ShopModifyLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Shop">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ShopModifyLog">
+              <PropertyRef Name="ShopId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserEditShopLog_User">
+          <End Role="UserInfo" Type="ZsfModel.Store.UserInfo" Multiplicity="1" />
+          <End Role="ShopModifyLog" Type="ZsfModel.Store.ShopModifyLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserInfo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ShopModifyLog">
+              <PropertyRef Name="ModifyBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserFollowShop_Shop">
+          <End Role="Shop" Type="ZsfModel.Store.Shop" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="UserFavoriteShop" Type="ZsfModel.Store.UserFavoriteShop" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Shop">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserFavoriteShop">
+              <PropertyRef Name="ShopId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserFollowShop_UserInfo">
+          <End Role="UserInfo" Type="ZsfModel.Store.UserInfo" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="UserFavoriteShop" Type="ZsfModel.Store.UserFavoriteShop" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserInfo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserFavoriteShop">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserLoginLog_User">
+          <End Role="UserInfo" Type="ZsfModel.Store.UserInfo" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="UserLoginLog" Type="ZsfModel.Store.UserLoginLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserInfo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserLoginLog">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserMail_UserMail">
+          <End Role="UserInfo" Type="ZsfModel.Store.UserInfo" Multiplicity="1" />
+          <End Role="UserMessage" Type="ZsfModel.Store.UserMessage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserInfo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserMessage">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserOrder_Shop">
+          <End Role="Shop" Type="ZsfModel.Store.Shop" Multiplicity="1" />
+          <End Role="UserOrderDetail" Type="ZsfModel.Store.UserOrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Shop">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserOrderDetail">
+              <PropertyRef Name="ShopId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserOrder_ShopDishe">
+          <End Role="ShopDishe" Type="ZsfModel.Store.ShopDishe" Multiplicity="1" />
+          <End Role="UserOrderDetail" Type="ZsfModel.Store.UserOrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ShopDishe">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserOrderDetail">
+              <PropertyRef Name="DisheId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserOrder_UserInfo">
+          <End Role="UserInfo" Type="ZsfModel.Store.UserInfo" Multiplicity="1" />
+          <End Role="UserOrderDetail" Type="ZsfModel.Store.UserOrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserInfo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserOrderDetail">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserOrder_UserInfo1">
+          <End Role="UserInfo" Type="ZsfModel.Store.UserInfo" Multiplicity="1" />
+          <End Role="UserOrder" Type="ZsfModel.Store.UserOrder" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="UserInfo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserOrder">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserOrderDetail_UserOrder">
+          <End Role="UserOrder" Type="ZsfModel.Store.UserOrder" Multiplicity="1" />
+          <End Role="UserOrderDetail" Type="ZsfModel.Store.UserOrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserOrder">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserOrderDetail">
+              <PropertyRef Name="OrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserPoint_UserInfo">
+          <End Role="UserInfo" Type="ZsfModel.Store.UserInfo" Multiplicity="1" />
+          <End Role="UserPoint" Type="ZsfModel.Store.UserPoint" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserInfo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserPoint">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ZsfModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="ZsfEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Location" EntityType="ZsfModel.Location" />
+          <EntitySet Name="ShopCategory" EntityType="ZsfModel.ShopCategory" />
+          <EntitySet Name="ShopComment" EntityType="ZsfModel.ShopComment" />
+          <EntitySet Name="ShopDishe" EntityType="ZsfModel.ShopDishe" />
+          <EntitySet Name="ShopDisheCategory" EntityType="ZsfModel.ShopDisheCategory" />
+          <EntitySet Name="ShopRankingAttribute" EntityType="ZsfModel.ShopRankingAttribute" />
+          <EntitySet Name="ShopServiceArea" EntityType="ZsfModel.ShopServiceArea" />
+          <EntitySet Name="UserGradeCategory" EntityType="ZsfModel.UserGradeCategory" />
+          <EntitySet Name="UserInfo" EntityType="ZsfModel.UserInfo" />
+          <EntitySet Name="UserLoginLog" EntityType="ZsfModel.UserLoginLog" />
+          <EntitySet Name="UserMessage" EntityType="ZsfModel.UserMessage" />
+          <EntitySet Name="UserPoint" EntityType="ZsfModel.UserPoint" />
+          <EntitySet Name="V_ShopComment" EntityType="ZsfModel.V_ShopComment" />
+          <EntitySet Name="V_ShopWithServiceArea" EntityType="ZsfModel.V_ShopWithServiceArea" />
+          <EntitySet Name="V_UserInfoDetail" EntityType="ZsfModel.V_UserInfoDetail" />
+          <EntitySet Name="V_UserShopComment" EntityType="ZsfModel.V_UserShopComment" />
+          <AssociationSet Name="FK_ShopComment_User" Association="ZsfModel.FK_ShopComment_User">
+            <End Role="UserInfo" EntitySet="UserInfo" />
+            <End Role="ShopComment" EntitySet="ShopComment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_UserGradeCategory" Association="ZsfModel.FK_User_UserGradeCategory">
+            <End Role="UserGradeCategory" EntitySet="UserGradeCategory" />
+            <End Role="UserInfo" EntitySet="UserInfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserLoginLog_User" Association="ZsfModel.FK_UserLoginLog_User">
+            <End Role="UserInfo" EntitySet="UserInfo" />
+            <End Role="UserLoginLog" EntitySet="UserLoginLog" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserMail_UserMail" Association="ZsfModel.FK_UserMail_UserMail">
+            <End Role="UserInfo" EntitySet="UserInfo" />
+            <End Role="UserMessage" EntitySet="UserMessage" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserPoint_UserInfo" Association="ZsfModel.FK_UserPoint_UserInfo">
+            <End Role="UserInfo" EntitySet="UserInfo" />
+            <End Role="UserPoint" EntitySet="UserPoint" />
+          </AssociationSet>
+          <EntitySet Name="UserFavoriteShop" EntityType="ZsfModel.UserFavoriteShop" />
+          <AssociationSet Name="FK_UserFollowShop_UserInfo" Association="ZsfModel.FK_UserFollowShop_UserInfo">
+            <End Role="UserInfo" EntitySet="UserInfo" />
+            <End Role="UserFavoriteShop" EntitySet="UserFavoriteShop" />
+          </AssociationSet>
+          <EntitySet Name="ServiceArea" EntityType="ZsfModel.ServiceArea" />
+          <AssociationSet Name="FK_ServiceArea_Location" Association="ZsfModel.FK_ServiceArea_Location">
+            <End Role="Location" EntitySet="Location" />
+            <End Role="ServiceArea" EntitySet="ServiceArea" />
+          </AssociationSet>
+          <EntitySet Name="V_UserDefaultArea" EntityType="ZsfModel.V_UserDefaultArea" />
+          <EntitySet Name="UserDefaultArea" EntityType="ZsfModel.UserDefaultArea" />
+          <AssociationSet Name="FK_UserDefaultArea_ServiceArea" Association="ZsfModel.FK_UserDefaultArea_ServiceArea">
+            <End Role="ServiceArea" EntitySet="ServiceArea" />
+            <End Role="UserDefaultArea" EntitySet="UserDefaultArea" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserDefaultArea_UserInfo" Association="ZsfModel.FK_UserDefaultArea_UserInfo">
+            <End Role="UserInfo" EntitySet="UserInfo" />
+            <End Role="UserDefaultArea" EntitySet="UserDefaultArea" />
+          </AssociationSet>
+          <EntitySet Name="V_ShopServiceArea" EntityType="ZsfModel.V_ShopServiceArea" />
+          <EntitySet Name="V_ShopDisheWithCategory" EntityType="ZsfModel.V_ShopDisheWithCategory" />
+          <EntitySet Name="V_UserFavoriteShopForList" EntityType="ZsfModel.V_UserFavoriteShopForList" />
+          <EntitySet Name="V_ShopDetail" EntityType="ZsfModel.V_ShopDetail" />
+          <EntitySet Name="ShopJobAd" EntityType="ZsfModel.ShopJobAd" />
+          <EntitySet Name="ShopJobAdModifyLog" EntityType="ZsfModel.ShopJobAdModifyLog" />
+          <AssociationSet Name="FK_ShopJobAd_UserInfo" Association="ZsfModel.FK_ShopJobAd_UserInfo">
+            <End Role="UserInfo" EntitySet="UserInfo" />
+            <End Role="ShopJobAd" EntitySet="ShopJobAd" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShopJobAdModifyLog_ShopJobAd" Association="ZsfModel.FK_ShopJobAdModifyLog_ShopJobAd">
+            <End Role="ShopJobAd" EntitySet="ShopJobAd" />
+            <End Role="ShopJobAdModifyLog" EntitySet="ShopJobAdModifyLog" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShopJobAdModifyLog_UserInfo" Association="ZsfModel.FK_ShopJobAdModifyLog_UserInfo">
+            <End Role="UserInfo" EntitySet="UserInfo" />
+            <End Role="ShopJobAdModifyLog" EntitySet="ShopJobAdModifyLog" />
+          </AssociationSet>
+          <EntitySet Name="V_ShopJobAd" EntityType="ZsfModel.V_ShopJobAd" />
+          <EntitySet Name="Shop" EntityType="ZsfModel.Shop" />
+          <EntitySet Name="V_ShopForList" EntityType="ZsfModel.V_ShopForList" />
+          <AssociationSet Name="FK_ShopComment_Shop" Association="ZsfModel.FK_ShopComment_Shop">
+            <End Role="Shop" EntitySet="Shop" />
+            <End Role="ShopComment" EntitySet="ShopComment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShopDishe_Shop" Association="ZsfModel.FK_ShopDishe_Shop">
+            <End Role="Shop" EntitySet="Shop" />
+            <End Role="ShopDishe" EntitySet="ShopDishe" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShopDisheCategory_Shop" Association="ZsfModel.FK_ShopDisheCategory_Shop">
+            <End Role="Shop" EntitySet="Shop" />
+            <End Role="ShopDisheCategory" EntitySet="ShopDisheCategory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShopJobAds_Shop" Association="ZsfModel.FK_ShopJobAds_Shop">
+            <End Role="Shop" EntitySet="Shop" />
+            <End Role="ShopJobAd" EntitySet="ShopJobAd" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShopRankingAttribute_Shop" Association="ZsfModel.FK_ShopRankingAttribute_Shop">
+            <End Role="Shop" EntitySet="Shop" />
+            <End Role="ShopRankingAttribute" EntitySet="ShopRankingAttribute" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShopServiceArea_Shop" Association="ZsfModel.FK_ShopServiceArea_Shop">
+            <End Role="Shop" EntitySet="Shop" />
+            <End Role="ShopServiceArea" EntitySet="ShopServiceArea" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserFollowShop_Shop" Association="ZsfModel.FK_UserFollowShop_Shop">
+            <End Role="Shop" EntitySet="Shop" />
+            <End Role="UserFavoriteShop" EntitySet="UserFavoriteShop" />
+          </AssociationSet>
+          <EntitySet Name="ShopModifyLog" EntityType="ZsfModel.ShopModifyLog" />
+          <AssociationSet Name="FK_UserEditShopLog_Shop" Association="ZsfModel.FK_UserEditShopLog_Shop">
+            <End Role="Shop" EntitySet="Shop" />
+            <End Role="ShopModifyLog" EntitySet="ShopModifyLog" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserEditShopLog_User" Association="ZsfModel.FK_UserEditShopLog_User">
+            <End Role="UserInfo" EntitySet="UserInfo" />
+            <End Role="ShopModifyLog" EntitySet="ShopModifyLog" />
+          </AssociationSet>
+          <EntitySet Name="UserOrder" EntityType="ZsfModel.UserOrder" />
+          <EntitySet Name="UserOrderDetail" EntityType="ZsfModel.UserOrderDetail" />
+          <AssociationSet Name="FK_UserOrder_Shop" Association="ZsfModel.FK_UserOrder_Shop">
+            <End Role="Shop" EntitySet="Shop" />
+            <End Role="UserOrderDetail" EntitySet="UserOrderDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserOrder_ShopDishe" Association="ZsfModel.FK_UserOrder_ShopDishe">
+            <End Role="ShopDishe" EntitySet="ShopDishe" />
+            <End Role="UserOrderDetail" EntitySet="UserOrderDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserOrder_UserInfo" Association="ZsfModel.FK_UserOrder_UserInfo">
+            <End Role="UserInfo" EntitySet="UserInfo" />
+            <End Role="UserOrderDetail" EntitySet="UserOrderDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserOrder_UserInfo1" Association="ZsfModel.FK_UserOrder_UserInfo1">
+            <End Role="UserInfo" EntitySet="UserInfo" />
+            <End Role="UserOrder" EntitySet="UserOrder" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserOrderDetail_UserOrder" Association="ZsfModel.FK_UserOrderDetail_UserOrder">
+            <End Role="UserOrder" EntitySet="UserOrder" />
+            <End Role="UserOrderDetail" EntitySet="UserOrderDetail" />
+          </AssociationSet>
+          </EntityContainer>
+        <EntityType Name="Location">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="ParentId" Nullable="false" />
+          <Property Type="String" Name="Value" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ServiceArea" Relationship="ZsfModel.FK_ServiceArea_Location" FromRole="Location" ToRole="ServiceArea" />
+        </EntityType>
+        <EntityType Name="ShopCategory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Value" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ShopComment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="ShopId" Nullable="false" />
+          <Property Type="Int32" Name="UserId" Nullable="false" />
+          <Property Type="String" Name="Comment" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Type="Int16" Name="Stars" Nullable="false" />
+          <Property Type="Int16" Name="PayMoney" Nullable="false" />
+          <Property Type="Int16" Name="DeliveryTime" Nullable="false" />
+          <Property Type="DateTime" Name="CreateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="UserInfo" Relationship="ZsfModel.FK_ShopComment_User" FromRole="ShopComment" ToRole="UserInfo" />
+          <NavigationProperty Name="Shop" Relationship="ZsfModel.FK_ShopComment_Shop" FromRole="ShopComment" ToRole="Shop" />
+        </EntityType>
+        <EntityType Name="ShopDishe">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="ShopId" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="Double" Name="Price" Nullable="false" />
+          <Property Type="Int32" Name="CategoryId" Nullable="false" />
+          <Property Type="String" Name="Remark" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Gift" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="Int16" Name="OrderIndex" Nullable="false" />
+          <NavigationProperty Name="Shop" Relationship="ZsfModel.FK_ShopDishe_Shop" FromRole="ShopDishe" ToRole="Shop" />
+          <NavigationProperty Name="UserOrderDetail" Relationship="ZsfModel.FK_UserOrder_ShopDishe" FromRole="ShopDishe" ToRole="UserOrderDetail" />
+        </EntityType>
+        <EntityType Name="ShopDisheCategory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="ShopId" />
+          <Property Type="String" Name="Value" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="Int16" Name="OrderIndex" Nullable="false" />
+          <NavigationProperty Name="Shop" Relationship="ZsfModel.FK_ShopDisheCategory_Shop" FromRole="ShopDisheCategory" ToRole="Shop" />
+        </EntityType>
+        <EntityType Name="ShopRankingAttribute">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="ShopId" Nullable="false" />
+          <Property Type="Int16" Name="Stars" Nullable="false" />
+          <Property Type="Int16" Name="AveragePayMoney" Nullable="false" />
+          <Property Type="Int16" Name="DeliveryTime" Nullable="false" />
+          <Property Type="Int16" Name="Visits" Nullable="false" />
+          <NavigationProperty Name="Shop" Relationship="ZsfModel.FK_ShopRankingAttribute_Shop" FromRole="ShopRankingAttribute" ToRole="Shop" />
+        </EntityType>
+        <EntityType Name="ShopServiceArea">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="ShopId" Nullable="false" />
+          <Property Type="Int32" Name="AreaId" Nullable="false" />
+          <NavigationProperty Name="Shop" Relationship="ZsfModel.FK_ShopServiceArea_Shop" FromRole="ShopServiceArea" ToRole="Shop" />
+        </EntityType>
+        <EntityType Name="UserGradeCategory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int16" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="GradeName" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="Int16" Name="GradeLevel" Nullable="false" />
+          <NavigationProperty Name="UserInfo" Relationship="ZsfModel.FK_User_UserGradeCategory" FromRole="UserGradeCategory" ToRole="UserInfo" />
+        </EntityType>
+        <EntityType Name="UserInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Email" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Password" Nullable="false" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="Gender" Nullable="false" />
+          <Property Type="DateTime" Name="Birthday" Nullable="false" Precision="0" />
+          <Property Type="String" Name="Photo" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Int16" Name="GradeId" Nullable="false" />
+          <Property Type="DateTime" Name="CreateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="ShopComment" Relationship="ZsfModel.FK_ShopComment_User" FromRole="UserInfo" ToRole="ShopComment" />
+          <NavigationProperty Name="UserGradeCategory" Relationship="ZsfModel.FK_User_UserGradeCategory" FromRole="UserInfo" ToRole="UserGradeCategory" />
+          <NavigationProperty Name="UserLoginLog" Relationship="ZsfModel.FK_UserLoginLog_User" FromRole="UserInfo" ToRole="UserLoginLog" />
+          <NavigationProperty Name="UserMessage" Relationship="ZsfModel.FK_UserMail_UserMail" FromRole="UserInfo" ToRole="UserMessage" />
+          <NavigationProperty Name="UserPoint" Relationship="ZsfModel.FK_UserPoint_UserInfo" FromRole="UserInfo" ToRole="UserPoint" />
+          <NavigationProperty Name="UserFavoriteShop" Relationship="ZsfModel.FK_UserFollowShop_UserInfo" FromRole="UserInfo" ToRole="UserFavoriteShop" />
+          <NavigationProperty Name="UserDefaultArea" Relationship="ZsfModel.FK_UserDefaultArea_UserInfo" FromRole="UserInfo" ToRole="UserDefaultArea" />
+          <NavigationProperty Name="ShopJobAd" Relationship="ZsfModel.FK_ShopJobAd_UserInfo" FromRole="UserInfo" ToRole="ShopJobAd" />
+          <NavigationProperty Name="ShopJobAdModifyLog" Relationship="ZsfModel.FK_ShopJobAdModifyLog_UserInfo" FromRole="UserInfo" ToRole="ShopJobAdModifyLog" />
+          <NavigationProperty Name="ShopModifyLog" Relationship="ZsfModel.FK_UserEditShopLog_User" FromRole="UserInfo" ToRole="ShopModifyLog" />
+          <NavigationProperty Name="UserOrderDetail" Relationship="ZsfModel.FK_UserOrder_UserInfo" FromRole="UserInfo" ToRole="UserOrderDetail" />
+          <NavigationProperty Name="UserOrder" Relationship="ZsfModel.FK_UserOrder_UserInfo1" FromRole="UserInfo" ToRole="UserOrder" />
+        </EntityType>
+        <EntityType Name="UserLoginLog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="UserId" Nullable="false" />
+          <Property Type="DateTime" Name="CreateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="UserInfo" Relationship="ZsfModel.FK_UserLoginLog_User" FromRole="UserLoginLog" ToRole="UserInfo" />
+        </EntityType>
+        <EntityType Name="UserMessage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="UserId" Nullable="false" />
+          <Property Type="String" Name="MsgTitle" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MsgContent" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="Readed" Nullable="false" />
+          <Property Type="DateTime" Name="CreateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="UserInfo" Relationship="ZsfModel.FK_UserMail_UserMail" FromRole="UserMessage" ToRole="UserInfo" />
+        </EntityType>
+        <EntityType Name="UserPoint">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="UserId" Nullable="false" />
+          <Property Type="Int16" Name="PointCount" Nullable="false" />
+          <Property Type="String" Name="Reason" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="Usable" Nullable="false" />
+          <Property Type="String" Name="UsedFor" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="UserInfo" Relationship="ZsfModel.FK_UserPoint_UserInfo" FromRole="UserPoint" ToRole="UserInfo" />
+        </EntityType>
+        <EntityType Name="V_ShopComment">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="ShopId" />
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="Comment" />
+            <PropertyRef Name="Stars" />
+            <PropertyRef Name="CreateTime" />
+            <PropertyRef Name="UserName" />
+            <PropertyRef Name="UserPhoto" />
+            <PropertyRef Name="UserGrade" />
+            <PropertyRef Name="DeliveryTime" />
+            <PropertyRef Name="PayMoney" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Int32" Name="ShopId" Nullable="false" />
+          <Property Type="Int32" Name="UserId" Nullable="false" />
+          <Property Type="String" Name="Comment" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Type="Int16" Name="Stars" Nullable="false" />
+          <Property Type="DateTime" Name="CreateTime" Nullable="false" Precision="0" />
+          <Property Type="String" Name="UserName" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="UserPhoto" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="UserGrade" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="Int16" Name="DeliveryTime" Nullable="false" />
+          <Property Type="Int16" Name="PayMoney" Nullable="false" />
+        </EntityType>
+        <EntityType Name="V_ShopWithServiceArea">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Address" />
+            <PropertyRef Name="PhoneNumber" />
+            <PropertyRef Name="OfficeTimeBegin" />
+            <PropertyRef Name="OfficeTimeEnd" />
+            <PropertyRef Name="Stars" />
+            <PropertyRef Name="Longitude" />
+            <PropertyRef Name="Latitude" />
+            <PropertyRef Name="CategoryId" />
+            <PropertyRef Name="CreateTime" />
+            <PropertyRef Name="AreaId" />
+            <PropertyRef Name="Category" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Address" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Logo" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PhoneNumber" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Time" Name="OfficeTimeBegin" Nullable="false" Precision="0" />
+          <Property Type="Time" Name="OfficeTimeEnd" Nullable="false" Precision="0" />
+          <Property Type="Int16" Name="Stars" Nullable="false" />
+          <Property Type="String" Name="Remark" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Int16" Name="UpSendPrice" />
+          <Property Type="Double" Name="Longitude" Nullable="false" />
+          <Property Type="Double" Name="Latitude" Nullable="false" />
+          <Property Type="Int32" Name="CategoryId" Nullable="false" />
+          <Property Type="DateTime" Name="CreateTime" Nullable="false" Precision="0" />
+          <Property Type="Int32" Name="AreaId" Nullable="false" />
+          <Property Type="String" Name="Category" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="V_UserInfoDetail">
+          <Key>
+            <PropertyRef Name="GradeName" />
+            <PropertyRef Name="GradeLevel" />
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Email" />
+            <PropertyRef Name="Gender" />
+            <PropertyRef Name="Birthday" />
+            <PropertyRef Name="Photo" />
+            <PropertyRef Name="CreateTime" />
+            <PropertyRef Name="GradeId" />
+          </Key>
+          <Property Type="String" Name="GradeName" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="Int16" Name="GradeLevel" Nullable="false" />
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Email" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="Gender" Nullable="false" />
+          <Property Type="DateTime" Name="Birthday" Nullable="false" Precision="0" />
+          <Property Type="String" Name="Photo" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreateTime" Nullable="false" Precision="0" />
+          <Property Type="Int16" Name="GradeId" Nullable="false" />
+        </EntityType>
+        <EntityType Name="V_UserShopComment">
+          <Key>
+            <PropertyRef Name="UserName" />
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="ShopId" />
+            <PropertyRef Name="Comment" />
+            <PropertyRef Name="Stars" />
+            <PropertyRef Name="CreateTime" />
+            <PropertyRef Name="ShopName" />
+          </Key>
+          <Property Type="String" Name="UserName" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="UserId" Nullable="false" />
+          <Property Type="Int32" Name="ShopId" Nullable="false" />
+          <Property Type="String" Name="Comment" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Type="Int16" Name="Stars" Nullable="false" />
+          <Property Type="DateTime" Name="CreateTime" Nullable="false" Precision="0" />
+          <Property Type="String" Name="ShopName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_ShopComment_User">
+          <End Type="ZsfModel.UserInfo" Role="UserInfo" Multiplicity="1" />
+          <End Type="ZsfModel.ShopComment" Role="ShopComment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserInfo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ShopComment">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_UserGradeCategory">
+          <End Type="ZsfModel.UserGradeCategory" Role="UserGradeCategory" Multiplicity="1" />
+          <End Type="ZsfModel.UserInfo" Role="UserInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserGradeCategory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserInfo">
+              <PropertyRef Name="GradeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserLoginLog_User">
+          <End Type="ZsfModel.UserInfo" Role="UserInfo" Multiplicity="1" />
+          <End Type="ZsfModel.UserLoginLog" Role="UserLoginLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserInfo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserLoginLog">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserMail_UserMail">
+          <End Type="ZsfModel.UserInfo" Role="UserInfo" Multiplicity="1" />
+          <End Type="ZsfModel.UserMessage" Role="UserMessage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserInfo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserMessage">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserPoint_UserInfo">
+          <End Type="ZsfModel.UserInfo" Role="UserInfo" Multiplicity="1" />
+          <End Type="ZsfModel.UserPoint" Role="UserPoint" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserInfo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserPoint">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="UserFavoriteShop">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="UserId" Nullable="false" />
+          <Property Type="Int32" Name="ShopId" Nullable="false" />
+          <Property Type="DateTime" Name="CreateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="UserInfo" Relationship="ZsfModel.FK_UserFollowShop_UserInfo" FromRole="UserFavoriteShop" ToRole="UserInfo" />
+          <NavigationProperty Name="Shop" Relationship="ZsfModel.FK_UserFollowShop_Shop" FromRole="UserFavoriteShop" ToRole="Shop" />
+        </EntityType>
+        <Association Name="FK_UserFollowShop_UserInfo">
+          <End Type="ZsfModel.UserInfo" Role="UserInfo" Multiplicity="1" />
+          <End Type="ZsfModel.UserFavoriteShop" Role="UserFavoriteShop" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserInfo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserFavoriteShop">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ServiceArea">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Value" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="ParentId" Nullable="false" />
+          <Property Type="String" Name="AreaType" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="Location" Relationship="ZsfModel.FK_ServiceArea_Location" FromRole="ServiceArea" ToRole="Location" />
+          <NavigationProperty Name="UserDefaultArea" Relationship="ZsfModel.FK_UserDefaultArea_ServiceArea" FromRole="ServiceArea" ToRole="UserDefaultArea" />
+        </EntityType>
+        <Association Name="FK_ServiceArea_Location">
+          <End Type="ZsfModel.Location" Role="Location" Multiplicity="1" />
+          <End Type="ZsfModel.ServiceArea" Role="ServiceArea" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Location">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ServiceArea">
+              <PropertyRef Name="ParentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="V_UserDefaultArea">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="UserName" />
+            <PropertyRef Name="AreaValue" />
+            <PropertyRef Name="AreaId" />
+          </Key>
+          <Property Type="Int32" Name="UserId" Nullable="false" />
+          <Property Type="String" Name="UserName" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="AreaValue" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="AreaId" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserDefaultArea">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="UserId" Nullable="false" />
+          <Property Type="Int32" Name="AreaId" Nullable="false" />
+          <NavigationProperty Name="ServiceArea" Relationship="ZsfModel.FK_UserDefaultArea_ServiceArea" FromRole="UserDefaultArea" ToRole="ServiceArea" />
+          <NavigationProperty Name="UserInfo" Relationship="ZsfModel.FK_UserDefaultArea_UserInfo" FromRole="UserDefaultArea" ToRole="UserInfo" />
+        </EntityType>
+        <Association Name="FK_UserDefaultArea_ServiceArea">
+          <End Type="ZsfModel.ServiceArea" Role="ServiceArea" Multiplicity="1" />
+          <End Type="ZsfModel.UserDefaultArea" Role="UserDefaultArea" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ServiceArea">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserDefaultArea">
+              <PropertyRef Name="AreaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserDefaultArea_UserInfo">
+          <End Type="ZsfModel.UserInfo" Role="UserInfo" Multiplicity="1" />
+          <End Type="ZsfModel.UserDefaultArea" Role="UserDefaultArea" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserInfo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserDefaultArea">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="V_ShopServiceArea">
+          <Key>
+            <PropertyRef Name="ShopId" />
+            <PropertyRef Name="AreaId" />
+            <PropertyRef Name="ServiceArea" />
+            <PropertyRef Name="ParentId" />
+            <PropertyRef Name="AreaType" />
+          </Key>
+          <Property Type="Int32" Name="ShopId" Nullable="false" />
+          <Property Type="Int32" Name="AreaId" Nullable="false" />
+          <Property Type="String" Name="ServiceArea" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="ParentId" Nullable="false" />
+          <Property Type="String" Name="AreaType" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="V_ShopDisheWithCategory">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="ShopId" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Price" />
+            <PropertyRef Name="CategoryId" />
+            <PropertyRef Name="DisheCategoryOrder" />
+            <PropertyRef Name="DisheOrder" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Int32" Name="ShopId" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="Double" Name="Price" Nullable="false" />
+          <Property Type="Int32" Name="CategoryId" Nullable="false" />
+          <Property Type="String" Name="CategoryValue" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Remark" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Gift" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="Int16" Name="DisheCategoryOrder" Nullable="false" />
+          <Property Type="Int16" Name="DisheOrder" Nullable="false" />
+        </EntityType>
+        <EntityType Name="V_UserFavoriteShopForList">
+          <Key>
+            <PropertyRef Name="FavoriteId" />
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="ShopId" />
+            <PropertyRef Name="ShopName" />
+            <PropertyRef Name="Address" />
+            <PropertyRef Name="OfficeTimeBegin" />
+            <PropertyRef Name="OfficeTimeEnd" />
+            <PropertyRef Name="UpSendPrice" />
+            <PropertyRef Name="ShopCategoryId" />
+            <PropertyRef Name="Longitude" />
+            <PropertyRef Name="Latitude" />
+            <PropertyRef Name="Stars" />
+            <PropertyRef Name="AveragePayMoney" />
+            <PropertyRef Name="DeliveryTime" />
+            <PropertyRef Name="FavoriteCreateTime" />
+            <PropertyRef Name="Visits" />
+          </Key>
+          <Property Type="Int32" Name="FavoriteId" Nullable="false" />
+          <Property Type="Int32" Name="UserId" Nullable="false" />
+          <Property Type="Int32" Name="ShopId" Nullable="false" />
+          <Property Type="String" Name="ShopName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Address" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Logo" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="Time" Name="OfficeTimeBegin" Nullable="false" Precision="0" />
+          <Property Type="Time" Name="OfficeTimeEnd" Nullable="false" Precision="0" />
+          <Property Type="Int16" Name="UpSendPrice" Nullable="false" />
+          <Property Type="Int32" Name="ShopCategoryId" Nullable="false" />
+          <Property Type="Double" Name="Longitude" Nullable="false" />
+          <Property Type="Double" Name="Latitude" Nullable="false" />
+          <Property Type="Int16" Name="Stars" Nullable="false" />
+          <Property Type="Int16" Name="AveragePayMoney" Nullable="false" />
+          <Property Type="Int16" Name="DeliveryTime" Nullable="false" />
+          <Property Type="DateTime" Name="FavoriteCreateTime" Nullable="false" Precision="3" />
+          <Property Type="Int16" Name="Visits" Nullable="false" />
+        </EntityType>
+        <EntityType Name="V_ShopDetail">
+          <Key>
+            <PropertyRef Name="Stars" />
+            <PropertyRef Name="AveragePayMoney" />
+            <PropertyRef Name="DeliveryTime" />
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Address" />
+            <PropertyRef Name="PhoneNumber" />
+            <PropertyRef Name="OfficeTimeBegin" />
+            <PropertyRef Name="OfficeTimeEnd" />
+            <PropertyRef Name="UpSendPrice" />
+            <PropertyRef Name="Longitude" />
+            <PropertyRef Name="Latitude" />
+            <PropertyRef Name="Hidden" />
+            <PropertyRef Name="CreateBy" />
+          </Key>
+          <Property Type="Int16" Name="Stars" Nullable="false" />
+          <Property Type="Int16" Name="AveragePayMoney" Nullable="false" />
+          <Property Type="Int16" Name="DeliveryTime" Nullable="false" />
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Address" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Logo" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PhoneNumber" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Time" Name="OfficeTimeBegin" Nullable="false" Precision="0" />
+          <Property Type="Time" Name="OfficeTimeEnd" Nullable="false" Precision="0" />
+          <Property Type="String" Name="Remark" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Int16" Name="UpSendPrice" Nullable="false" />
+          <Property Type="Double" Name="Longitude" Nullable="false" />
+          <Property Type="Double" Name="Latitude" Nullable="false" />
+          <Property Type="Boolean" Name="Hidden" Nullable="false" />
+          <Property Type="Int32" Name="CreateBy" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ShopJobAd">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="ShopId" Nullable="false" />
+          <Property Type="String" Name="JobTitle" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="Int16" Name="SalaryMin" Nullable="false" />
+          <Property Type="Int16" Name="SalaryMax" Nullable="false" />
+          <Property Type="String" Name="ContactPhone" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="WorkPlace" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="PublishedAt" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="DateDue" Nullable="false" Precision="0" />
+          <Property Type="Int32" Name="PublishedBy" Nullable="false" />
+          <Property Type="Int16" Name="OrderIndex" Nullable="false" />
+          <NavigationProperty Name="UserInfo" Relationship="ZsfModel.FK_ShopJobAd_UserInfo" FromRole="ShopJobAd" ToRole="UserInfo" />
+          <NavigationProperty Name="ShopJobAdModifyLog" Relationship="ZsfModel.FK_ShopJobAdModifyLog_ShopJobAd" FromRole="ShopJobAd" ToRole="ShopJobAdModifyLog" />
+          <Property Type="DateTime" Name="LastModifyAt" Nullable="false" Precision="3" />
+          <Property Type="Int32" Name="LastModifyBy" Nullable="false" />
+          <Property Type="String" Name="JobType" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="Shop" Relationship="ZsfModel.FK_ShopJobAds_Shop" FromRole="ShopJobAd" ToRole="Shop" />
+        </EntityType>
+        <EntityType Name="ShopJobAdModifyLog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="JobId" Nullable="false" />
+          <Property Type="DateTime" Name="ModifyAt" Nullable="false" Precision="3" />
+          <Property Type="Int32" Name="ModifyBy" Nullable="false" />
+          <NavigationProperty Name="ShopJobAd" Relationship="ZsfModel.FK_ShopJobAdModifyLog_ShopJobAd" FromRole="ShopJobAdModifyLog" ToRole="ShopJobAd" />
+          <NavigationProperty Name="UserInfo" Relationship="ZsfModel.FK_ShopJobAdModifyLog_UserInfo" FromRole="ShopJobAdModifyLog" ToRole="UserInfo" />
+        </EntityType>
+        <Association Name="FK_ShopJobAd_UserInfo">
+          <End Type="ZsfModel.UserInfo" Role="UserInfo" Multiplicity="1" />
+          <End Type="ZsfModel.ShopJobAd" Role="ShopJobAd" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserInfo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ShopJobAd">
+              <PropertyRef Name="PublishedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShopJobAdModifyLog_ShopJobAd">
+          <End Type="ZsfModel.ShopJobAd" Role="ShopJobAd" Multiplicity="1" />
+          <End Type="ZsfModel.ShopJobAdModifyLog" Role="ShopJobAdModifyLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ShopJobAd">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ShopJobAdModifyLog">
+              <PropertyRef Name="JobId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShopJobAdModifyLog_UserInfo">
+          <End Type="ZsfModel.UserInfo" Role="UserInfo" Multiplicity="1" />
+          <End Type="ZsfModel.ShopJobAdModifyLog" Role="ShopJobAdModifyLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserInfo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ShopJobAdModifyLog">
+              <PropertyRef Name="ModifyBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="V_ShopJobAd">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="ShopId" />
+            <PropertyRef Name="ShopName" />
+            <PropertyRef Name="JobTitle" />
+            <PropertyRef Name="Description" />
+            <PropertyRef Name="PublishedAt" />
+            <PropertyRef Name="DateDue" />
+            <PropertyRef Name="PublishedByUserId" />
+            <PropertyRef Name="PublishedByUserName" />
+            <PropertyRef Name="SalaryMin" />
+            <PropertyRef Name="SalaryMax" />
+            <PropertyRef Name="ShopLocation" />
+            <PropertyRef Name="OrderIndex" />
+            <PropertyRef Name="AreaId" />
+            <PropertyRef Name="ContactPhone" />
+            <PropertyRef Name="LastModifyAt" />
+            <PropertyRef Name="LastModifyByUserId" />
+            <PropertyRef Name="LastModifyByUserName" />
+            <PropertyRef Name="JobType" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Int32" Name="ShopId" Nullable="false" />
+          <Property Type="String" Name="ShopName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="JobTitle" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="PublishedAt" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="DateDue" Nullable="false" Precision="0" />
+          <Property Type="Int32" Name="PublishedByUserId" Nullable="false" />
+          <Property Type="String" Name="PublishedByUserName" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="Int16" Name="SalaryMin" Nullable="false" />
+          <Property Type="Int16" Name="SalaryMax" Nullable="false" />
+          <Property Type="String" Name="ShopLocation" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Int16" Name="OrderIndex" Nullable="false" />
+          <Property Type="Int32" Name="AreaId" Nullable="false" />
+          <Property Type="String" Name="ContactPhone" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="WorkPlace" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="LastModifyAt" Nullable="false" Precision="3" />
+          <Property Type="Int32" Name="LastModifyByUserId" Nullable="false" />
+          <Property Type="String" Name="LastModifyByUserName" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="JobType" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Shop">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Address" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Logo" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PhoneNumber" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Time" Name="OfficeTimeBegin" Nullable="false" Precision="0" />
+          <Property Type="Time" Name="OfficeTimeEnd" Nullable="false" Precision="0" />
+          <Property Type="Int16" Name="Stars" Nullable="false" />
+          <Property Type="String" Name="Remark" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Int16" Name="UpSendPrice" Nullable="false" />
+          <Property Type="Int16" Name="AveragePayMoney" />
+          <Property Type="Int16" Name="DeliveryTime" Nullable="false" />
+          <Property Type="Double" Name="Longitude" Nullable="false" />
+          <Property Type="Double" Name="Latitude" Nullable="false" />
+          <Property Type="Int32" Name="CategoryId" Nullable="false" />
+          <Property Type="Boolean" Name="Hidden" Nullable="false" />
+          <Property Type="DateTime" Name="CreateTime" Nullable="false" Precision="0" />
+          <Property Type="Int32" Name="CreateBy" Nullable="false" />
+          <Property Type="Int32" Name="LastModifyBy" Nullable="false" />
+          <Property Type="DateTime" Name="LastModifyAt" Nullable="false" Precision="3" />
+          <NavigationProperty Name="ShopComment" Relationship="ZsfModel.FK_ShopComment_Shop" FromRole="Shop" ToRole="ShopComment" />
+          <NavigationProperty Name="ShopDishe" Relationship="ZsfModel.FK_ShopDishe_Shop" FromRole="Shop" ToRole="ShopDishe" />
+          <NavigationProperty Name="ShopDisheCategory" Relationship="ZsfModel.FK_ShopDisheCategory_Shop" FromRole="Shop" ToRole="ShopDisheCategory" />
+          <NavigationProperty Name="ShopJobAd" Relationship="ZsfModel.FK_ShopJobAds_Shop" FromRole="Shop" ToRole="ShopJobAd" />
+          <NavigationProperty Name="ShopRankingAttribute" Relationship="ZsfModel.FK_ShopRankingAttribute_Shop" FromRole="Shop" ToRole="ShopRankingAttribute" />
+          <NavigationProperty Name="ShopServiceArea" Relationship="ZsfModel.FK_ShopServiceArea_Shop" FromRole="Shop" ToRole="ShopServiceArea" />
+          <NavigationProperty Name="UserFavoriteShop" Relationship="ZsfModel.FK_UserFollowShop_Shop" FromRole="Shop" ToRole="UserFavoriteShop" />
+          <NavigationProperty Name="ShopModifyLog" Relationship="ZsfModel.FK_UserEditShopLog_Shop" FromRole="Shop" ToRole="ShopModifyLog" />
+          <NavigationProperty Name="UserOrderDetail" Relationship="ZsfModel.FK_UserOrder_Shop" FromRole="Shop" ToRole="UserOrderDetail" />
+        </EntityType>
+        <EntityType Name="V_ShopForList">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Address" />
+            <PropertyRef Name="PhoneNumber" />
+            <PropertyRef Name="OfficeTimeBegin" />
+            <PropertyRef Name="OfficeTimeEnd" />
+            <PropertyRef Name="UpSendPrice" />
+            <PropertyRef Name="CategoryId" />
+            <PropertyRef Name="CreateTime" />
+            <PropertyRef Name="AreaId" />
+            <PropertyRef Name="Category" />
+            <PropertyRef Name="Longitude" />
+            <PropertyRef Name="Latitude" />
+            <PropertyRef Name="Stars" />
+            <PropertyRef Name="AveragePayMoney" />
+            <PropertyRef Name="DeliveryTime" />
+            <PropertyRef Name="Hidden" />
+            <PropertyRef Name="Visits" />
+            <PropertyRef Name="CreateByUserName" />
+            <PropertyRef Name="CreateBy" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Address" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Logo" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PhoneNumber" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Time" Name="OfficeTimeBegin" Nullable="false" Precision="0" />
+          <Property Type="Time" Name="OfficeTimeEnd" Nullable="false" Precision="0" />
+          <Property Type="Int16" Name="UpSendPrice" Nullable="false" />
+          <Property Type="Int32" Name="CategoryId" Nullable="false" />
+          <Property Type="DateTime" Name="CreateTime" Nullable="false" Precision="0" />
+          <Property Type="Int32" Name="AreaId" Nullable="false" />
+          <Property Type="String" Name="Category" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Type="Double" Name="Longitude" Nullable="false" />
+          <Property Type="Double" Name="Latitude" Nullable="false" />
+          <Property Type="Int16" Name="Stars" Nullable="false" />
+          <Property Type="Int16" Name="AveragePayMoney" Nullable="false" />
+          <Property Type="Int16" Name="DeliveryTime" Nullable="false" />
+          <Property Type="Boolean" Name="Hidden" Nullable="false" />
+          <Property Type="Int16" Name="Visits" Nullable="false" />
+          <Property Type="Int32" Name="JobsCount" />
+          <Property Type="String" Name="CreateByUserName" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="CreateBy" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_ShopComment_Shop">
+          <End Type="ZsfModel.Shop" Role="Shop" Multiplicity="1" />
+          <End Type="ZsfModel.ShopComment" Role="ShopComment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Shop">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ShopComment">
+              <PropertyRef Name="ShopId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShopDishe_Shop">
+          <End Type="ZsfModel.Shop" Role="Shop" Multiplicity="1" />
+          <End Type="ZsfModel.ShopDishe" Role="ShopDishe" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Shop">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ShopDishe">
+              <PropertyRef Name="ShopId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShopDisheCategory_Shop">
+          <End Type="ZsfModel.Shop" Role="Shop" Multiplicity="0..1" />
+          <End Type="ZsfModel.ShopDisheCategory" Role="ShopDisheCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Shop">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ShopDisheCategory">
+              <PropertyRef Name="ShopId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShopJobAds_Shop">
+          <End Type="ZsfModel.Shop" Role="Shop" Multiplicity="1" />
+          <End Type="ZsfModel.ShopJobAd" Role="ShopJobAd" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Shop">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ShopJobAd">
+              <PropertyRef Name="ShopId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShopRankingAttribute_Shop">
+          <End Type="ZsfModel.Shop" Role="Shop" Multiplicity="1" />
+          <End Type="ZsfModel.ShopRankingAttribute" Role="ShopRankingAttribute" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Shop">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ShopRankingAttribute">
+              <PropertyRef Name="ShopId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShopServiceArea_Shop">
+          <End Type="ZsfModel.Shop" Role="Shop" Multiplicity="1" />
+          <End Type="ZsfModel.ShopServiceArea" Role="ShopServiceArea" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Shop">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ShopServiceArea">
+              <PropertyRef Name="ShopId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserFollowShop_Shop">
+          <End Type="ZsfModel.Shop" Role="Shop" Multiplicity="1" />
+          <End Type="ZsfModel.UserFavoriteShop" Role="UserFavoriteShop" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Shop">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserFavoriteShop">
+              <PropertyRef Name="ShopId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ShopModifyLog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="ShopId" Nullable="false" />
+          <Property Type="Int32" Name="ModifyBy" Nullable="false" />
+          <Property Type="DateTime" Name="ModifyAt" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Shop" Relationship="ZsfModel.FK_UserEditShopLog_Shop" FromRole="ShopModifyLog" ToRole="Shop" />
+          <NavigationProperty Name="UserInfo" Relationship="ZsfModel.FK_UserEditShopLog_User" FromRole="ShopModifyLog" ToRole="UserInfo" />
+        </EntityType>
+        <Association Name="FK_UserEditShopLog_Shop">
+          <End Type="ZsfModel.Shop" Role="Shop" Multiplicity="1" />
+          <End Type="ZsfModel.ShopModifyLog" Role="ShopModifyLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Shop">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ShopModifyLog">
+              <PropertyRef Name="ShopId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserEditShopLog_User">
+          <End Type="ZsfModel.UserInfo" Role="UserInfo" Multiplicity="1" />
+          <End Type="ZsfModel.ShopModifyLog" Role="ShopModifyLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserInfo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ShopModifyLog">
+              <PropertyRef Name="ModifyBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="UserOrder">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Boolean" Name="Available" Nullable="false" />
+          <Property Type="Int32" Name="CreateBy" Nullable="false" />
+          <Property Type="DateTime" Name="CreateTime" Nullable="false" />
+          <NavigationProperty Name="UserInfo" Relationship="ZsfModel.FK_UserOrder_UserInfo1" FromRole="UserOrder" ToRole="UserInfo" />
+          <NavigationProperty Name="UserOrderDetail" Relationship="ZsfModel.FK_UserOrderDetail_UserOrder" FromRole="UserOrder" ToRole="UserOrderDetail" />
+        </EntityType>
+        <EntityType Name="UserOrderDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Int32" Name="OrderId" Nullable="false" />
+          <Property Type="Int32" Name="ShopId" Nullable="false" />
+          <Property Type="Int32" Name="DisheId" Nullable="false" />
+          <Property Type="Int32" Name="UserId" Nullable="false" />
+          <Property Type="Int16" Name="Price" Nullable="false" />
+          <Property Type="Int16" Name="OrderCount" Nullable="false" />
+          <Property Type="Int16" Name="UserGroup" Nullable="false" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="false" />
+          <NavigationProperty Name="Shop" Relationship="ZsfModel.FK_UserOrder_Shop" FromRole="UserOrderDetail" ToRole="Shop" />
+          <NavigationProperty Name="ShopDishe" Relationship="ZsfModel.FK_UserOrder_ShopDishe" FromRole="UserOrderDetail" ToRole="ShopDishe" />
+          <NavigationProperty Name="UserInfo" Relationship="ZsfModel.FK_UserOrder_UserInfo" FromRole="UserOrderDetail" ToRole="UserInfo" />
+          <NavigationProperty Name="UserOrder" Relationship="ZsfModel.FK_UserOrderDetail_UserOrder" FromRole="UserOrderDetail" ToRole="UserOrder" />
+        </EntityType>
+        <Association Name="FK_UserOrder_Shop">
+          <End Type="ZsfModel.Shop" Role="Shop" Multiplicity="1" />
+          <End Type="ZsfModel.UserOrderDetail" Role="UserOrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Shop">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserOrderDetail">
+              <PropertyRef Name="ShopId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserOrder_ShopDishe">
+          <End Type="ZsfModel.ShopDishe" Role="ShopDishe" Multiplicity="1" />
+          <End Type="ZsfModel.UserOrderDetail" Role="UserOrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ShopDishe">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserOrderDetail">
+              <PropertyRef Name="DisheId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserOrder_UserInfo">
+          <End Type="ZsfModel.UserInfo" Role="UserInfo" Multiplicity="1" />
+          <End Type="ZsfModel.UserOrderDetail" Role="UserOrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserInfo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserOrderDetail">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserOrder_UserInfo1">
+          <End Type="ZsfModel.UserInfo" Role="UserInfo" Multiplicity="1" />
+          <End Type="ZsfModel.UserOrder" Role="UserOrder" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="UserInfo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserOrder">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserOrderDetail_UserOrder">
+          <End Type="ZsfModel.UserOrder" Role="UserOrder" Multiplicity="1" />
+          <End Type="ZsfModel.UserOrderDetail" Role="UserOrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserOrder">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserOrderDetail">
+              <PropertyRef Name="OrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ZsfModelStoreContainer" CdmEntityContainer="ZsfEntities">
+          <EntitySetMapping Name="Location">
+            <EntityTypeMapping TypeName="ZsfModel.Location">
+              <MappingFragment StoreEntitySet="Location">
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ShopCategory">
+            <EntityTypeMapping TypeName="ZsfModel.ShopCategory">
+              <MappingFragment StoreEntitySet="ShopCategory">
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ShopComment">
+            <EntityTypeMapping TypeName="ZsfModel.ShopComment">
+              <MappingFragment StoreEntitySet="ShopComment">
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="DeliveryTime" ColumnName="DeliveryTime" />
+                <ScalarProperty Name="PayMoney" ColumnName="PayMoney" />
+                <ScalarProperty Name="Stars" ColumnName="Stars" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ShopId" ColumnName="ShopId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ShopDishe">
+            <EntityTypeMapping TypeName="ZsfModel.ShopDishe">
+              <MappingFragment StoreEntitySet="ShopDishe">
+                <ScalarProperty Name="OrderIndex" ColumnName="OrderIndex" />
+                <ScalarProperty Name="Gift" ColumnName="Gift" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ShopId" ColumnName="ShopId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ShopDisheCategory">
+            <EntityTypeMapping TypeName="ZsfModel.ShopDisheCategory">
+              <MappingFragment StoreEntitySet="ShopDisheCategory">
+                <ScalarProperty Name="OrderIndex" ColumnName="OrderIndex" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="ShopId" ColumnName="ShopId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ShopRankingAttribute">
+            <EntityTypeMapping TypeName="ZsfModel.ShopRankingAttribute">
+              <MappingFragment StoreEntitySet="ShopRankingAttribute">
+                <ScalarProperty Name="Visits" ColumnName="Visits" />
+                <ScalarProperty Name="DeliveryTime" ColumnName="DeliveryTime" />
+                <ScalarProperty Name="AveragePayMoney" ColumnName="AveragePayMoney" />
+                <ScalarProperty Name="Stars" ColumnName="Stars" />
+                <ScalarProperty Name="ShopId" ColumnName="ShopId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ShopServiceArea">
+            <EntityTypeMapping TypeName="ZsfModel.ShopServiceArea">
+              <MappingFragment StoreEntitySet="ShopServiceArea">
+                <ScalarProperty Name="AreaId" ColumnName="AreaId" />
+                <ScalarProperty Name="ShopId" ColumnName="ShopId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserGradeCategory">
+            <EntityTypeMapping TypeName="ZsfModel.UserGradeCategory">
+              <MappingFragment StoreEntitySet="UserGradeCategory">
+                <ScalarProperty Name="GradeLevel" ColumnName="GradeLevel" />
+                <ScalarProperty Name="GradeName" ColumnName="GradeName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserInfo">
+            <EntityTypeMapping TypeName="ZsfModel.UserInfo">
+              <MappingFragment StoreEntitySet="UserInfo">
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="GradeId" ColumnName="GradeId" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserLoginLog">
+            <EntityTypeMapping TypeName="ZsfModel.UserLoginLog">
+              <MappingFragment StoreEntitySet="UserLoginLog">
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserMessage">
+            <EntityTypeMapping TypeName="ZsfModel.UserMessage">
+              <MappingFragment StoreEntitySet="UserMessage">
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="Readed" ColumnName="Readed" />
+                <ScalarProperty Name="MsgContent" ColumnName="MsgContent" />
+                <ScalarProperty Name="MsgTitle" ColumnName="MsgTitle" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserPoint">
+            <EntityTypeMapping TypeName="ZsfModel.UserPoint">
+              <MappingFragment StoreEntitySet="UserPoint">
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="UsedFor" ColumnName="UsedFor" />
+                <ScalarProperty Name="Usable" ColumnName="Usable" />
+                <ScalarProperty Name="Reason" ColumnName="Reason" />
+                <ScalarProperty Name="PointCount" ColumnName="PointCount" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_ShopComment">
+            <EntityTypeMapping TypeName="ZsfModel.V_ShopComment">
+              <MappingFragment StoreEntitySet="V_ShopComment">
+                <ScalarProperty Name="PayMoney" ColumnName="PayMoney" />
+                <ScalarProperty Name="DeliveryTime" ColumnName="DeliveryTime" />
+                <ScalarProperty Name="UserGrade" ColumnName="UserGrade" />
+                <ScalarProperty Name="UserPhoto" ColumnName="UserPhoto" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="Stars" ColumnName="Stars" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ShopId" ColumnName="ShopId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_ShopWithServiceArea">
+            <EntityTypeMapping TypeName="ZsfModel.V_ShopWithServiceArea">
+              <MappingFragment StoreEntitySet="V_ShopWithServiceArea">
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="AreaId" ColumnName="AreaId" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+                <ScalarProperty Name="UpSendPrice" ColumnName="UpSendPrice" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="Stars" ColumnName="Stars" />
+                <ScalarProperty Name="OfficeTimeEnd" ColumnName="OfficeTimeEnd" />
+                <ScalarProperty Name="OfficeTimeBegin" ColumnName="OfficeTimeBegin" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Logo" ColumnName="Logo" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_UserInfoDetail">
+            <EntityTypeMapping TypeName="ZsfModel.V_UserInfoDetail">
+              <MappingFragment StoreEntitySet="V_UserInfoDetail">
+                <ScalarProperty Name="GradeId" ColumnName="GradeId" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="GradeLevel" ColumnName="GradeLevel" />
+                <ScalarProperty Name="GradeName" ColumnName="GradeName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_UserShopComment">
+            <EntityTypeMapping TypeName="ZsfModel.V_UserShopComment">
+              <MappingFragment StoreEntitySet="V_UserShopComment">
+                <ScalarProperty Name="ShopName" ColumnName="ShopName" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="Stars" ColumnName="Stars" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="ShopId" ColumnName="ShopId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserFavoriteShop">
+            <EntityTypeMapping TypeName="ZsfModel.UserFavoriteShop">
+              <MappingFragment StoreEntitySet="UserFavoriteShop">
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="ShopId" ColumnName="ShopId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ServiceArea">
+            <EntityTypeMapping TypeName="ZsfModel.ServiceArea">
+              <MappingFragment StoreEntitySet="ServiceArea">
+                <ScalarProperty Name="AreaType" ColumnName="AreaType" />
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_UserDefaultArea">
+            <EntityTypeMapping TypeName="ZsfModel.V_UserDefaultArea">
+              <MappingFragment StoreEntitySet="V_UserDefaultArea">
+                <ScalarProperty Name="AreaId" ColumnName="AreaId" />
+                <ScalarProperty Name="AreaValue" ColumnName="AreaValue" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserDefaultArea">
+            <EntityTypeMapping TypeName="ZsfModel.UserDefaultArea">
+              <MappingFragment StoreEntitySet="UserDefaultArea">
+                <ScalarProperty Name="AreaId" ColumnName="AreaId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_ShopServiceArea">
+            <EntityTypeMapping TypeName="ZsfModel.V_ShopServiceArea">
+              <MappingFragment StoreEntitySet="V_ShopServiceArea">
+                <ScalarProperty Name="AreaType" ColumnName="AreaType" />
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="ServiceArea" ColumnName="ServiceArea" />
+                <ScalarProperty Name="AreaId" ColumnName="AreaId" />
+                <ScalarProperty Name="ShopId" ColumnName="ShopId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_ShopDisheWithCategory">
+            <EntityTypeMapping TypeName="ZsfModel.V_ShopDisheWithCategory">
+              <MappingFragment StoreEntitySet="V_ShopDisheWithCategory">
+                <ScalarProperty Name="DisheOrder" ColumnName="DisheOrder" />
+                <ScalarProperty Name="DisheCategoryOrder" ColumnName="DisheCategoryOrder" />
+                <ScalarProperty Name="Gift" ColumnName="Gift" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="CategoryValue" ColumnName="CategoryValue" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ShopId" ColumnName="ShopId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_UserFavoriteShopForList">
+            <EntityTypeMapping TypeName="ZsfModel.V_UserFavoriteShopForList">
+              <MappingFragment StoreEntitySet="V_UserFavoriteShopForList">
+                <ScalarProperty Name="Visits" ColumnName="Visits" />
+                <ScalarProperty Name="FavoriteCreateTime" ColumnName="FavoriteCreateTime" />
+                <ScalarProperty Name="DeliveryTime" ColumnName="DeliveryTime" />
+                <ScalarProperty Name="AveragePayMoney" ColumnName="AveragePayMoney" />
+                <ScalarProperty Name="Stars" ColumnName="Stars" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+                <ScalarProperty Name="ShopCategoryId" ColumnName="ShopCategoryId" />
+                <ScalarProperty Name="UpSendPrice" ColumnName="UpSendPrice" />
+                <ScalarProperty Name="OfficeTimeEnd" ColumnName="OfficeTimeEnd" />
+                <ScalarProperty Name="OfficeTimeBegin" ColumnName="OfficeTimeBegin" />
+                <ScalarProperty Name="Logo" ColumnName="Logo" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="ShopName" ColumnName="ShopName" />
+                <ScalarProperty Name="ShopId" ColumnName="ShopId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="FavoriteId" ColumnName="FavoriteId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_ShopDetail">
+            <EntityTypeMapping TypeName="ZsfModel.V_ShopDetail">
+              <MappingFragment StoreEntitySet="V_ShopDetail">
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="Hidden" ColumnName="Hidden" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+                <ScalarProperty Name="UpSendPrice" ColumnName="UpSendPrice" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="OfficeTimeEnd" ColumnName="OfficeTimeEnd" />
+                <ScalarProperty Name="OfficeTimeBegin" ColumnName="OfficeTimeBegin" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Logo" ColumnName="Logo" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="DeliveryTime" ColumnName="DeliveryTime" />
+                <ScalarProperty Name="AveragePayMoney" ColumnName="AveragePayMoney" />
+                <ScalarProperty Name="Stars" ColumnName="Stars" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ShopJobAd">
+            <EntityTypeMapping TypeName="ZsfModel.ShopJobAd">
+              <MappingFragment StoreEntitySet="ShopJobAd">
+                <ScalarProperty Name="JobType" ColumnName="JobType" />
+                <ScalarProperty Name="LastModifyBy" ColumnName="LastModifyBy" />
+                <ScalarProperty Name="LastModifyAt" ColumnName="LastModifyAt" />
+                <ScalarProperty Name="OrderIndex" ColumnName="OrderIndex" />
+                <ScalarProperty Name="PublishedBy" ColumnName="PublishedBy" />
+                <ScalarProperty Name="DateDue" ColumnName="DateDue" />
+                <ScalarProperty Name="PublishedAt" ColumnName="PublishedAt" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="WorkPlace" ColumnName="WorkPlace" />
+                <ScalarProperty Name="ContactPhone" ColumnName="ContactPhone" />
+                <ScalarProperty Name="SalaryMax" ColumnName="SalaryMax" />
+                <ScalarProperty Name="SalaryMin" ColumnName="SalaryMin" />
+                <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+                <ScalarProperty Name="ShopId" ColumnName="ShopId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ShopJobAdModifyLog">
+            <EntityTypeMapping TypeName="ZsfModel.ShopJobAdModifyLog">
+              <MappingFragment StoreEntitySet="ShopJobAdModifyLog">
+                <ScalarProperty Name="ModifyBy" ColumnName="ModifyBy" />
+                <ScalarProperty Name="ModifyAt" ColumnName="ModifyAt" />
+                <ScalarProperty Name="JobId" ColumnName="JobId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_ShopJobAd">
+            <EntityTypeMapping TypeName="ZsfModel.V_ShopJobAd">
+              <MappingFragment StoreEntitySet="V_ShopJobAd">
+                <ScalarProperty Name="JobType" ColumnName="JobType" />
+                <ScalarProperty Name="LastModifyByUserName" ColumnName="LastModifyByUserName" />
+                <ScalarProperty Name="LastModifyByUserId" ColumnName="LastModifyByUserId" />
+                <ScalarProperty Name="LastModifyAt" ColumnName="LastModifyAt" />
+                <ScalarProperty Name="WorkPlace" ColumnName="WorkPlace" />
+                <ScalarProperty Name="ContactPhone" ColumnName="ContactPhone" />
+                <ScalarProperty Name="AreaId" ColumnName="AreaId" />
+                <ScalarProperty Name="OrderIndex" ColumnName="OrderIndex" />
+                <ScalarProperty Name="ShopLocation" ColumnName="ShopLocation" />
+                <ScalarProperty Name="SalaryMax" ColumnName="SalaryMax" />
+                <ScalarProperty Name="SalaryMin" ColumnName="SalaryMin" />
+                <ScalarProperty Name="PublishedByUserName" ColumnName="PublishedByUserName" />
+                <ScalarProperty Name="PublishedByUserId" ColumnName="PublishedByUserId" />
+                <ScalarProperty Name="DateDue" ColumnName="DateDue" />
+                <ScalarProperty Name="PublishedAt" ColumnName="PublishedAt" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+                <ScalarProperty Name="ShopName" ColumnName="ShopName" />
+                <ScalarProperty Name="ShopId" ColumnName="ShopId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Shop">
+            <EntityTypeMapping TypeName="ZsfModel.Shop">
+              <MappingFragment StoreEntitySet="Shop">
+                <ScalarProperty Name="LastModifyAt" ColumnName="LastModifyAt" />
+                <ScalarProperty Name="LastModifyBy" ColumnName="LastModifyBy" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="Hidden" ColumnName="Hidden" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+                <ScalarProperty Name="DeliveryTime" ColumnName="DeliveryTime" />
+                <ScalarProperty Name="AveragePayMoney" ColumnName="AveragePayMoney" />
+                <ScalarProperty Name="UpSendPrice" ColumnName="UpSendPrice" />
+                <ScalarProperty Name="Remark" ColumnName="Remark" />
+                <ScalarProperty Name="Stars" ColumnName="Stars" />
+                <ScalarProperty Name="OfficeTimeEnd" ColumnName="OfficeTimeEnd" />
+                <ScalarProperty Name="OfficeTimeBegin" ColumnName="OfficeTimeBegin" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Logo" ColumnName="Logo" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_ShopForList">
+            <EntityTypeMapping TypeName="ZsfModel.V_ShopForList">
+              <MappingFragment StoreEntitySet="V_ShopForList">
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="CreateByUserName" ColumnName="CreateByUserName" />
+                <ScalarProperty Name="JobsCount" ColumnName="JobsCount" />
+                <ScalarProperty Name="Visits" ColumnName="Visits" />
+                <ScalarProperty Name="Hidden" ColumnName="Hidden" />
+                <ScalarProperty Name="DeliveryTime" ColumnName="DeliveryTime" />
+                <ScalarProperty Name="AveragePayMoney" ColumnName="AveragePayMoney" />
+                <ScalarProperty Name="Stars" ColumnName="Stars" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="AreaId" ColumnName="AreaId" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="UpSendPrice" ColumnName="UpSendPrice" />
+                <ScalarProperty Name="OfficeTimeEnd" ColumnName="OfficeTimeEnd" />
+                <ScalarProperty Name="OfficeTimeBegin" ColumnName="OfficeTimeBegin" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Logo" ColumnName="Logo" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ShopModifyLog">
+            <EntityTypeMapping TypeName="ZsfModel.ShopModifyLog">
+              <MappingFragment StoreEntitySet="ShopModifyLog">
+                <ScalarProperty Name="ModifyAt" ColumnName="ModifyAt" />
+                <ScalarProperty Name="ModifyBy" ColumnName="ModifyBy" />
+                <ScalarProperty Name="ShopId" ColumnName="ShopId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserOrder">
+            <EntityTypeMapping TypeName="ZsfModel.UserOrder">
+              <MappingFragment StoreEntitySet="UserOrder">
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="Available" ColumnName="Available" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserOrderDetail">
+            <EntityTypeMapping TypeName="ZsfModel.UserOrderDetail">
+              <MappingFragment StoreEntitySet="UserOrderDetail">
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="UserGroup" ColumnName="UserGroup" />
+                <ScalarProperty Name="OrderCount" ColumnName="OrderCount" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="DisheId" ColumnName="DisheId" />
+                <ScalarProperty Name="ShopId" ColumnName="ShopId" />
+                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="UseLegacyProvider" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="ZsfDB" ZoomLevel="93">
+        <EntityTypeShape EntityType="ZsfModel.Location" Width="1.5" PointX="3.75" PointY="15.5" Height="1.7790128580729157" />
+        <EntityTypeShape EntityType="ZsfModel.ShopCategory" Width="1.5" PointX="0.75" PointY="1.125" Height="1.3969734700520746" />
+        <EntityTypeShape EntityType="ZsfModel.ShopComment" Width="1.5" PointX="5.25" PointY="11" Height="2.9251310221354174" />
+        <EntityTypeShape EntityType="ZsfModel.ShopDishe" Width="1.5" PointX="8.25" PointY="3.5" Height="2.5430916341145746" />
+        <EntityTypeShape EntityType="ZsfModel.ShopDisheCategory" Width="1.5" PointX="8.25" PointY="0.75" Height="1.7790128580729174" />
+        <EntityTypeShape EntityType="ZsfModel.ShopRankingAttribute" Width="1.5" PointX="8.25" PointY="17.25" Height="2.161052246093746" />
+        <EntityTypeShape EntityType="ZsfModel.ShopServiceArea" Width="1.5" PointX="11.25" PointY="10.125" Height="1.9700325520833388" />
+        <EntityTypeShape EntityType="ZsfModel.UserGradeCategory" Width="1.5" PointX="0.75" PointY="11.5" Height="1.7790128580729174" />
+        <EntityTypeShape EntityType="ZsfModel.UserInfo" Width="1.5" PointX="3" PointY="10.375" Height="4.2622688802083246" />
+        <EntityTypeShape EntityType="ZsfModel.UserLoginLog" Width="1.5" PointX="5.25" PointY="20.625" Height="1.7790128580729174" />
+        <EntityTypeShape EntityType="ZsfModel.UserMessage" Width="1.5" PointX="5.25" PointY="23.125" Height="2.3520719401041674" />
+        <EntityTypeShape EntityType="ZsfModel.UserPoint" Width="1.5" PointX="5.25" PointY="26.25" Height="2.5430916341145746" />
+        <EntityTypeShape EntityType="ZsfModel.V_ShopComment" Width="1.5" PointX="2.75" PointY="1.125" Height="3.1161507161458246" />
+        <EntityTypeShape EntityType="ZsfModel.V_ShopWithServiceArea" Width="1.5" PointX="12.75" PointY="1.125" Height="4.0712491861979174" />
+        <EntityTypeShape EntityType="ZsfModel.V_UserInfoDetail" Width="1.5" PointX="12.375" PointY="5.875" Height="2.9251310221354174" />
+        <EntityTypeShape EntityType="ZsfModel.V_UserShopComment" Width="1.5" PointX="12.75" PointY="13.125" Height="2.3520719401041674" />
+        <AssociationConnector Association="ZsfModel.FK_ShopComment_User" >
+          <ConnectorPoint PointX="4.5" PointY="12.034119396671912" />
+          <ConnectorPoint PointX="4.729166666666667" PointY="12.034119396671912" />
+          <ConnectorPoint PointX="4.895833333333333" PointY="12.034119396671912" />
+          <ConnectorPoint PointX="4.916666666666667" PointY="12.034119396671912" />
+          <ConnectorPoint PointX="5.083333333333333" PointY="12.034119396671912" />
+          <ConnectorPoint PointX="5.25" PointY="12.034119396671912" />
+        </AssociationConnector>
+        <AssociationConnector Association="ZsfModel.FK_User_UserGradeCategory" >
+          <ConnectorPoint PointX="2.25" PointY="12.389506429036459" />
+          <ConnectorPoint PointX="2.5416666666666665" PointY="12.389506429036459" />
+          <ConnectorPoint PointX="2.7083333333333335" PointY="12.389506429036459" />
+          <ConnectorPoint PointX="3" PointY="12.389506429036459" />
+        </AssociationConnector>
+        <AssociationConnector Association="ZsfModel.FK_UserLoginLog_User" >
+          <ConnectorPoint PointX="3.3405761328125" PointY="15.40134765625" />
+          <ConnectorPoint PointX="3.3405761328125" PointY="21.514506429036459" />
+          <ConnectorPoint PointX="3.4619572330729165" PointY="21.514506429036459" />
+          <ConnectorPoint PointX="3.7309811165364586" PointY="21.514506429036459" />
+          <ConnectorPoint PointX="5.25" PointY="21.514506429036459" />
+        </AssociationConnector>
+        <AssociationConnector Association="ZsfModel.FK_UserMail_UserMail" >
+          <ConnectorPoint PointX="3.54529056640625" PointY="15.40134765625" />
+          <ConnectorPoint PointX="3.54529056640625" PointY="24.301035970052084" />
+          <ConnectorPoint PointX="5.25" PointY="24.301035970052084" />
+        </AssociationConnector>
+        <AssociationConnector Association="ZsfModel.FK_UserPoint_UserInfo" >
+          <ConnectorPoint PointX="3.13903556640625" PointY="15.40134765625" />
+          <ConnectorPoint PointX="3.13903556640625" PointY="27.521545817057287" />
+          <ConnectorPoint PointX="5.25" PointY="27.521545817057287" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="ZsfModel.UserFavoriteShop" Width="1.5" PointX="15.25" PointY="8.625" Height="2.1610522460937602" />
+        <AssociationConnector Association="ZsfModel.FK_UserFollowShop_UserInfo" >
+          <ConnectorPoint PointX="3.9577819864666459" PointY="10.375" />
+          <ConnectorPoint PointX="3.9577819864666459" PointY="10.217367350260417" />
+          <ConnectorPoint PointX="4.729166666666667" PointY="10.217367350260417" />
+          <ConnectorPoint PointX="4.895833333333333" PointY="10.217367350260417" />
+          <ConnectorPoint PointX="5.6249101041666671" PointY="10.217367350260417" />
+          <ConnectorPoint PointX="5.7915767708333332" PointY="10.217367350260417" />
+          <ConnectorPoint PointX="11" PointY="10.217367350260417" />
+          <ConnectorPoint PointX="11" PointY="9.4231548486328123" />
+          <ConnectorPoint PointX="11.041666666666666" PointY="9.4231548486328123" />
+          <ConnectorPoint PointX="11.208333333333334" PointY="9.4231548486328123" />
+          <ConnectorPoint PointX="15.25" PointY="9.4231548486328123" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="ZsfModel.ServiceArea" Width="1.5" PointX="6" PointY="15.25" Height="2.1610522460937602" />
+        <AssociationConnector Association="ZsfModel.FK_ServiceArea_Location" >
+          <ConnectorPoint PointX="5.25" PointY="16.389506429036459" />
+          <ConnectorPoint PointX="6" PointY="16.389506429036459" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="ZsfModel.V_UserDefaultArea" Width="1.5" PointX="0.75" PointY="15.75" Height="1.7790128580729174" />
+        <EntityTypeShape EntityType="ZsfModel.UserDefaultArea" Width="1.5" PointX="8.25" PointY="12.875" Height="1.9700325520833388" />
+        <AssociationConnector Association="ZsfModel.FK_UserDefaultArea_ServiceArea" >
+          <ConnectorPoint PointX="7.15625" PointY="15.25" />
+          <ConnectorPoint PointX="7.15625" PointY="14.320821940104169" />
+          <ConnectorPoint PointX="8.25" PointY="14.320821940104169" />
+        </AssociationConnector>
+        <AssociationConnector Association="ZsfModel.FK_UserDefaultArea_UserInfo" >
+          <ConnectorPoint PointX="4.5" PointY="14.645427246093753" />
+          <ConnectorPoint PointX="7.072916666666667" PointY="14.645427246093753" />
+          <ConnectorPoint PointX="7.239583333333333" PointY="14.645427246093753" />
+          <ConnectorPoint PointX="8.25" PointY="14.645427246093753" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="ZsfModel.V_ShopServiceArea" Width="1.5" PointX="15.375" PointY="11.75" Height="1.9700325520833246" />
+        <EntityTypeShape EntityType="ZsfModel.V_ShopDisheWithCategory" Width="1.5" PointX="6.375" PointY="0.5" Height="2.9251310221354174" />
+        <EntityTypeShape EntityType="ZsfModel.V_UserFavoriteShopForList" Width="1.5" PointX="15.375" PointY="0.75" Height="4.2622688802083246" />
+        <EntityTypeShape EntityType="ZsfModel.V_ShopDetail" Width="1.5" PointX="15.375" PointY="14.75" Height="3.8802294921875102" />
+        <EntityTypeShape EntityType="ZsfModel.ShopJobAd" Width="1.5" PointX="3" PointY="5.375" Height="3.4981901041666683" />
+        <EntityTypeShape EntityType="ZsfModel.ShopJobAdModifyLog" Width="1.5" PointX="11.25" PointY="0.75" Height="2.1610522460937602" />
+        <AssociationConnector Association="ZsfModel.FK_ShopJobAd_UserInfo">
+          <ConnectorPoint PointX="3.416390993233323" PointY="10.375" />
+          <ConnectorPoint PointX="3.416390993233323" PointY="9.82828857421875" />
+        </AssociationConnector>
+        <AssociationConnector Association="ZsfModel.FK_ShopJobAdModifyLog_ShopJobAd">
+          <ConnectorPoint PointX="4.5" PointY="7.6016442871093748" />
+          <ConnectorPoint PointX="4.729166666666667" PointY="7.6016442871093739" />
+          <ConnectorPoint PointX="4.895833333333333" PointY="7.6016442871093748" />
+          <ConnectorPoint PointX="5.6249101041666671" PointY="7.6016442871093739" />
+          <ConnectorPoint PointX="5.7915767708333332" PointY="7.6016442871093748" />
+          <ConnectorPoint PointX="6.125" PointY="7.6016442871093748" />
+          <ConnectorPoint PointX="6.125" PointY="3.6751310221354174" />
+          <ConnectorPoint PointX="7.916666666666667" PointY="3.675131022135417" />
+          <ConnectorPoint PointX="8.0833333333333339" PointY="3.6751310221354174" />
+          <ConnectorPoint PointX="8.125" PointY="3.6751310221354174" />
+          <ConnectorPoint PointX="8.125" PointY="3.3125" />
+          <ConnectorPoint PointX="11.611977354166667" PointY="3.3124999999999996" />
+          <ConnectorPoint PointX="11.778644020833335" PointY="3.3125" />
+          <ConnectorPoint PointX="12.203125375" PointY="3.3125" />
+          <ConnectorPoint PointX="12.203125375" PointY="2.9110522460937602" />
+        </AssociationConnector>
+        <AssociationConnector Association="ZsfModel.FK_ShopJobAdModifyLog_UserInfo">
+          <ConnectorPoint PointX="4.5" PointY="13.190950515393245" />
+          <ConnectorPoint PointX="4.729166666666667" PointY="13.190950515393245" />
+          <ConnectorPoint PointX="4.895833333333333" PointY="13.190950515393245" />
+          <ConnectorPoint PointX="5" PointY="13.190950515393245" />
+          <ConnectorPoint PointX="5" PointY="10.75" />
+          <ConnectorPoint PointX="5.6249101041666671" PointY="10.75" />
+          <ConnectorPoint PointX="5.7915767708333332" PointY="10.75" />
+          <ConnectorPoint PointX="10.791666666666666" PointY="10.75" />
+          <ConnectorPoint PointX="10.958333333333334" PointY="10.75" />
+          <ConnectorPoint PointX="11.125" PointY="10.75" />
+          <ConnectorPoint PointX="11.125" PointY="3.5360522460937602" />
+          <ConnectorPoint PointX="11.695310687500001" PointY="3.5360522460937602" />
+          <ConnectorPoint PointX="11.695310687500001" PointY="2.9110522460937602" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="ZsfModel.V_ShopJobAd" Width="1.5" PointX="10.375" PointY="16.75" Height="4.6443082682291674" />
+        <EntityTypeShape EntityType="ZsfModel.Shop" Width="1.5" PointX="0.75" PointY="4" Height="6.3634855143229174" />
+        <EntityTypeShape EntityType="ZsfModel.V_ShopForList" Width="1.5" PointX="6.375" PointY="4.75" Height="5.2173673502604174" />
+        <AssociationConnector Association="ZsfModel.FK_ShopComment_Shop" >
+          <ConnectorPoint PointX="2.25" PointY="4.4018253580729123" />
+          <ConnectorPoint PointX="2.4166666666666665" PointY="4.4018253580729114" />
+          <ConnectorPoint PointX="2.5833333333333335" PointY="4.4018253580729123" />
+          <ConnectorPoint PointX="4.729166666666667" PointY="4.4018253580729114" />
+          <ConnectorPoint PointX="4.895833333333333" PointY="4.4018253580729123" />
+          <ConnectorPoint PointX="5.208290885416667" PointY="4.4018253580729114" />
+          <ConnectorPoint PointX="5.374957552083333" PointY="4.4018253580729123" />
+          <ConnectorPoint PointX="5.7082434375" PointY="4.4018253580729123" />
+          <ConnectorPoint PointX="5.7082434375" PointY="11" />
+        </AssociationConnector>
+        <AssociationConnector Association="ZsfModel.FK_ShopDishe_Shop" >
+          <ConnectorPoint PointX="2.25" PointY="4.65625" />
+          <ConnectorPoint PointX="2.4166666666666665" PointY="4.6562499999999991" />
+          <ConnectorPoint PointX="2.5833333333333335" PointY="4.65625" />
+          <ConnectorPoint PointX="2.6666666666666665" PointY="4.6562499999999991" />
+          <ConnectorPoint PointX="2.8333333333333335" PointY="4.65625" />
+          <ConnectorPoint PointX="4.729166666666667" PointY="4.6562499999999991" />
+          <ConnectorPoint PointX="4.895833333333333" PointY="4.65625" />
+          <ConnectorPoint PointX="5.208290885416667" PointY="4.6562499999999991" />
+          <ConnectorPoint PointX="5.374957552083333" PointY="4.65625" />
+          <ConnectorPoint PointX="5.6249101041666671" PointY="4.6562499999999991" />
+          <ConnectorPoint PointX="5.7915767708333332" PointY="4.65625" />
+          <ConnectorPoint PointX="6.041666666666667" PointY="4.6562499999999991" />
+          <ConnectorPoint PointX="6.208333333333333" PointY="4.65625" />
+          <ConnectorPoint PointX="8.25" PointY="4.65625" />
+        </AssociationConnector>
+        <AssociationConnector Association="ZsfModel.FK_ShopDisheCategory_Shop" >
+          <ConnectorPoint PointX="2.25" PointY="7.2772526041666676" />
+          <ConnectorPoint PointX="2.4166666666666665" PointY="7.2772526041666667" />
+          <ConnectorPoint PointX="2.5833333333333335" PointY="7.2772526041666676" />
+          <ConnectorPoint PointX="2.75" PointY="7.2772526041666676" />
+          <ConnectorPoint PointX="2.75" PointY="4.5" />
+          <ConnectorPoint PointX="4.729166666666667" PointY="4.4999999999999991" />
+          <ConnectorPoint PointX="4.895833333333333" PointY="4.5" />
+          <ConnectorPoint PointX="5.208290885416667" PointY="4.4999999999999991" />
+          <ConnectorPoint PointX="5.374957552083333" PointY="4.5" />
+          <ConnectorPoint PointX="5.6249101041666671" PointY="4.4999999999999991" />
+          <ConnectorPoint PointX="5.7915767708333332" PointY="4.5" />
+          <ConnectorPoint PointX="6.041666666666667" PointY="4.4999999999999991" />
+          <ConnectorPoint PointX="6.208333333333333" PointY="4.5" />
+          <ConnectorPoint PointX="8" PointY="4.5" />
+          <ConnectorPoint PointX="8" PointY="3.25" />
+          <ConnectorPoint PointX="9" PointY="3.25" />
+          <ConnectorPoint PointX="9" PointY="2.7200325520833339" />
+        </AssociationConnector>
+        <AssociationConnector Association="ZsfModel.FK_ShopJobAds_Shop" >
+          <ConnectorPoint PointX="2.25" PointY="8.6152705891927077" />
+          <ConnectorPoint PointX="2.4166666666666665" PointY="8.6152705891927077" />
+          <ConnectorPoint PointX="2.5833333333333335" PointY="8.6152705891927077" />
+          <ConnectorPoint PointX="3" PointY="8.6152705891927077" />
+        </AssociationConnector>
+        <AssociationConnector Association="ZsfModel.FK_ShopRankingAttribute_Shop" >
+          <ConnectorPoint PointX="2.25" PointY="10.554505208333334" />
+          <ConnectorPoint PointX="2.625" PointY="10.929505208333334" />
+          <ConnectorPoint PointX="2.625" PointY="18.537811593098965" />
+          <ConnectorPoint PointX="3.0557022330729167" PointY="18.537811593098965" />
+          <ConnectorPoint PointX="3.2223688997395836" PointY="18.537811593098965" />
+          <ConnectorPoint PointX="3.2572427994791666" PointY="18.537811593098965" />
+          <ConnectorPoint PointX="3.4239094661458336" PointY="18.537811593098965" />
+          <ConnectorPoint PointX="3.4619572330729165" PointY="18.537811593098965" />
+          <ConnectorPoint PointX="3.7309811165364586" PointY="18.537811593098965" />
+          <ConnectorPoint PointX="8.25" PointY="18.537811593098965" />
+        </AssociationConnector>
+        <AssociationConnector Association="ZsfModel.FK_ShopServiceArea_Shop" >
+          <ConnectorPoint PointX="1.4687480000000002" PointY="10.554505208333334" />
+          <ConnectorPoint PointX="1.4687480000000002" PointY="11.014506429036459" />
+          <ConnectorPoint PointX="2.5416666666666665" PointY="11.014506429036459" />
+          <ConnectorPoint PointX="2.7083333333333335" PointY="11.014506429036459" />
+          <ConnectorPoint PointX="2.75" PointY="11.014506429036459" />
+          <ConnectorPoint PointX="2.75" PointY="10.217367350260417" />
+          <ConnectorPoint PointX="3.3330576598999895" PointY="10.217367350260417" />
+          <ConnectorPoint PointX="3.4997243265666564" PointY="10.217367350260417" />
+          <ConnectorPoint PointX="4.729166666666667" PointY="10.217367350260417" />
+          <ConnectorPoint PointX="4.895833333333333" PointY="10.217367350260417" />
+          <ConnectorPoint PointX="5.6249101041666671" PointY="10.217367350260417" />
+          <ConnectorPoint PointX="5.7915767708333332" PointY="10.217367350260417" />
+          <ConnectorPoint PointX="10.875" PointY="10.217367350260417" />
+          <ConnectorPoint PointX="10.875" PointY="11.32700592903646" />
+          <ConnectorPoint PointX="11.25" PointY="11.32700592903646" />
+        </AssociationConnector>
+        <AssociationConnector Association="ZsfModel.FK_UserFollowShop_Shop" >
+          <ConnectorPoint PointX="2.25" PointY="10.046183675130209" />
+          <ConnectorPoint PointX="2.4166666666666665" PointY="10.046183675130209" />
+          <ConnectorPoint PointX="2.5833333333333335" PointY="10.046183675130209" />
+          <ConnectorPoint PointX="3.3330576598999895" PointY="10.046183675130209" />
+          <ConnectorPoint PointX="3.4997243265666564" PointY="10.046183675130209" />
+          <ConnectorPoint PointX="4.729166666666667" PointY="10.046183675130209" />
+          <ConnectorPoint PointX="4.895833333333333" PointY="10.046183675130209" />
+          <ConnectorPoint PointX="5.6249101041666671" PointY="10.046183675130209" />
+          <ConnectorPoint PointX="5.7915767708333332" PointY="10.046183675130209" />
+          <ConnectorPoint PointX="10.541666666666666" PointY="10.046183675130207" />
+          <ConnectorPoint PointX="10.833333333333334" PointY="10.046183675130209" />
+          <ConnectorPoint PointX="10.916666666666666" PointY="10.046183675130207" />
+          <ConnectorPoint PointX="11.208333333333334" PointY="10.046183675130209" />
+          <ConnectorPoint PointX="15.25" PointY="10.046183675130209" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="ZsfModel.ShopModifyLog" Width="1.5" PointX="4.625" PointY="0.75" Height="2.1610522460937602" />
+        <AssociationConnector Association="ZsfModel.FK_UserEditShopLog_Shop" >
+          <ConnectorPoint PointX="2.25" PointY="5.0156274999999937" />
+          <ConnectorPoint PointX="2.4166666666666665" PointY="5.0156274999999928" />
+          <ConnectorPoint PointX="2.5833333333333335" PointY="5.0156274999999937" />
+          <ConnectorPoint PointX="2.6666666666666665" PointY="5.0156274999999928" />
+          <ConnectorPoint PointX="2.8333333333333335" PointY="5.0156274999999937" />
+          <ConnectorPoint PointX="4.729166666666667" PointY="5.0156274999999928" />
+          <ConnectorPoint PointX="4.895833333333333" PointY="5.0156274999999937" />
+          <ConnectorPoint PointX="5.29162421875" PointY="5.0156274999999937" />
+          <ConnectorPoint PointX="5.29162421875" PointY="2.9110522460937602" />
+        </AssociationConnector>
+        <AssociationConnector Association="ZsfModel.FK_UserEditShopLog_User" >
+          <ConnectorPoint PointX="4.5" PointY="14.285276634114592" />
+          <ConnectorPoint PointX="4.8125" PointY="14.285276634114592" />
+          <ConnectorPoint PointX="4.8125" PointY="2.9110522460937602" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="ZsfModel.UserOrder" Width="1.5" PointX="15.25" PointY="20.375" Height="2.1610522460937602" />
+        <EntityTypeShape EntityType="ZsfModel.UserOrderDetail" Width="1.5" PointX="17.5" PointY="6.75" Height="3.4981901041666674" />
+        <AssociationConnector Association="ZsfModel.FK_UserOrder_Shop" >
+          <ConnectorPoint PointX="1.5" PointY="4" />
+          <ConnectorPoint PointX="1.5" PointY="3.75" />
+          <ConnectorPoint PointX="2.5" PointY="3.75" />
+          <ConnectorPoint PointX="2.5" PointY="10.217367350260417" />
+          <ConnectorPoint PointX="3.3330576598999895" PointY="10.217367350260417" />
+          <ConnectorPoint PointX="3.4997243265666564" PointY="10.217367350260417" />
+          <ConnectorPoint PointX="4.729166666666667" PointY="10.217367350260417" />
+          <ConnectorPoint PointX="4.895833333333333" PointY="10.217367350260417" />
+          <ConnectorPoint PointX="5.6249101041666671" PointY="10.217367350260417" />
+          <ConnectorPoint PointX="5.7915767708333332" PointY="10.217367350260417" />
+          <ConnectorPoint PointX="10.75" PointY="10.217367350260417" />
+          <ConnectorPoint PointX="10.75" PointY="9.0501310221354174" />
+          <ConnectorPoint PointX="11.041666666666666" PointY="9.0501310221354174" />
+          <ConnectorPoint PointX="11.208333333333334" PointY="9.0501310221354174" />
+          <ConnectorPoint PointX="15" PointY="9.0501310221354174" />
+          <ConnectorPoint PointX="15" PointY="7.6562505000000005" />
+          <ConnectorPoint PointX="17.5" PointY="7.6562505000000005" />
+        </AssociationConnector>
+        <AssociationConnector Association="ZsfModel.FK_UserOrder_ShopDishe" >
+          <ConnectorPoint PointX="9.75" PointY="5.5356245930989587" />
+          <ConnectorPoint PointX="11.041666666666666" PointY="5.5356245930989578" />
+          <ConnectorPoint PointX="11.208333333333334" PointY="5.5356245930989587" />
+          <ConnectorPoint PointX="18.25" PointY="5.5356245930989587" />
+          <ConnectorPoint PointX="18.25" PointY="6.75" />
+        </AssociationConnector>
+        <AssociationConnector Association="ZsfModel.FK_UserOrder_UserInfo" >
+          <ConnectorPoint PointX="4.2601429932333232" PointY="10.375" />
+          <ConnectorPoint PointX="4.2601429932333232" PointY="10.217367350260417" />
+          <ConnectorPoint PointX="4.729166666666667" PointY="10.217367350260417" />
+          <ConnectorPoint PointX="4.895833333333333" PointY="10.217367350260417" />
+          <ConnectorPoint PointX="5.6249101041666671" PointY="10.217367350260417" />
+          <ConnectorPoint PointX="5.7915767708333332" PointY="10.217367350260417" />
+          <ConnectorPoint PointX="10.625" PointY="10.217367350260417" />
+          <ConnectorPoint PointX="10.625" PointY="9.1751310221354174" />
+          <ConnectorPoint PointX="10.666666666666666" PointY="9.1751310221354174" />
+          <ConnectorPoint PointX="10.833333333333334" PointY="9.1751310221354174" />
+          <ConnectorPoint PointX="11.041666666666666" PointY="9.1751310221354174" />
+          <ConnectorPoint PointX="11.208333333333334" PointY="9.1751310221354174" />
+          <ConnectorPoint PointX="14.9375" PointY="9.1751310221354174" />
+          <ConnectorPoint PointX="14.9375" PointY="8.1406277499999931" />
+          <ConnectorPoint PointX="17.5" PointY="8.1406277499999931" />
+        </AssociationConnector>
+        <AssociationConnector Association="ZsfModel.FK_UserOrder_UserInfo1" >
+          <ConnectorPoint PointX="3.6476477832031251" PointY="15.40134765625" />
+          <ConnectorPoint PointX="3.6476477832031251" PointY="22.501282552083339" />
+          <ConnectorPoint PointX="15.25" PointY="22.501282552083339" />
+        </AssociationConnector>
+        <AssociationConnector Association="ZsfModel.FK_UserOrderDetail_UserOrder" >
+          <ConnectorPoint PointX="16.75" PointY="21.45552612304688" />
+          <ConnectorPoint PointX="18.25" PointY="21.45552612304688" />
+          <ConnectorPoint PointX="18.25" PointY="10.248190104166667" />
+        </AssociationConnector>
+        </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

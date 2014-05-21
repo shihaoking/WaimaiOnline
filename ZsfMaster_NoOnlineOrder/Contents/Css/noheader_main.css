@@ -1,0 +1,40 @@
+﻿.content{ width:960px; margin:40px auto 0; min-height:500px}
+fieldset{ margin-top:10px}
+.footer{ text-align: center; margin-top:50px;font-size:13px; background-color:#26221F;}
+.footer p{ color:white}
+.footer a{color:#F56267;}
+.footer .lk{ padding:15px 0}
+.footer .footer p{ margin:0; color:white}
+.footer p.lk a{ margin-left:20px;}
+.footer .cp_right{ margin-bottom:0; padding:15px 0; color:white; margin-top:0}
+.clear{ clear:both}
+body{ position:relative;padding:0;margin:0;font-family:'Microsoft Yahei','华文细黑','黑体','幼圆','宋体';background-color:#F0EDE1; color:#26221F; overflow-y:scroll }
+h2{margin-top:0}
+input{outline: none; font-family:'Microsoft Yahei','华文细黑','黑体','幼圆','宋体'}
+textarea{font-family:'Microsoft Yahei','华文细黑','黑体','幼圆','宋体';outline:none}
+img{ vertical-align:middle}
+ul{ margin:0; padding:0;}
+li{ list-style:none}
+table{ width:100%;}
+
+.area_box{ width:620px; margin:17% auto 0; background-color:white}
+.area_box h3{ margin:0; padding:7px; text-align:center; background-color:#CF2329;  color:white; height:40px; line-height:40px; padding:0 10px}
+.area_box ul.a_list{width:590px; margin:10px auto;}
+.area_box .a_list_item{ margin-top:5px}
+.area_box .a_list_item .title{ color:White; padding:3px 5px; border-radius:3px}
+.area_box .a_list_item.b .title{ background-color:#1BA1E2;}
+.area_box .a_list_item.u .title{ background-color:#9C0;}
+.area_box .a_d_list{ margin-top:10px; font-size:0}
+.area_box .a_d_list.o{ display:none; margin-top:0}
+.area_box .a_d_list li{ list-style:none;height:28px; line-height:28px; color:#26221F ; cursor:pointer; display:inline-block; width:180px; font-size:14px; margin-left:8px; 
+                padding-left:5px; border-left-width:3px; border-left-style:solid; margin-bottom:10px;_float:left;*float:left}
+.area_box .a_d_list.b li{ background-color:#F0EDE1; border-left:none; width:100px; text-align:center; padding-left:0; margin-right:10px}
+.area_box .a_list_item.b .a_d_list li{border-left-color:#1BA1E2}
+.area_box .a_list_item.u .a_d_list li{border-left-color:#9C0}
+.area_box .a_d_list li:hover{ color:white}
+.area_box .a_list_item.b .a_d_list li:hover{ background-color:#1BA1E2;}
+.area_box .a_list_item.u .a_d_list li:hover{ background-color:#9C0;}
+.area_box .a_d_list li.hover{ color:white; cursor:default}
+.area_box .a_list_item.b .a_d_list li.hover{background-color:#1BA1E2;}
+.area_box .a_list_item.b .a_d_list.b li.hover{background-color:#1BA1E2;}
+.area_box .a_list_item.u .a_d_list li.hover{background-color:#9C0;}

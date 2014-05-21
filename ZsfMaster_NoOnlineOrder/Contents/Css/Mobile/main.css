@@ -1,0 +1,80 @@
+﻿body{margin:0; font-family:arial; position:relative;font-family:'Microsoft Yahei','华文细黑','黑体','幼圆','宋体';background-color:#F0EDE1; color:#26221F  }
+span{color:#26221F}
+ul { margin: 0; padding: 0; }
+li { list-style: none; }
+a{text-decoration:none;}
+img{ vertical-align:text-bottom; border:none}
+form{ display:inline-block}
+.clear { clear: both;  height:0px; margin:0; padding:0; width:0; border:none; overflow:hidden;}
+.shadow{ background-color:black;opacity:0.5;filter:alpha(opacity=50); zoom:1; z-index:10; display:none; display:block; top:0; left:0; position:absolute}
+h1{ margin:0}
+
+.header { background-color:#26221F;font-family:'Microsoft Yahei', 'Helvetica Neue', 'Luxi Sans', 'DejaVu Sans', Tahoma, 'Hiragino Sans GB', STHeiti,'宋体';}
+.header .logo { float:left;}
+.header .logo a{ display:inline-block; padding:10px; background-color:#CF2329}
+.header .my_loct{  font-size:14px; float:right; margin-right:15px; text-align:right; margin-top:5px }
+.header .my_loct .area{color:#E93E44}
+.header .my_loct span{ color:#9C0; height:20px; line-height:20px}
+
+.main{ margin-top:10px}
+.main .cnt{ margin-top:10px; padding:0 15px}
+.main .search_box{padding:5px 10px;}
+.main .search_box .s_form{ display:inline-block;width:100%;}
+.main .search_box .s_form form{ width:100%; text-align:center}
+.main .search_box .s_form #shopName{ height:29px;padding:2px 3px; margin:0; font-size:15px;color:#999; width:50%;vertical-align:top; border:1px solid #DADADA; border-right:none; outline:none}
+.main .search_box .s_form .btn{ display:inline-block; cursor:pointer; height:35px; background:url(/Contents/Images/search.png) no-repeat center center;
+                                width:40px; text-align:center; border:none; color:white; background-color:#CF2329; font-weight:bold; font-size:15px; vertical-align:bottom;border:none;}
+
+.shop_list_box .ctg_list{padding:0 10px}
+.shop_list_box .ctg_list ul li { height:25px; line-height:25px; display:block; float:left; margin-right:10px; margin-bottom:10px}
+.shop_list_box .ctg_list ul li a{  display:inline-block; color:#26221F; font-size:13px; padding:0 7px; background-color:white}
+.shop_list_box .ctg_list ul li a.now{ background-position:0 -22px; color:white; background-color:#e93e44}
+
+.list_box .stat{ color:#444; font-size:14px}
+.list_box .order_by{  margin-bottom:10px;font-size:12px; background-color:White; border:1px solid #DADADA;border-left:none;border-right:none; height:35px; line-height:35px; padding-left:10px;}
+.list_box .order_by a{ margin-right:10px; color:#26221F; padding:0 5px; display:inline-block; font-size:12px;}
+.list_box .order_by a:active{background-color:#9C0; color:white;}
+.list_box .order_by a.now{background-color:#9C0; color:white}
+.shop_ls{ padding:0 10px}
+.shop_ls .shop { display:block; border:1px solid #DADADA; padding:6px 0; background-color:White; margin-bottom:5px; }
+.shop_ls .shop:active{ background-color:#D3E8FF}
+.list_box .shop.last{ margin-right:0px}
+.list_box .shop .sh_pic { padding:4px; display:block; border:1px solid #DBDBDB}
+.list_box .shop .sh_pic:active{ border:1px solid #F56267; padding:4px}
+.list_box .shop .sh_pic img { width: 165px; height:124px; }
+.list_box .shop .star{ color:#FA9614; font-size:12px;  width:55px}
+.list_box .shop .name{color:white; font-size:14px; padding:3px 5px 2px; margin-left:-3px; background-color:#e93e44;}
+.list_box .shop .stars{ vertical-align:bottom}
+.list_box .shop .up_price { font-size: 12px;  padding-left:10px; display:block; margin-top:5px }
+.list_box .shop .ads{ font-size:12px; padding-left:10px; display:block;margin-top:3px}
+
+.stars{ background-image:url(/Contents/Images/star-off.png); background-position:0 center; background-repeat:repeat-x; height:25px; display:inline-block; width:125px; height:25px;}
+.stars.small{ background-image:url(/Contents/Images/star-off-small.png); width:70px; height:20px;}
+.stars .stars_on{background-image:url(/Contents/Images/star-on.png);background-position:0 center; background-repeat:repeat-x; height:25px; display:inline-block}
+.stars.small .stars_on{background-image:url(/Contents/Images/star-on-small.png);height:20px;}
+
+.login_form td.info input{width:150px; line-height:25px;}
+.login_form td.bt{ text-align:center}
+
+.dialog h3{ margin:0; padding:7px; text-align:center; background-color:#CF2329;  color:white; height:40px; line-height:40px; padding:0 10px}
+.dialog h3 .close{ vertical-align:middle; float:right; cursor:pointer; margin-top:13px}
+.area_box{ position: absolute; z-index:99; display:none; background-color:White; width:260px}
+.area_box ul li{ list-style:none;height:35px; line-height:35px; color:#26221F ; font-weight:bolder;padding-left:15px;}
+.area_box ul li:active{background-color:#99CC00; color:white;}
+.area_box  li.hover{background-color:#9C0; color:white}
+
+.page_list { text-align: center; display: block; margin:30px auto 0 auto; width:100% }
+.pg_ul { margin: 0 auto; padding: 0;  display:inline-block;}
+.pg_ul li { list-style: none; float:left; margin:0 5px;}
+.pg_ul li a { display: block; color: #26221F; font-size: 13px; text-decoration: none; border: 1px solid white; background-color:White; padding:7px 11px; }
+.pg_ul li a:active{background-color: #F56267; display: block; color:white; padding:8px 12px; border:none;}
+.pg_ul li.i strong { background-color: #E93E44; display: block; padding:6px 11px; color:white; }
+
+.footer{ text-align: center; margin-top:25px; margin-bottom:20px;font-size:13px;}
+.footer a{color:#2A85E8;}
+.footer a:hover{color:#11639D;}
+.footer p.lk{ margin:0;}
+.footer p.lk a.ab{ margin-right:20px;}
+.footer p.cp{margin-bottom:0}
+.footer p.cp .mail_to{ margin-left:30px}
+.footer p.cp .mail_to a{ margin-left:5px}
